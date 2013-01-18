@@ -1,3 +1,4 @@
+TEST
 <?php
 require_once('__init__.php');
 // This would be the url of the host running the server-standalone.jar
