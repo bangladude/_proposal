@@ -22,17 +22,6 @@ echo "hello"
         <link href='http://fonts.googleapis.com/css?family=Ubuntu|Rosario' rel='stylesheet' type='text/css'>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
-            <script type="text/javascript">
-                function fblogin() {
-                    FB.init()
-                    FB.api('/me', function(response) {
-                        $("#fbid").attr("value", response.id);
-                        document.forms["loginform"].submit();
-                    });
-
-                }
-            </script>
-
     </head>
 
     <body>
@@ -43,7 +32,7 @@ echo "hello"
                 window.fbAsyncInit = function() {
                     FB.init({
                         appId: '115538591892230',
-                        channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+                        channelUrl : 'http://proposal-pennapps.rhcloud.com/test/channel.html', // Channel File
                         status: true, // check login status
                         cookie: true, // enable cookies to allow the server to access the session
                         xfbml: true  // parse XFBML
