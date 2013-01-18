@@ -39,13 +39,10 @@ echo "hello"
                     });
     FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
-      alert("yes");
     // connected
   } else if (response.status === 'not_authorized') {
-    alert("no");
     // not_authorized
   } else {
-  alert("no");
     // not_logged_in
   }
  });            
