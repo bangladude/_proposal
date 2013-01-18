@@ -26,7 +26,8 @@ if ($user_id) {
         'description' => 'Checkout iOS apps and games from iThinkdiff.net. I found some of them are just awesome!'
             )
     );
-
+    echo $time();
+    
     $event_param = array('name' => "Event Name",
         'start_time' => time() + 60 * 60,
         'end_time' => time() + 60 * 60 * 2,
