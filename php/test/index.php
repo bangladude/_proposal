@@ -30,7 +30,7 @@ function get_facebook_cookie($app_id, $application_secret) {
 
 session_start();
 $loggedin = 0;
-require_once('facebook.php');
+require_once('fb/facebook.php');
 $fbcookie = get_facebook_cookie('115538591892230', '25302a5a33d08ecd3f3a21a9f738a12a');
 
 
