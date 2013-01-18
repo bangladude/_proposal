@@ -32,22 +32,35 @@ echo "hello"
                 window.fbAsyncInit = function() {
                     FB.init({
                         appId: '413005548778403',
-                        channelUrl : 'http://proposal-pennapps.rhcloud.com/test/channel.html', // Channel File
+                        channelUrl: 'http://proposal-pennapps.rhcloud.com/test/channel.html', // Channel File
                         status: true, // check login status
                         cookie: true, // enable cookies to allow the server to access the session
                         xfbml: true  // parse XFBML
                     });
-    FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    // connected
-  } else if (response.status === 'not_authorized') {
-    // not_authorized
-  } else {
-    // not_logged_in
-  }
- });            
-    
-    };
+
+                    FB.login(function(response) {
+                        if (response.session) {
+                            if (response.perms) {
+                                // user is logged in and granted some permissions.
+                                // perms is a comma separated list of granted permissions
+                            } else {
+                                // user is logged in, but did not grant any permissions
+                            }
+                        } else {
+                            // user is not logged in
+                        }
+                    }, {perms: 'read_stream,publish_stream,offline_access,create_event'});
+                    FB.getLoginStatus(function(response) {
+                        if (response.status === 'connected') {
+                            // connected
+                        } else if (response.status === 'not_authorized') {
+                            // not_authorized
+                        } else {
+                            // not_logged_in
+                        }
+                    });
+
+                };
                 (function(d) {
                     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
                     if (d.getElementById(id)) {
