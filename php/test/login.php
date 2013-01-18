@@ -29,8 +29,7 @@ echo "hello"
 
         <div id="fb-root">
             <script>
-
-                
+                     
                 window.fbAsyncInit = function() {
                     FB.init({
                         appId: '413005548778403',
@@ -70,7 +69,7 @@ echo "hello"
                 }(document));
             </script>
         </div>
-        <div class="fb-login-button" onlogin="fblogin();" perms="email">Login with Facebook</div>
+        <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event">Login with Facebook</div>
 
 
         <a href="#" onclick="FB.logout();">Logout of Facebook</a>
