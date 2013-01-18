@@ -31,7 +31,7 @@ echo "hello"
             <script>
                 window.fbAsyncInit = function() {
                     FB.init({
-                        appId: '115538591892230',
+                        appId: '413005548778403',
                         channelUrl : 'http://proposal-pennapps.rhcloud.com/test/channel.html', // Channel File
                         status: true, // check login status
                         cookie: true, // enable cookies to allow the server to access the session
