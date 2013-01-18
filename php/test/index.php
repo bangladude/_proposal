@@ -43,6 +43,7 @@ $config = array(
 $facebook = new Facebook($config);
 $facebook->setAccessToken($fbcookie['access_token']);
 $user_id = $facebook->getUser();
-
+echo $user_id;
+echo "hello"
 
 ?>
