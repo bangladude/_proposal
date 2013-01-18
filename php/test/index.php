@@ -39,6 +39,8 @@ if ($user_id) {
         'privacy_type' => "OPEN",
     );
     
+    $event_utf8 = array_map(utf8_encode, $Facebook_event);
+    
     $event_parameters = array( 'method' => 'events.create', 'uids' => $id, 'event_info' => json_encode($event_utf8), 'callback' => '' );
 }
 echo 'success';
