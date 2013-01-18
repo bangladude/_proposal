@@ -14,3 +14,4 @@ echo $session->source();
 echo hello;
 
 ?>
+TEST
