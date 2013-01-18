@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="innerStyle.css">
+  </head>
+  <body>
+    <a href="index.html"><div id="restart">
+      <div class="button">
+        You're Done!
+        Hack Someone Else!
+      </div>
+    </div></a>
+  </body
+</html>

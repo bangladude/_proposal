@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="innerStyle.css">
+  </head>
+  <body>
+    <h3>Choose your weapons</h3>
+    <div id="formdiv">
+      <form>
+        <div>
+          <input type="checkbox" value="fbstatus"/>Update facebook status
+        </div>  
+        <div>
+          <input type="checkbox" value="fbrel"/>Change relationship status
+        </div>
+        <div>
+          <input type="checkbox" value="fbevent"/>Make engagement event
+        </div>
+        <div>
+          <input type="checkbox" value="ringpic"/>Add picture of ring
+        </div>
+        <div>
+          <input type="checkbox" value="lifeevent"/>Add life event
+        </div>
+      </form>
+    </div>
+    <a href="finish.html"><div class="start_button">
+      <div class="button">Finish!</div>
+    </a>
+  </body>
+</html>

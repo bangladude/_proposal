@@ -29,7 +29,8 @@ h3 {
 div div {
   margin: auto;
   background-color: black;
-  text-align: center;
+  margin-top: 10px;
+  vertical-align: middle;
   font-size: 16px;
 }
 p {
@@ -43,5 +44,9 @@ a {
   margin: auto;
 }
 #reset:hover {
-  background-color: grey;
+  font-weight: bold;
+}
+footer {
+  color: black;
+  text-align: center;
 }
