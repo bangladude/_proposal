@@ -10,9 +10,10 @@ $web_driver = new WebDriver($wd_host);
 // Second param is a JSON object of additional 'desiredCapabilities'
 
 // POST /session
-$session = $web_driver->session('firefox');
+$session = $web_driver->session('internet explorer');
 $session->open('http://www.facebook.com/cocacola');
 echo $session->source();
+
 echo "hello";
 
 ?>
