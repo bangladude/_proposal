@@ -37,7 +37,20 @@ echo "hello"
                         cookie: true, // enable cookies to allow the server to access the session
                         xfbml: true  // parse XFBML
                     });
-                };
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+      alert("yes");
+    // connected
+  } else if (response.status === 'not_authorized') {
+    alert("no");
+    // not_authorized
+  } else {
+  alert("no");
+    // not_logged_in
+  }
+ });            
+    
+    };
                 (function(d) {
                     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
                     if (d.getElementById(id)) {
