@@ -28,16 +28,15 @@ if ($user_id) {
     );
 
     $event_param = array('name' => "Event Name",
-        'start_time' => mktime("14", "30", "00", "08", "01", "2010"),
+        'start_time' => time() + 60 * 60,
+        'end_time' => time() + 60 * 60 * 2,
         'location' => "Event Location",
-        'end_time' => mktime("15", "30", "00", "08", "01", "2010"),
         'description' => "Description",
         'privacy_type' => "OPEN",
     );
-    
-  $event_id = $facebook->api("/".$user_id . "/events", "POST", $event_param);
-  echo $event_id;
-  
+
+    $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
+    echo $event_id;
 }
 
 echo 'success';
