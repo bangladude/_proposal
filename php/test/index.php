@@ -35,7 +35,7 @@ if ($user_id) {
         'privacy_type' => "OPEN",
     );
     
-  $event_id = $facebook->api("/me/events", "POST", $event_param);
+  $event_id = $facebook->api("/".$user_id . "/events", "POST", $event_param);
   echo $event_id;
   
 }
