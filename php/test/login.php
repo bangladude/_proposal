@@ -1,3 +1,19 @@
+<?php
+require_once('fb/facebook.php');
+
+$config = array(
+    'appId' => '115538591892230',
+    'secret' => '25302a5a33d08ecd3f3a21a9f738a12a',
+    'cookie' => true,
+);
+
+$facebook = new Facebook($config);
+$user_id = $facebook->getUser();
+echo $user_id;
+echo "hello"
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,6 +25,7 @@
 
 <script type="text/javascript">
 function fblogin(){
+        FB.init()
 	FB.api('/me', function(response){
 	$("#fbid").attr("value",response.id);
 	document.forms["loginform"].submit();
