@@ -29,7 +29,7 @@ if ($user_id) {
     
     
     $event_param = array('name' => "Event Name",
-        'start_time' => time() + 60*60*2,
+        'start_time' => date("Y-m-d",time() + 60*60*2),
         //'end_time' => time() + 60 * 60 * 2,
         //'location' => "Event Location",
         //'description' => "Description",
