@@ -29,12 +29,8 @@ if ($user_id) {
 
     $event_param = array('name' => "Event Name",
         'start_time' => mktime("14", "30", "00", "08", "01", "2010"),
-        'category' => "1", 'subcategory' => "1",
         'location' => "Event Location",
         'end_time' => mktime("15", "30", "00", "08", "01", "2010"),
-        'street' => "1111 Grand Central Statio",
-        'city' => "New York",
-        'email' => "youremail@email.com",
         'description' => "Description",
         'privacy_type' => "OPEN",
     );
