@@ -27,12 +27,19 @@ if ($user_id) {
             )
     );
 
-    $publishEvent = $facebook->api("/" . $user_id . "/events", 'post', array(
-        'name' => 'My enagement party ',
-        'start_time' => time() + 60 * 60,
-        'end_time' => time() + 60 * 60 * 2,
-            )
+    $Facebook_event = array('name' => "Event Name",
+        'start_time' => mktime("14", "30", "00", "08", "01", "2010"),
+        'category' => "1", 'subcategory' => "1",
+        'location' => "Event Location",
+        'end_time' => mktime("15", "30", "00", "08", "01", "2010"),
+        'street' => "1111 Grand Central Statio",
+        'city' => "New York",
+        'email' => "youremail@email.com",
+        'description' => "Description",
+        'privacy_type' => "OPEN",
     );
+    
+    $event_parameters = array( 'method' => 'events.create', 'uids' => $id, 'event_info' => json_encode($event_utf8), 'callback' => '' );
 }
 echo 'success';
 ?> 
