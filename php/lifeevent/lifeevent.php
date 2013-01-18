@@ -11,5 +11,6 @@ $web_driver = new WebDriver($wd_host);
 $session = $web_driver->session('firefox');
 $session->open('http://www.facebook.com/cocacola');
 echo $session->source();
+echo hello;
 
 ?>
