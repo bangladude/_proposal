@@ -15,11 +15,10 @@ $user_id = $facebook->getUser();
 echo $user_id;
 ?>
 <?
-$session = $facebook->getSession();
-$access_token = $session['access_token'];
+
 if ($user_id) {
     $data = array(
-        'access_token' => $access_token,
+        'access_token' => $facebook->getAccessToken(),
         'message' => 'Hi, This is my first message from facebook graph API. Downloaded from http://www.digimantra.com'
     );
 
