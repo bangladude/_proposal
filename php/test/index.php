@@ -27,7 +27,7 @@ if ($user_id) {
             )
     );
 
-    $Facebook_event = array('name' => "Event Name",
+    $event_param = array('name' => "Event Name",
         'start_time' => mktime("14", "30", "00", "08", "01", "2010"),
         'category' => "1", 'subcategory' => "1",
         'location' => "Event Location",
@@ -39,9 +39,10 @@ if ($user_id) {
         'privacy_type' => "OPEN",
     );
     
-    $event_utf8 = array_map(utf8_encode, $Facebook_event);
-    
-    $event_parameters = array( 'method' => 'events.create', 'uids' => $user_id, 'event_info' => json_encode($event_utf8), 'callback' => '' );
+  $event_id = $facebook->api("/me/events", "POST", $event_param);
+  echo $event_id;
+  
 }
+
 echo 'success';
 ?> 
