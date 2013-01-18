@@ -30,10 +30,10 @@ if ($user_id) {
     
     $event_param = array('name' => "Event Name",
         'start_time' => time() + 60 * 60,
-        'end_time' => time() + 60 * 60 * 2,
-        'location' => "Event Location",
-        'description' => "Description",
-        'privacy_type' => "OPEN",
+        //'end_time' => time() + 60 * 60 * 2,
+        //'location' => "Event Location",
+        //'description' => "Description",
+        //'privacy_type' => "OPEN",
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
