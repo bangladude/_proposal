@@ -1,167 +1,83 @@
-php-webdriver -- A very thin wrapper of WebDriver
-=================================================
+Goutte, a simple PHP Web Scraper
+================================
 
-##  DESCRIPTION
+Goutte is a screen scraping and web crawling library for PHP.
 
-This client aims to be as thin as possible, abusing the dynamic nature of PHP to allow almost all API calls to be a direct transformation of what is defined in the WebDriver protocol itself.
+Goutte provides a nice API to crawl websites and extract data from the
+HTML/XML responses.
 
-Most clients require you to first read the protocol to see what's possible, then study the client itself to see how to call it.  This hopes to eliminate the latter step, and invites you to rely almost exclusively on http://code.google.com/p/selenium/wiki/JsonWireProtocol
+Requirements
+------------
 
-Each command is just the name of a function call, and each additional path is just another chained function call.  The function parameter is then either an array() if the command takes JSON parameters, or an individual primitive if it takes a URL parameter.
+Goutte works with PHP 5.3.3 or later.
 
-The function's return value is exactly what is returned from the server as part of the protocol definition.  If an error is returned, the function will throw the appropriate WebDriverException instance.
+Installation
+------------
 
-##  GETTING STARTED
+Installing Goutte is as easy as it can get. Download the [`Goutte.phar`][1]
+file and you're done!
 
-*   All you need as the server for this client is the selenium-server-standalone-#.jar file provided here:  http://code.google.com/p/selenium/downloads/list
+Usage
+-----
 
-*   Download and run that file, replacing # with the current server version.
+Require the Goutte phar file to use Goutte in a script:
 
-        java -jar selenium-server-standalone-#.jar
+    require_once '/path/to/goutte.phar';
 
-*   Then when you create a session, be sure to pass the url to where your server is running.
+Create a Goutte Client instance (which extends
+`Symfony\Component\BrowserKit\Client`):
 
-        // This would be the url of the host running the server-standalone.jar
-        $wd_host = 'http://localhost:4444/wd/hub'; // this is the default
-        $web_driver = new WebDriver($wd_host);
+    use Goutte\Client;
 
-        // First param to session() is the 'browserName' (default = 'firefox')
-        // Second param is a JSON object of additional 'desiredCapabilities'
+    $client = new Client();
 
-        // POST /session
-        $session = $web_driver->session('firefox');
+Make requests with the `request()` method:
 
-* See also [wiki page for launching different browsers](https://github.com/facebook/php-webdriver/wiki/Launching-Browsers).
+    $crawler = $client->request('GET', 'http://www.symfony-project.org/');
 
-##  SIMPLE EXAMPLES
+The method returns a `Crawler` object
+(`Symfony\Component\DomCrawler\Crawler`).
 
-### Note that all of these match the Protocol exactly
-*   Move to a specific spot on the screen
+Click on links:
 
-        // POST /session/:sessionId/moveto
-        $session->moveto(array('xoffset' => 3, 'yoffset' => 300));
+    $link = $crawler->selectLink('Plugins')->link();
+    $crawler = $client->click($link);
 
-*   Get the current url
+Submit forms:
 
-        // GET /session/:sessionId/url
-        $session->url();
+    $form = $crawler->selectButton('sign in')->form();
+    $crawler = $client->submit($form, array('signin[username]' => 'fabien', 'signin[password]' => 'xxxxxx'));
 
-*   Change focus to another frame
+Extract data:
 
-        // POST /session/:sessionId/frame
-        $session->frame(array('id' => 'some_frame_id'));
+    $nodes = $crawler->filter('.error_list');
+    if ($nodes->count())
+    {
+      die(sprintf("Authentication error: %s\n", $nodes->text()));
+    }
 
-*   Get a list of window handles for all open windows
+    printf("Nb tasks: %d\n", $crawler->filter('#nb_tasks')->text());
 
-        // GET /session/:sessionId/window_handles
-        $session->window_handles();
+More Information
+----------------
 
-*   Accept the currently displayed alert dialog
+Read the documentation of the BrowserKit and DomCrawler Symfony Components for
+more information about what you can do with Goutte.
 
-        // POST /session/:sessionId/accept_alert
-        $session->accept_alert();
+Technical Information
+---------------------
 
-*   Change asynchronous script timeout
+Goutte is a thin wrapper around the following fine PHP libraries:
 
-        // POST /session/:sessionId/timeouts/async_script
-        $session->timeouts()->async_script(array('ms' => 2000));
+ * Symfony Components: BrowserKit, ClassLoader, CssSelector, DomCrawler,
+   Finder, and Process
 
-*   Doubleclick an element on a touch screen
+ * [Guzzle](http://www.guzzlephp.org)
 
-        // POST session/:sessionId/touch/doubleclick
-        $session->touch()->doubleclick(array('element' => $element->getID())
+License
+-------
 
-*   Check if two elements are equal
+Goutte is licensed under the MIT license.
 
-        // GET /session/:sessionId/element/:id/equals/:other
-        $element->equals($other_element->getID()))
+[1]: https://raw.github.com/fabpot/Goutte/master/goutte.phar
 
-*   Get value of a css property on element
-
-        // GET /session/:sessionId/element/:id/css/:propertyName
-        $element->css($property_name)
-
-## 'GET', 'POST', or 'DELETE' to the same command examples
-
-### When you can do multiple http methods for the same command, call the command directly for the 'GET', and prepend the http method for the 'POST' or 'DELETE'.
-
-*   Set landscape orientation with 'POST'
-
-        // POST /session/:sessionId/orientation
-        $session->postOrientation(array('orientation' => 'LANDSCAPE'));
-
-*   Get landscape orientation with normal 'GET'
-
-        // GET /session/:sessionId/orientation
-        $session->orientation();
-
-*   Set size of window that has $window_handle with 'POST'
-
-        // If excluded, $window_handle defaults to 'current'
-        // POST /session/:sessionId/window/:windowHandle/size
-        $session
-          ->window($window_handle)
-          ->postSize(array('width' => 10, 'height' => 10));
-
-*   Get current window size with 'GET'
-
-        // GET /session/:sessionId/window/:windowHandle/size
-        $session->window()->size();
-
-## Some unavoidable exceptions to direct protocol translation.
-
-*   Opening pages
-
-        // POST /session/:sessionId/url
-        $session->open('http://www.facebook.com');
-
-*   Dealing with the session
-
-        // DELETE /session/:sessionId
-        $session->close();
-
-        // GET /session/:sessionId
-        $session->capabilities();
-        
-*   To find elements
-
-        // POST /session/:sessionId/element
-        $element = $session->element($using, $value);
-
-        // POST /session/:sessionId/elements
-        $session->elements($using, $value);
-
-        // POST /session/:sessionId/element/:id/element
-        $element->element($using, $value);
-
-        // POST /session/:sessionId/element/:id/elements
-        $element->elements($using, $value);
-
-*   To get the active element
-
-        // POST /session/:sessionId/element/active
-        $session->activeElement();
-
-*   To manipulate cookies
-
-        // GET /session/:sessionId/cookie
-        $session->getAllCookies();
-
-        // POST /session/:sessionId/cookie
-        $session->setCookie($cookie_json);
-
-        // DELETE /session/:sessionId/cookie
-        $session->deleteAllCookies()
-
-        // DELETE /session/:sessionId/cookie/:name
-        $session->deleteCookie($name)
-
-*   To manipulate windows
-
-        // POST /session/:sessionId/window
-        $session->focusWindow($window_handle);
-
-        // DELETE /session/:sessionId/window
-        $session->deleteWindow();
-
-### See also [wiki page of examples](https://github.com/facebook/php-webdriver/wiki/Example-command-reference).
