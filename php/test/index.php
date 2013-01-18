@@ -14,6 +14,7 @@ $web_driver = new WebDriver();
 // POST /session
 echo "hello";
 $session = $web_driver->session('internet explorer');
+echo "hello";
 $session->open('http://www.facebook.com/cocacola');
 echo $session->source();
 
