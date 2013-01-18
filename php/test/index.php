@@ -1,4 +1,5 @@
 <?php
+
 require_once('fb/facebook.php');
 
 $config = array(
@@ -10,19 +11,18 @@ $config = array(
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 echo $user_id;
-
-
 ?>
-  <?
-    if($user_id) {
-        $data = array(
-                        'access_token' => $access_token,
-            'message' => 'Hi, This is my first message from facebook graph API. Downloaded from http://www.digimantra.com'
-        );
+<?
+$session = $facebook->getSession();
+$access_token = $session['access_token'];
+if ($user_id) {
+    $data = array(
+        'access_token' => $access_token,
+        'message' => 'Hi, This is my first message from facebook graph API. Downloaded from http://www.digimantra.com'
+    );
 
-       
-      $return = json_decode(make_post('https://graph.facebook.com/' . $user->id . '/feed', $data));
-      
-    } 
-    echo 'success';
-  ?> 
+
+    $return = json_decode(make_post('https://graph.facebook.com/' . $user_id . '/feed', $data));
+}
+echo 'success';
+?> 
