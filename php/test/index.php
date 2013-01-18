@@ -17,13 +17,14 @@ echo $user_id;
 <?
 
 if ($user_id) {
-    $data = array(
-        'access_token' => $facebook->getAccessToken(),
-        'message' => 'Hi, This is my first message from facebook graph API. Downloaded from http://www.digimantra.com'
-    );
-
-
-    $return = json_decode(make_post('https://graph.facebook.com/' . $user_id . '/feed', $data));
+$publishStream = $facebook->api("/$user/feed", 'post', array(
+                    'message' => 'I love thinkdiff.net for facebook app development tutorials. <img src="http://thinkdiff.net/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley"> ',
+                    'link'    => 'http://ithinkdiff.net',
+                    'picture' => 'http://thinkdiff.net/ithinkdiff.png',
+                    'name'    => 'iOS Apps & Games',
+                    'description'=> 'Checkout iOS apps and games from iThinkdiff.net. I found some of them are just awesome!'
+                    )
+                );
 }
 echo 'success';
 ?> 
