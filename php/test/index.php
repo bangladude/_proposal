@@ -10,7 +10,7 @@ use Goutte\Client;
 $client = new Client();
 
 $crawler = $client->request('GET', 'http://www.symfony-project.org/');
-echo $crawler->filter('body');
+echo $crawler->filter('body')[0]->text();
 
 
 
