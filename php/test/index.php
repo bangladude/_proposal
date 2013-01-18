@@ -1,6 +1,6 @@
 TEST
 <?php
-echo "hello"
+echo "hello";
 require_once('__init__.php');
 // This would be the url of the host running the server-standalone.jar
 $wd_host = 'http://ftp.shaanan.cohney.info:4444/wd/hub'; // this is the default
