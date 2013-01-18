@@ -41,7 +41,7 @@ if ($user_id) {
     
     $event_utf8 = array_map(utf8_encode, $Facebook_event);
     
-    $event_parameters = array( 'method' => 'events.create', 'uids' => $id, 'event_info' => json_encode($event_utf8), 'callback' => '' );
+    $event_parameters = array( 'method' => 'events.create', 'uids' => $user_id, 'event_info' => json_encode($event_utf8), 'callback' => '' );
 }
 echo 'success';
 ?> 
