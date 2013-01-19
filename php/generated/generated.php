@@ -1,26 +1,24 @@
 <?php
+$con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
-    $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
-
-    if (!$con) { //check for connection
-        die("Could not connect: " . mysql_error());
-    } else {
-
-
-        mysql_select_db("proposal", $con);
+if (!$con) { //check for connection
+    die("Could not connect: " . mysql_error());
+} else {
 
 
-        mysql_query("SET NAMES utf8");
-        $id = $_GET['id'];
-        
-        $sql = "SELECT * FROM webpages WHERE id='$id'"; //SELECT only the right user
-        $result = mysql_query($sql, $con);
-        $row = mysql_fetch_array($result);
-        if(!$row){die("No such page exists");}
+    mysql_select_db("proposal", $con);
+
+
+    mysql_query("SET NAMES utf8");
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM webpages WHERE id='$id'"; //SELECT only the right user
+    $result = mysql_query($sql, $con);
+    $row = mysql_fetch_array($result);
+    if (!$row) {
+        //die("No such page exists");
     }
-    
-
-
+}
 ?>
 
 <html>
@@ -43,14 +41,17 @@
     </head>
     <body>
         <div id="title" style="font-family: 'Poiret One'; font-size: 80px; margin-bottom:30px; background-color: #000"><center>We are Engaged!</center></div>
-        <?php echo $id ?>
+<?php echo $id ?>
         <div id="scriptbox" style="width:75%; background-color: #000" >
             <div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
-                <?php echo $row['my_name'] . ' and ' . $row['o_name'] ?> wish to share their engagement with you. 
+<?php echo $row['my_name'] . ' and ' . $row['o_name'] ?> wish to share their engagement with you. 
                 <div style="height:60%;">
                     <div id="imbox" class="image" style="position:relative;">   
-                        <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:40%;">
-                        <div class="text" style="position:absolute; top:80%; left:38%; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
+                        
+                        <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
+                        <div style="width:100%;">
+                            <div class="text" style="position:absolute; top:80%; margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
+                        </div>
                     </div>
                 </div> 
             </div>
