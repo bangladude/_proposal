@@ -41,7 +41,6 @@ if (!$con) { //check for connection
     </head>
     <body>
         <div id="title" style="font-family: 'Poiret One'; font-size: 80px; margin-bottom:30px; background-color: #000"><center>We are Engaged!</center></div>
-<?php echo $id ?>
         <div id="scriptbox" style="width:75%; background-color: #000" >
             <div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
 <?php echo $row['my_name'] . ' and ' . $row['o_name'] ?> wish to share their engagement with you. 
