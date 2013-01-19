@@ -16,10 +16,11 @@ $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
 echo $user_id;
 ?>
+
 <?
 
 function postWall() {
-    global $facebook, $user_id;
+    global $facebook, $user_id,$partner;
     
     $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
     $partner = $ret['data'][0];
@@ -93,7 +94,7 @@ function postPhoto() {
 }
 
 function storeDB() {
-    global $facebook, $user_id;
+    global $facebook, $user_id, $partner;
     
     $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
@@ -109,8 +110,9 @@ function storeDB() {
 
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
+        $p_name = $partner['name'];
 
-        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella')"; //SELECT only the right user
+        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname',' $p_name)"; //SELECT only the right user
         mysql_query($sql, $con);
     }
 }
