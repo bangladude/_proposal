@@ -32,7 +32,7 @@ $params = array(
 
 //Run Query
 $result = $facebook->api($params);
-echo p_array($result);
+echo print_r($result);
 
 #postWall();
 #postPhoto();
