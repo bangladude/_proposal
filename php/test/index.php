@@ -19,7 +19,7 @@ echo $user_id;
 
 if ($user_id) {
     $ret = $facebook->api("/" . $user_id . "/friends?limit=1",'get');
-    $partner= $ret['data'];
+    $partner= $ret['data'][0];
     echo print_r($partner);
     
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
