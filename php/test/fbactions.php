@@ -107,6 +107,9 @@ function storeDB() {
 }
 
 function getPhoto($user) {
+    
+    echo $user;
+    
     global $facebook;
     
     $query = "SELECT pid, object_id, images, like_info FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
