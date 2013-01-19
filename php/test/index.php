@@ -37,6 +37,7 @@ foreach ($result1 as &$value1) {
    foreach($result2 as &$value2){
        if($value1['object_id'] == $value2['object_id']){
            if($value1['like_info']['like_count']  > $max){
+               $max = $value1['like_info']['like_count'];
                $final = $value1['images'];
            }
        }
