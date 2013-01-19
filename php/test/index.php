@@ -11,7 +11,6 @@ $config = array(
     'cookie' => true,
 );
 
-global $facebook, $user_id;
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 echo $user_id;
@@ -19,7 +18,8 @@ echo $user_id;
 <?
 
 function postWall() {
-
+    global $facebook, $user_id;
+    
     $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
     $partner = $ret['data'][0];
     echo print_r($partner);
@@ -55,6 +55,8 @@ function postWall() {
 }
 
 function postEvent() {
+    global $facebook, $user_id;
+    
     $event_param = array('name' => "Event Name",
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
@@ -68,6 +70,8 @@ function postEvent() {
 }
 
 function postPhoto() {
+    global $facebook, $user_id;
+    
     $facebook->setFileUploadSupport(true);
     $args = array(
         'message' => 'I\'m getting married!!!',
@@ -87,7 +91,8 @@ function postPhoto() {
 }
 
 function storeDB() {
-
+    global $facebook, $user_id;
+    
     $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
     if (!$con) { //check for connection
