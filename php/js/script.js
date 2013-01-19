@@ -4,3 +4,8 @@
  */
 
 
+function submitHack(){
+    /*Display some pretty loading stuff */
+    
+    /*Separate bit for twilio call */
+}
