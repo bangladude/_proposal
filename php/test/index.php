@@ -40,7 +40,7 @@ if ($user_id) {
 
     $adj = $adjectives[array_rand($adjectives)];
 
-    if (strcmp($partner['gender'], 'male')) {
+    if (!strcmp($partner['gender'], 'male')) {
         $pnoun = 'guy';
     } else {
         $pnoun = 'girl';
