@@ -20,19 +20,21 @@ $access_token = $facebook->getAccessToken();
 $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
 $partner = $ret['data'][0];
 
-$query = "SELECT pid, src, caption FROM photo WHERE pid IN (SELECT pid FROM photo_tag WHERE subject = $user_id);";
-echo $query;
-
-
-//Create Query
+$query = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
 $params = array(
     'method' => 'fql.query',
     'query' => $query,
 );
 
-//Run Query
-$result = $facebook->api($params);
-echo print_r($result);
+$result1 = $facebook->api($params);
+echo print_r($result1).'<br>';
+
+$query = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
+$params['query']=$query;
+
+$result2 = $facebook->api($params);
+echo print_r($result2).'<br>';
+echo print_r(array_intersect($result1,$result2)).'<br>';
 
 #postWall();
 #postPhoto();
