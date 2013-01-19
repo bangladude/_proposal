@@ -10,8 +10,15 @@ function findlatlng($location){
 	return $latlng;
 }
 
+function getlocation(){
+	global $user_id;
+	$location= $facebook->api("/" . $user_id . "?fields=location");
+	return $location;
+    }
+
 function createurl(){
-	$coor = findlatlng();
+	$location = getlocation();
+	$coor = findlatlng($location);
 	$url = "http://maps.googleapis.com/maps/api/staticmap?size=512x512&maptype=roadmap\&markers=size:mid%7Ccolor:red%7C" . $coor . "&sensor=false";
 	return $url;
 }
