@@ -15,6 +15,7 @@
         
         $sql = "SELECT * FROM webpages WHERE id='$id'"; //SELECT only the right user
         $result = mysql_query($sql, $con);
+        $row = mysql_fetch_array($result);
     }
     
 
@@ -44,7 +45,7 @@
         <?php echo $id ?>
         <div id="scriptbox" style="width:75%; background-color: #000" >
             <div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
-                <?php echo 'Shaanan' . ' and ' . 'Shadia' ?> wish to share their engagement with you. 
+                <?php echo $row['my_name'] . ' and ' . 'Shadia' ?> wish to share their engagement with you. 
                 <div style="height:60%;">
                     <div id="imbox" class="image" style="position:relative;">   
                         <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:40%;">
