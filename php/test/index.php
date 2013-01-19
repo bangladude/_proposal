@@ -33,7 +33,7 @@ $query2 = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (S
 $params['query']=$query2;
 $result2 = $facebook->api($params);
 
-echo $result1,$result2.'<br>';
+echo print_r($result2).'<br>';
 
 #postWall();
 #postPhoto();
