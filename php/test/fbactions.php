@@ -108,7 +108,7 @@ function storeDB() {
 
 function getPhoto($user) {
     
-    echo $user;
+    
     
     global $facebook;
     
@@ -127,8 +127,10 @@ function getPhoto($user) {
     $max = -1;
     foreach ($result1 as &$value1) {
         foreach ($result2 as &$value2) {
+            
             if ($value1['object_id'] == $value2['object_id']) {
-
+                echo $value1;
+                
                 $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
                 #echo '<br>'.print_r($ret['tags']['data']).'<br>';
                 if (count(($ret['tags']['data'])) != 2) {
