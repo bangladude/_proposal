@@ -21,7 +21,12 @@ if ($user_id) {
     $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
     $partner = $ret['data'][0];
     echo print_r($partner);
-
+    echo '\n';
+    echo $partner['gender'];
+    echo strcmp($partner['gender'], 'male');
+    echo strcmp($partner['gender'], 'female');
+    echo '\n';
+    
     $adjectives = explode(',', "n admirable,n aristocratic,n athletic,n august, beautiful, becoming, clean-cut, comely, dapper,n elegant, fair,
         fashionable, fine, good-looking, graceful, impressive, lovely, majestic, noble, personable, pulchritudinous, robust, sharp, smart,
         smooth, spruce, stately, strong, stylish, suave, virile, adorable, agreeable, alluring, beautiful, beckoning, bewitching, 
@@ -32,17 +37,17 @@ if ($user_id) {
         divine, elegant, enticing, excellent, exquisite, fair, fascinating, fine, foxy, good-looking, gorgeous, graceful, grand, handsome,
         n ideal, lovely, magnificent, marvelous, nice, pleasing, pretty, pulchritudinous, radiant, ravishing, refined, resplendent,
         shapely, sightly, splendid, statuesque, stunning, sublime, superb, symmetrical, taking, well-formed, wonderful");
-    
+
     $adj = $adjectives[array_rand($adjectives)];
-    
-    if(strcmp($partner['gender'],'male')){
+
+    if (strcmp($partner['gender'], 'male')) {
         $pnoun = 'guy';
     } else {
         $pnoun = 'girl';
     }
-    
+
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I\'m getting engaged to a' .$adj . ' ' . $pnoun .": " . $partner['name'],
+        'message' => 'I\'m getting engaged to a' . $adj . ' ' . $pnoun . ": " . $partner['name'],
             )
     );
 
