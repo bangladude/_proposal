@@ -120,7 +120,7 @@ function getPhoto($user) {
 
     $result1 = $facebook->api($params);
    
-    echo print_r($result1).'<br>';
+    echo print_r($result1).'<br><br><br><br><br>';
 
     $query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= '$user')";
     $params['query'] = $query2;
