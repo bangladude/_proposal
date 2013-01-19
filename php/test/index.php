@@ -22,41 +22,11 @@ $access_token = $facebook->getAccessToken();
 $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
 $partner = $ret['data'][0];
 
-$query = "SELECT pid, object_id, images, like_info FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
-$params = array(
-    'method' => 'fql.query',
-    'query' => $query,
-);
-
-$result1 = $facebook->api($params);
-
-
-$query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= 527355783)";
-$params['query']=$query2;
-$result2 = $facebook->api($params);
-$max = -1;
-foreach ($result1 as &$value1) {
-   foreach($result2 as &$value2){
-       if($value1['object_id'] == $value2['object_id']){
-           
-           $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
-           #echo '<br>'.print_r($ret['tags']['data']).'<br>';
-           if(count(($ret['tags']['data'])) != 2){break;}
-           
-           if($value1['like_info']['like_count']  > $max){
-               $max = $value1['like_info']['like_count'];
-               $final = $value1['images'];
-           }
-       }
-   }
-}
-
-echo '<img src="'.$final[0]['source'].'" >';
 
 #postWall();
 #postPhoto();
 #postEvent();
-storeDB();
-#callExcited(' Nikki ','6103047974');
+#storeDB();
+callExcited(' Nikki ','9736414198');
 echo 'success';
 ?> 
