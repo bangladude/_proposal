@@ -123,7 +123,7 @@ function storeDB() {
         
         $row = mysql_fetch_array($result);
         
-        echo '<br><a href=./generated/generated.php?id='.$row['id'].'>Generated Page</a><br>';
+        echo '<br><a href=../generated/generated.php?id='.$row['id'].'>Generated Page</a><br>';
     }
 }
 
