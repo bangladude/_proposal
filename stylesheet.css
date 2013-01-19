@@ -1,0 +1,43 @@
+* {
+  background-color: #BDBDBD;
+  text-family: Garamond;
+  color: white;
+}
+h3 {
+  text-align: center;
+  font-size: 30px;
+  border: 2px solid black;
+  background-color: black;
+}
+div {
+  margin: auto  
+}
+#scriptbox {
+  width:800px;
+  height:550px;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: auto;
+}
+#reset {
+  text-align: center;
+  width: 100px;
+  height: 50px; 
+  border: 2px solid black;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  background-color: black;
+}
+div div {
+  margin: auto;
+  background-color: black;
+}
+p {
+  text-align: center;
+  font-size: 16px;
+  background-color: black;
+}
+a {
+  text-decoration: none;
+}
