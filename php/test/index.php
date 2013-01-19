@@ -43,7 +43,7 @@ foreach ($result1 as &$value1) {
    }
 }
 
-echo print_r($final);
+echo $final[0]['source'];
 
 #postWall();
 #postPhoto();
