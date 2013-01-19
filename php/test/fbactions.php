@@ -89,8 +89,7 @@ function storeDB() {
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
-        echo print_r($partner).'<br>';
-        $url = getPhoto($partner['id']);
+        $url = getPhoto($partner);
 
         $sql = "INSERT INTO webpages (my_name,o_name,imgurl) VALUES ('$fullname','$p_name')"; //SELECT only the right user
 
