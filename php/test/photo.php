@@ -20,6 +20,15 @@ echo '<b>'
 
 <?php
 
+$facebook->setFileUploadSupport(true);
+$data = array(
+    'message' => 'Caption',
+    'image'=> '@'.realpath('up.png')
+);
+    
+    
+  
+
 // Show photo upload form to user and post to the Graph URL
 $graph_url = "https://graph.facebook.com/".$user_id."/photos?"
         . "access_token=" . $access_token;
