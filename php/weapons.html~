@@ -23,7 +23,7 @@
         </div>
       </form>
     </div>
-    <a href="finish.html"><div id="finish">
+    <a href="finish.html"><div class="start_button">
       <div class="button">Finish!</div>
     </a>
   </body>
