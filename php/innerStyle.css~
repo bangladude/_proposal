@@ -7,7 +7,7 @@ body {
   margin: auto;
 }
 h3 {
-  margin-top: 150px;
+  margin-top: 100px;
   text-align: center;
 }
 #formdiv {
@@ -32,7 +32,7 @@ label {
 }
 #finish {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 80px;
   width: 100px;
   height: 50px;
   font-size: 20px;
