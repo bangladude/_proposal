@@ -5,7 +5,7 @@
   <body>
     <a href="index.html"><div id="restart">
       <div class="button">
-        You're Done!<br>
+        You're Done!
         Hack Someone Else!
       </div>
     </div></a>
