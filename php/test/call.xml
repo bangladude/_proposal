@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Play loop="10">https://api.twilio.com/cowbell.mp3</Play>
+    <Say voice="woman" language="en">You have a prerecorded message from Rigel.</Say>
+    <Play>https://proposal-pennapps.rhcloud.com/test/gratz.mp3</Play>
+    <Say voice="woman" language="en">End of recorded message.</Say>
 </Response>

@@ -1,4 +1,5 @@
 <?php
+include_once 'twilio.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -126,9 +127,10 @@ function storeDB() {
     }
 }
 
-postWall();
-postPhoto();
-postEvent();
+#postWall();
+#postPhoto();
+#postEvent();
 storeDB();
+callExcited('Rigel');
 echo 'success';
 ?> 
