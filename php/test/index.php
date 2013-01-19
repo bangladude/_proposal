@@ -20,7 +20,7 @@ $access_token = $facebook->getAccessToken();
 $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
 $partner = $ret['data'][0];
 
-$query = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
+$query = "SELECT pid, object_id, src, like_info FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
 $params = array(
     'method' => 'fql.query',
     'query' => $query,
@@ -29,10 +29,9 @@ $params = array(
 $result1 = $facebook->api($params);
 
 
-$query2 = "SELECT pid, object_id, src, like_info FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
+$query2 = "SELECT object_id, FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
 $params['query']=$query2;
 $result2 = $facebook->api($params);
-
 $max = -1;
 foreach ($result1 as &$value1) {
    foreach($result2 as &$value2){
