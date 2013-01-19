@@ -89,7 +89,7 @@ echo $user_id;
             $('retstuff').load('index.php');
         }
         </script>
-        <input type="button" onclick="runHack()"/>
+        <input type="button" onclick="runHack()" name="btn_runHack"/>
         <div id="retstuff"></div>
 
 
