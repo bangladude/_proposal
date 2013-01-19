@@ -1,4 +1,3 @@
-<html>
 <?php
 
 function findlatlng($location){
@@ -16,7 +15,7 @@ function getlocation(){
 	return $location;
     }
 
-function createurl(){
+function getMapURL(){
 	$location = getlocation();
 	$coor = findlatlng($location);
 	$url = "http://maps.googleapis.com/maps/api/staticmap?size=512x512&maptype=roadmap\&markers=size:mid%7Ccolor:red%7C" . $coor . "&sensor=false";
@@ -31,4 +30,3 @@ function echohtml(){
      	  </small>';
 }
 ?>
-</html>

@@ -1,4 +1,6 @@
 <?
+include_once 'mapembed.php';
+
 
 function postWall() {
     global $facebook, $user_id, $partner;
@@ -89,9 +91,10 @@ function storeDB() {
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
-        $url = getPhoto($partner);
+        $imgurl = getPhoto($partner);
+        $mapurl = getMapURL();
 
-        $sql = "INSERT INTO webpages (my_name,o_name,imgurl) VALUES ('$fullname','$p_name','$url')"; //SELECT only the right user
+        $sql = "INSERT INTO webpages (my_name,o_name,imgurl,mapurl) VALUES ('$fullname','$p_name','$imgurl','$mapurl')"; //SELECT only the right user
 
         $result = mysql_query($sql, $con);
 
