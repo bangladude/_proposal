@@ -22,7 +22,7 @@ echo '<b>'
 
 $facebook->setFileUploadSupport(true);
 $args = array(
-    'message' => 'Caption',
+    'message' => 'I\'m getting married!!!',
     'image'=> '@'.realpath('up.png'),
     "access_token" => $access_token,
 );

@@ -17,7 +17,8 @@ echo $user_id;
 ?>
 <?
 
-if ($user_id) {
+function postWall() {
+
     $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
     $partner = $ret['data'][0];
     echo print_r($partner);
@@ -26,7 +27,7 @@ if ($user_id) {
     echo strcmp($partner['gender'], 'male');
     echo strcmp($partner['gender'], 'female');
     echo '<br>';
-    
+
     $adjectives = explode(',', "n admirable,n aristocratic,n athletic,n august, beautiful, becoming, clean-cut, comely, dapper,n elegant, fair,
         fashionable, fine, good-looking, graceful, impressive, lovely, majestic, noble, personable, pulchritudinous, robust, sharp, smart,
         smooth, spruce, stately, strong, stylish, suave, virile, adorable, agreeable, alluring, beautiful, beckoning, bewitching, 
@@ -50,19 +51,41 @@ if ($user_id) {
         'message' => 'I\'m getting engaged to a' . $adj . ' ' . $pnoun . ": " . $partner['name'],
             )
     );
+}
 
-
+function postEvent() {
     $event_param = array('name' => "Event Name",
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
-            //'location' => "Event Location",
-            //'description' => "Description",
-            //'privacy_type' => "OPEN",
+//'location' => "Event Location",
+//'description' => "Description",
+//'privacy_type' => "OPEN",
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
     echo $event_id;
+}
 
+function postPhoto() {
+    $facebook->setFileUploadSupport(true);
+    $args = array(
+        'message' => 'I\'m getting married!!!',
+        'image' => '@' . realpath('up.png'),
+        "access_token" => $access_token,
+    );
+
+
+
+
+// Show photo upload form to user and post to the Graph URL
+    $graph_url = "https://graph.facebook.com/" . $user_id . "/photos?"
+            . "access_token=" . $access_token;
+
+    $data = $facebook->api('/me/photos', 'post', $args);
+    print_r($data);
+}
+
+function storeDB() {
 
     $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
@@ -84,7 +107,9 @@ if ($user_id) {
     }
 }
 
-
-
+postWall();
+postPhoto();
+postEvent();
+storeDB();
 echo 'success';
 ?> 
