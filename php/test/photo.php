@@ -23,13 +23,16 @@ echo '<b>'
 $facebook->setFileUploadSupport(true);
 $args = array(
     'message' => 'Caption',
-    'image'=> '@'.realpath('up.png')
+    'image'=> '@'.realpath('up.png'),
+    "access_token" => $access_token,
 );
     
     
   
 
 // Show photo upload form to user and post to the Graph URL
+$graph_url = "https://graph.facebook.com/".$user_id."/photos?"
+        . "access_token=" . $access_token;
 
 $data = $facebook->api('/me/photos', 'post', $args);
 print_r($data);
