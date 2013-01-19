@@ -11,8 +11,9 @@ $config = array(
     'cookie' => true,
 );
 
-global $facebook = new Facebook($config);
-global $user_id = $facebook->getUser();
+global $facebook, $user_id;
+$facebook = new Facebook($config);
+$user_id = $facebook->getUser();
 echo $user_id;
 ?>
 <?
