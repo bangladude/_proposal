@@ -55,7 +55,7 @@ if ($user_id) {
     $user_profile = $facebook->api('/me','GET');
     $fullname = $user_profile['name'];
     
-    $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella', '$fullname' ,$fbid)"; //SELECT only the right user
+    $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella')"; //SELECT only the right user
     mysql_query($sql, $con);
         
     }
