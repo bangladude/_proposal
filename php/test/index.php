@@ -67,7 +67,8 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    echo $event_id;
+    echo '<br>Event: '. $event_id . '<br>';
+    
 }
 
 function postPhoto() {
