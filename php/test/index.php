@@ -19,7 +19,7 @@ echo $user_id;
 
 if ($user_id) {
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I\'m getting engaged to a gorgeous girl! @Will Amejecifaide Bharambesky',
+        'message' => 'I\'m getting engaged to a gorgeous girl! @[100005074113271:Rick Amejgdaacbga Zuckerberg]',
             )
     );
 
