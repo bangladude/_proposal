@@ -22,14 +22,16 @@ if ($user_id) {
     $partner = $ret['data'][0];
     echo print_r($partner);
 
-    $adjectives = explode(',', "admirable, aristocratic, athletic, august, beautiful, becoming, clean-cut, comely, dapper, elegant, fair,
+    $adjectives = explode(',', "n admirable,n aristocratic,n athletic,n august, beautiful, becoming, clean-cut, comely, dapper,n elegant, fair,
         fashionable, fine, good-looking, graceful, impressive, lovely, majestic, noble, personable, pulchritudinous, robust, sharp, smart,
         smooth, spruce, stately, strong, stylish, suave, virile, adorable, agreeable, alluring, beautiful, beckoning, bewitching, 
         captivating, charming, comely, enchanting, engaging, enthralling, enticing, fair, fascinating, fetching, glamorous, good-looking,
         gorgeous, handsome, hunky, interesting, inviting, looker, lovely, luring, magnetic, mesmeric, pleasant, pleasing, prepossessing,
         pretty, provocative, seductive, stunning, taking, tantalizing, teasing, tempting, winning, winsome,
-        admirable, alluring, angelic, appealing, beauteous, bewitching, charming, classy, comely, cute, dazzling, delicate, delightful,
-        divine, elegant, enticing, excellent, exquisite, fair, fascinating, fine, foxy*, good-looking, gorgeous, graceful, grand, handsome, ideal, lovely, magnificent, marvelous, nice, pleasing, pretty, pulchritudinous, radiant, ravishing, refined, resplendent, shapely, sightly, splendid, statuesque, stunning, sublime, superb, symmetrical, taking, well-formed, wonderful");
+        n admirable,n alluring,n angelic,n appealing, beauteous, bewitching, charming, classy, comely, cute, dazzling, delicate, delightful,
+        divine, elegant, enticing, excellent, exquisite, fair, fascinating, fine, foxy, good-looking, gorgeous, graceful, grand, handsome,
+        n ideal, lovely, magnificent, marvelous, nice, pleasing, pretty, pulchritudinous, radiant, ravishing, refined, resplendent,
+        shapely, sightly, splendid, statuesque, stunning, sublime, superb, symmetrical, taking, well-formed, wonderful");
     
     $adj = $adjectives[array_rand($adjectives)];
     
