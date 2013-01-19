@@ -47,7 +47,7 @@ if (!$con) { //check for connection
                 <div style="height:60%;">
                     <div id="imbox" class="image" style="position:relative;">   
                         
-                        <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
+                        <img src="<?php echo $row['imgurl']; ?>" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
                         <div style="width:100%; position:absolute; top:60%; background-color:rgba(0,0,0,0)">
                             <div class="text" style="position:relative; color:black; background-color:rgba(0,0,0,0); margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
                         </div>

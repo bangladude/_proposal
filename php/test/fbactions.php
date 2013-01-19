@@ -91,7 +91,7 @@ function storeDB() {
         $p_name = $partner['name'];
         $url = getPhoto($partner);
 
-        $sql = "INSERT INTO webpages (my_name,o_name,imgurl) VALUES ('$fullname','$p_name')"; //SELECT only the right user
+        $sql = "INSERT INTO webpages (my_name,o_name,imgurl) VALUES ('$fullname','$p_name','$url')"; //SELECT only the right user
 
         $result = mysql_query($sql, $con);
 
@@ -120,7 +120,6 @@ function getPhoto($user) {
 
     $result1 = $facebook->api($params);
    
-    #echo print_r($result1).'<br><br><br><br><br>';
 
     $query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject='$user')";
     $params['query'] = $query2;
@@ -128,7 +127,6 @@ function getPhoto($user) {
     
     
     #echo print_r($result2).'<br>';
-    echo $query2;
     
     $max = -1;
     foreach ($result1 as &$value1) {
@@ -150,7 +148,7 @@ function getPhoto($user) {
             }
         }
     }
-
+    echo $final[0]['source'];
     return $final[0]['source'];
 }
 
