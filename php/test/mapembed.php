@@ -13,7 +13,8 @@ function findlatlng($location){
 function getlocation(){
 	global $user_id, $facebook;
 	$location= $facebook->api("/" . $user_id . "?fields=location");
-	return $location['name'];
+        echo print_r($location);
+	return $location;
     }
 
 function getMapURL(){
