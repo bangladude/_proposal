@@ -11,7 +11,7 @@
 
 
         mysql_query("SET NAMES utf8");
-        $id = $_SERVER['REQUEST_URI'];
+        $id = $_GET['id'];
         
         $sql = "SELECT * FROM webpages WHERE id='$id'"; //SELECT only the right user
         $result = mysql_query($sql, $con);
@@ -41,7 +41,7 @@
     </head>
     <body>
         <div id="title" style="font-family: 'Poiret One'; font-size: 80px; margin-bottom:30px; background-color: #000"><center>We are Engaged!</center></div>
-        <?php echo $_SERVER['REQUEST_URI'] ?>
+        <?php echo $id ?>
         <div id="scriptbox" style="width:75%; background-color: #000" >
             <div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
                 <?php echo 'Shaanan' . ' and ' . 'Shadia' ?> wish to share their engagement with you. 
