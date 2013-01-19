@@ -23,7 +23,6 @@ echo $user_id;
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>My CSS Test</title>
-        <link href="css/login.css" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Ubuntu|Rosario' rel='stylesheet' type='text/css'>
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
@@ -86,10 +85,10 @@ echo $user_id;
         <br></br>
         <script type="text/javascript">
         function runHack(){
-            $('retstuff').load('index.php');
+            $('#retstuff').load('index.php');
         }
         </script>
-        <input type="button" onclick="runHack()" name="btn_runHack"/>
+        <input type="button" onclick="runHack()" name="btn_runHack" value="Run Hack!"/>
         <div id="retstuff"></div>
 
 
