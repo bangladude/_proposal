@@ -89,20 +89,58 @@ function storeDB() {
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
+        $url = getPhoto($partner['id']);
 
-        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','$p_name')"; //SELECT only the right user
+        $sql = "INSERT INTO webpages (my_name,o_name,imgurl) VALUES ('$fullname','$p_name')"; //SELECT only the right user
 
         $result = mysql_query($sql, $con);
 
         $sql = "SELECT id FROM webpages WHERE my_name='$fullname' AND o_name='$p_name' ORDER BY id DESC";
 
-        echo '<br>'.$sql . '<br>';
+        echo '<br>' . $sql . '<br>';
         $result = mysql_query($sql, $con);
 
         $row = mysql_fetch_array($result);
 
         echo '<br><a href=../generated/generated.php?id=' . $row['id'] . '>Generated Page</a><br>';
     }
+}
+
+function getPhoto($user) {
+    global $facebook;
+    
+    $query = "SELECT pid, object_id, images, like_info FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=me())";
+    $params = array(
+        'method' => 'fql.query',
+        'query' => $query,
+    );
+
+    $result1 = $facebook->api($params);
+
+
+    $query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= '$user')";
+    $params['query'] = $query2;
+    $result2 = $facebook->api($params);
+    $max = -1;
+    foreach ($result1 as &$value1) {
+        foreach ($result2 as &$value2) {
+            if ($value1['object_id'] == $value2['object_id']) {
+
+                $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
+                #echo '<br>'.print_r($ret['tags']['data']).'<br>';
+                if (count(($ret['tags']['data'])) != 2) {
+                    break;
+                }
+
+                if ($value1['like_info']['like_count'] > $max) {
+                    $max = $value1['like_info']['like_count'];
+                    $final = $value1['images'];
+                }
+            }
+        }
+    }
+
+    return $final[0]['source'];
 }
 
 ?>
