@@ -21,7 +21,7 @@ $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'g
 $partner = $ret['data'][0];
 
 $query = "SELECT pid, src, caption FROM photo WHERE pid IN (SELECT pid FROM photo_tag WHERE subject = $user_id);";
-
+echo $query;
 
 
 //Create Query
