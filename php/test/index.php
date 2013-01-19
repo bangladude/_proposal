@@ -27,6 +27,7 @@ $params = array(
 );
 
 $result1 = $facebook->api($params);
+echo $query;
 echo print_r($result1).'<br>';
 
 $query = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
