@@ -26,7 +26,7 @@ $partner = $ret['data'][0];
 #postWall();
 #postPhoto();
 #postEvent();
-#storeDB();
-callExcited(' Nikki ','9736414198');
+storeDB();
+#callExcited(' Nikki ','9736414198');
 echo 'success';
 ?> 
