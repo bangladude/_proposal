@@ -27,7 +27,7 @@ $query = "SELECT pid, src, caption FROM photo WHERE pid IN (SELECT pid FROM phot
 //Create Query
 $params = array(
     'method' => 'fql.query',
-    'query' => query,
+    'query' => $query,
 );
 
 //Run Query
