@@ -21,7 +21,7 @@ echo '<b>'
 <?php
 
 $facebook->setFileUploadSupport(true);
-$data = array(
+$args = array(
     'message' => 'Caption',
     'image'=> '@'.realpath('up.png')
 );
@@ -30,18 +30,7 @@ $data = array(
   
 
 // Show photo upload form to user and post to the Graph URL
-$graph_url = "https://graph.facebook.com/".$user_id."/photos?"
-        . "access_token=" . $access_token;
 
-echo '<html><body>';
-echo '<form enctype="multipart/form-data" action="'
- . $graph_url . ' "method="POST">';
-echo 'Please choose a photo: ';
-echo '<input name="source" type="file"><br/><br/>';
-echo 'Say something about this photo: ';
-echo '<input name="message" 
-             type="text" value=""><br/><br/>';
-echo '<input type="submit" value="Upload"/><br/>';
-echo '</form>';
-echo '</body></html>';
+$data = $facebook->api('/me/photos', 'post', $args);
+print_r($data);
 ?>
