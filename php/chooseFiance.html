@@ -1,9 +1,10 @@
-<!doctype html>
 <html>
 <head>
     <title>Choose a Fiance</title>
     <link rel="stylesheet" href="jquery.fb.css">
-
+</head>
+	<body onBeforePrint="clickURL()">
+    <a id="link" style="display:none" href="#">Demo it!</a>
     <script src="jquery-1.6.4.min.js"></script>
     <script src="jquery.fb.dialog.js"></script>
     <script src="jquery.fb.friend-selector.js"></script>
@@ -16,6 +17,7 @@
             selectedFriends = [];
             $('a')
                 .click(function(e) {
+                	alert("clicked!");
                     e.preventDefault();
                     // To use, just call the fbFriendSelector() function on a jQuery object and pass it two arguments:
                     // 1.) The JSON data returned from a https://graph.facebook.com/me/friends?access_token=abc API call
@@ -37,9 +39,6 @@
                 });
         });
     </script>
-</head>
-<body onLoad="clickURL()">
-    <a id="link" style="display:none" href="#">Demo it!</a>
 </body>
 </html>
     
