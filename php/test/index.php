@@ -18,12 +18,29 @@ echo $user_id;
 <?
 
 if ($user_id) {
-    $ret = $facebook->api("/" . $user_id . "/friends?limit=1",'get');
-    $partner= $ret['data'][0];
+    $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
+    $partner = $ret['data'][0];
     echo print_r($partner);
+
+    $adjectives = explode(',', "admirable, aristocratic, athletic, august, beautiful, becoming, clean-cut, comely, dapper, elegant, fair,
+        fashionable, fine, good-looking, graceful, impressive, lovely, majestic, noble, personable, pulchritudinous, robust, sharp, smart,
+        smooth, spruce, stately, strong, stylish, suave, virile, adorable, agreeable, alluring, beautiful, beckoning, bewitching, 
+        captivating, charming, comely, enchanting, engaging, enthralling, enticing, fair, fascinating, fetching, glamorous, good-looking,
+        gorgeous, handsome, hunky, interesting, inviting, looker, lovely, luring, magnetic, mesmeric, pleasant, pleasing, prepossessing,
+        pretty, provocative, seductive, stunning, taking, tantalizing, teasing, tempting, winning, winsome,
+        admirable, alluring, angelic, appealing, beauteous, bewitching, charming, classy, comely, cute, dazzling, delicate, delightful,
+        divine, elegant, enticing, excellent, exquisite, fair, fascinating, fine, foxy*, good-looking, gorgeous, graceful, grand, handsome, ideal, lovely, magnificent, marvelous, nice, pleasing, pretty, pulchritudinous, radiant, ravishing, refined, resplendent, shapely, sightly, splendid, statuesque, stunning, sublime, superb, symmetrical, taking, well-formed, wonderful");
+    
+    $adj = $adjectives[array_rand($adjectives)];
+    
+    if(strcmp($partner['gender'],'male')){
+        $pnoun = 'guy';
+    } else {
+        $pnoun = 'girl';
+    }
     
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I\'m getting engaged to a gorgeous girl! '. $partner['name'],
+        'message' => 'I\'m getting engaged to a' .$adj . ' ' . $pnoun . $partner['name'],
             )
     );
 
@@ -48,18 +65,16 @@ if ($user_id) {
 
 
         mysql_select_db("proposal", $con);
-        
-        
-            mysql_query("SET NAMES utf8");
-    
-    $user_profile = $facebook->api('/me','GET');
-    $fullname = $user_profile['name'];
-    
-    $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella')"; //SELECT only the right user
-    mysql_query($sql, $con);
-        
-    }
 
+
+        mysql_query("SET NAMES utf8");
+
+        $user_profile = $facebook->api('/me', 'GET');
+        $fullname = $user_profile['name'];
+
+        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella')"; //SELECT only the right user
+        mysql_query($sql, $con);
+    }
 }
 
 
