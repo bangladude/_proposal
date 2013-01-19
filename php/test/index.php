@@ -19,11 +19,8 @@ echo $user_id;
 
 if ($user_id) {
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I love thinkdiff.net for facebook app development tutorials. <img src="http://thinkdiff.net/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley"> ',
-        'link' => 'http://ithinkdiff.net',
-        'picture' => 'http://thinkdiff.net/ithinkdiff.png',
-        'name' => 'iOS Apps & Games',
-        'description' => 'Checkout iOS apps and games from iThinkdiff.net. I found some of them are just awesome!'
+        'message' => 'I\'m getting engaged to a gorgeous girl! ',
+
             )
     );
 
