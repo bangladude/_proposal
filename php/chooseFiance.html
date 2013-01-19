@@ -2,27 +2,17 @@
 <html>
 <head>
     <title>Choose a Fiance</title>
-    <link rel="stylesheet" href="innerStyle.css">
+    <link rel="stylesheet" href="jquery.fb.css">
 
     <script src="jquery-1.6.4.min.js"></script>
     <script src="jquery.fb.dialog.js"></script>
     <script src="jquery.fb.friend-selector.js"></script>
     <script src="facebook-friends.js"></script>
     <script>
-    	selectedFriends = [];
-    	e.preventDefault();
-    	 $(this).fbFriendSelector(friends.data, selectedFriends);
-    	 $(this).bind('friendSelection', function(e, data) {
-                    friendString = ''
-                    selectedFriends = [];
-                    $.each(data, function() {
-                        friendString += this.name+', ';
-                        selectedFriends.push(this.id);
-                    });
-                    if(selectedFriends.length) {
-                        alert('You selected: '+friendString.substring(0, friendString.length - 2));
-                    }
-        /*$(function() {
+    	function clickURL(){
+			document.getElementById('link').click();
+    	}
+        $(function() {
             selectedFriends = [];
             $('a')
                 .click(function(e) {
@@ -45,12 +35,11 @@
                         alert('You selected: '+friendString.substring(0, friendString.length - 2));
                     }
                 });
-        });*/
+        });
     </script>
 </head>
-<body>
-    <h3>Choose a Fiance!</h3>
-    <!--<a href="#">Demo it!</a> --!>
+<body onLoad="clickURL()">
+    <a id="link" style="display:none" href="#">Demo it!</a>
 </body>
 </html>
     
