@@ -7,8 +7,11 @@ body {
   margin: auto;
 }
 h3 {
+<<<<<<< HEAD
   font-weight: 200;
   font-size: 60px;
+=======
+>>>>>>> 29e6bea9e03e6fd555ab5bfeecd159a397df63f4
   margin-top: 100px;
   text-align: center;
 }
@@ -36,10 +39,16 @@ h3 {
 }
 
 #formdiv {
+<<<<<<< HEAD
   margin-left: 420px;
   font-size: 28px;
   width: 600px;
   height: 200px;
+=======
+  width: 200px;
+  height: 100px;
+  margin: auto;
+>>>>>>> 29e6bea9e03e6fd555ab5bfeecd159a397df63f4
 }
 label {
   display: block;
@@ -48,6 +57,7 @@ label {
 .start_button {
   margin: auto;
   margin-top: 150px;
+<<<<<<< HEAD
   width: 200px;
   height: 100px;
   font-size: 50px;
@@ -61,6 +71,19 @@ label {
 #finish {
   margin: auto;
   margin-top: 20px;
+=======
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: #BDBDBD;
+}
+#finish {
+  margin: auto;
+  margin-top: 70px;
+>>>>>>> 29e6bea9e03e6fd555ab5bfeecd159a397df63f4
   width: 100px;
   height: 50px;
   font-size: 20px;
@@ -87,7 +110,11 @@ div div {
   margin-top: 10px;  
 }
 .button {
+<<<<<<< HEAD
   background-color: #C0F400;
+=======
+  background-color: #BDBDBD;
+>>>>>>> 29e6bea9e03e6fd555ab5bfeecd159a397df63f4
 }
 #restart {
   margin: auto;
