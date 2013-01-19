@@ -21,11 +21,11 @@ if ($user_id) {
     $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
     $partner = $ret['data'][0];
     echo print_r($partner);
-    echo '\n';
+    echo '<br>';
     echo $partner['gender'];
     echo strcmp($partner['gender'], 'male');
     echo strcmp($partner['gender'], 'female');
-    echo '\n';
+    echo '<br>';
     
     $adjectives = explode(',', "n admirable,n aristocratic,n athletic,n august, beautiful, becoming, clean-cut, comely, dapper,n elegant, fair,
         fashionable, fine, good-looking, graceful, impressive, lovely, majestic, noble, personable, pulchritudinous, robust, sharp, smart,
