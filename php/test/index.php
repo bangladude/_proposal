@@ -13,6 +13,7 @@ $config = array(
 
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
+$access_token = $facebook->getAccessToken();
 echo $user_id;
 ?>
 <?
@@ -70,7 +71,7 @@ function postEvent() {
 }
 
 function postPhoto() {
-    global $facebook, $user_id;
+    global $facebook, $user_id, $access_token;
     
     $facebook->setFileUploadSupport(true);
     $args = array(
