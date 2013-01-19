@@ -12,14 +12,16 @@ $config = array(
 );
 
 $facebook = new Facebook($config);
+$access_token = $facebook->getAccessToken();
 $user_id = $facebook->getUser();
 echo $user_id;
+echo '<b>'
 ?>
 
 <?php
 
 // Show photo upload form to user and post to the Graph URL
-$graph_url = "https://graph.facebook.com/me/photos?"
+$graph_url = "https://graph.facebook.com/".$user_id."/photos?"
         . "access_token=" . $access_token;
 
 echo '<html><body>';
