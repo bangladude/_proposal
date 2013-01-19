@@ -50,7 +50,7 @@ if (!$con) { //check for connection
                         
                         <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
                         <div style="width:100%;">
-                            <div class="text" style="position:absolute; top:80%; margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
+                            <div class="text" style="position:relative; top:80%; margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
                         </div>
                     </div>
                 </div> 
