@@ -119,7 +119,7 @@ function getPhoto($user) {
     );
 
     $result1 = $facebook->api($params);
-    echo print_r($result1).'<br>';
+   
 
     $query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= '$user')";
     $params['query'] = $query2;
@@ -134,7 +134,7 @@ function getPhoto($user) {
         foreach ($result2 as &$value2) {
             
             if ($value1['object_id'] == $value2['object_id']) {
-                
+                echo $value1['images'].'<br>';
                 
                 $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
                 #echo '<br>'.print_r($ret['tags']['data']).'<br>';
