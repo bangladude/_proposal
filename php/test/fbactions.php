@@ -96,7 +96,7 @@ function storeDB() {
 
         $sql = "SELECT id FROM webpages WHERE my_name='$fullname' AND o_name='$p_name' ORDER BY id DESC";
 
-        echo $sql . '<br>';
+        echo '<br>'.$sql . '<br>';
         $result = mysql_query($sql, $con);
 
         $row = mysql_fetch_array($result);
