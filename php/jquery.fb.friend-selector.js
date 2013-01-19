@@ -27,7 +27,7 @@
     var $showAll      = $fsc.find('.show_all');
     var $showSelected = $fsc.find('.show_selected');
 
-    $fs.fbDialog('Tag Friends');
+    $fs.fbDialog('Choose a Fiance!');
 
     // Clear the search box
     $clear
