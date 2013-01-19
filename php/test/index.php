@@ -18,8 +18,11 @@ echo $user_id;
 <?
 
 if ($user_id) {
+    $ret = $facebook->api("/" . $user_id . "/friends?limit=1",'get');
+    $partner= $ret['data'];
+    
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I\'m getting engaged to a gorgeous girl! @[100005074113271]',
+        'message' => 'I\'m getting engaged to a gorgeous girl! '. $partner['name'],
             )
     );
 
