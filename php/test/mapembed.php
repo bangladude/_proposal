@@ -1,13 +1,5 @@
 <?php
-require_once('fb/facebook.php');
 
-$config = array(
-    'appId' => '413005548778403',
-    'secret' => '8c6d6dca17efdf37635a17e9157bac4c',
-    'cookie' => true,
-);
-
-$facebook = new Facebook($config);
 
 function findlatlng($location){
 	$location = urlencode($location);
@@ -19,7 +11,7 @@ function findlatlng($location){
 }
 
 function getlocation(){
-	global $user_id; $facebook;
+	global $user_id, $facebook;
 	$location= $facebook->api("/" . $user_id . "?fields=location");
 	return $location->name;
     }
