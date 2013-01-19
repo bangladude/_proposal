@@ -40,7 +40,7 @@ if ($user_id) {
     }
     
     $publishStream = $facebook->api("/" . $user_id . "/feed", 'post', array(
-        'message' => 'I\'m getting engaged to a' .$adj . ' ' . $pnoun . $partner['name'],
+        'message' => 'I\'m getting engaged to a' .$adj . ' ' . $pnoun .": " . $partner['name'],
             )
     );
 
