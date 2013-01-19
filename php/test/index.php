@@ -14,16 +14,16 @@ $config = array(
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
-echo $user_id;
+
+$ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
+$partner = $ret['data'][0];
 ?>
 
 <?
 
 function postWall() {
-    global $facebook, $user_id,$partner;
-    
-    $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
-    $partner = $ret['data'][0];
+    global $facebook, $user_id, $partner;
+
     echo print_r($partner);
     echo '<br>';
     echo $partner['gender'];
@@ -58,7 +58,7 @@ function postWall() {
 
 function postEvent() {
     global $facebook, $user_id;
-    
+
     $event_param = array('name' => "Event Name",
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
@@ -68,13 +68,12 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    echo '<br>Event: '. $event_id . '<br>';
-    
+    echo '<br>Event: ' . $event_id . '<br>';
 }
 
 function postPhoto() {
     global $facebook, $user_id, $access_token;
-    
+
     $facebook->setFileUploadSupport(true);
     $args = array(
         'message' => 'I\'m getting married!!!',
@@ -95,7 +94,7 @@ function postPhoto() {
 
 function storeDB() {
     global $facebook, $user_id, $partner;
-    
+
     $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
     if (!$con) { //check for connection
@@ -111,19 +110,19 @@ function storeDB() {
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
-        
+
         $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','$p_name')"; //SELECT only the right user
-        
+
         $result = mysql_query($sql, $con);
-        
+
         $sql = "SELECT id FROM webpages WHERE my_name='$fullname' AND o_name='$p_name' ORDER BY id DESC";
-        
-        echo $sql.'<br>';
+
+        echo $sql . '<br>';
         $result = mysql_query($sql, $con);
-        
+
         $row = mysql_fetch_array($result);
-        
-        echo '<br><a href=../generated/generated.php?id='.$row['id'].'>Generated Page</a><br>';
+
+        echo '<br><a href=../generated/generated.php?id=' . $row['id'] . '>Generated Page</a><br>';
     }
 }
 
