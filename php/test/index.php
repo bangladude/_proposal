@@ -2,7 +2,7 @@
 
 include_once 'twilio.php';
 include_once 'fbactions.php';
-include_once 'mapembed.php';
+#include_once 'mapembed.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
