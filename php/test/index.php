@@ -111,8 +111,9 @@ function storeDB() {
         $user_profile = $facebook->api('/me', 'GET');
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
-        echo $p_name . ": p_name";
+        
         $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname',' $p_name)"; //SELECT only the right user
+        echo '<br>'.$sql.'<br>';
         mysql_query($sql, $con);
     }
 }
