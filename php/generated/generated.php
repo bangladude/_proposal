@@ -57,10 +57,10 @@ if (!$con) { //check for connection
             <div style="text-align:center; margin:auto;">
                 <div id="leftbar" style="display:inline-block; margin-right:10px; width:45%;">
 
-                    <img width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo createurl(); ?>" />
+                    <img width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="" />
     	  <br />
     	  <small>
-          <a href="<?php echo createurl(); ?>" style="color:#0000FF;text-align:left">View Larger Map</a>
+          <a href="" style="color:#0000FF;text-align:left">View Larger Map</a>
      	  </small>
                    
                 </div>
