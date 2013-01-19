@@ -3,14 +3,23 @@
     <title>Proposal App</title>
     <link type="text/css" rel="stylesheet" href="style.css">
   </head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <body>
-    <h3>Proposal App</h3>
-    <div id="bar">stuff</div>
-        <a href="http://proposal-pennapps.rhcloud.com/index.html">
+    <a href="http://proposal-pennapps.rhcloud.com/index.html">
     </a>
-    <div id="scriptbox">add scripts here</div>
+    <h1>placeholder</h1>
+    <div id="scriptbox">
+    	<h3>Proposal App
+    		<button id="button" onClick="next()">></button>
+    	</h3>
+    	<script language="javascript">
+    		function next(){
+    			$('#scriptbox').load('weapons.html');
+    		}
+    	</script>
+    </div>
     <div id="reset">
-	<div>Reset App</div>
+	<div>Reset</div>
       </div>
     <footer>
       Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
