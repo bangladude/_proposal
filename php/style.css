@@ -45,3 +45,7 @@ a {
 #reset:hover {
   background-color: grey;
 }
+footer {
+  color: black;
+  text-align: center;
+}

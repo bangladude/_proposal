@@ -1,0 +1,17 @@
+* {
+  color: white;
+  font-family: Garamond;
+  background: grey;
+}
+h3 {
+  text-align: center;
+}
+#formdiv {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+label {
+  display: block;
+  margin: auto; 
+}
