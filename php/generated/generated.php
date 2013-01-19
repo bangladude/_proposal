@@ -60,7 +60,7 @@ if (!$con) { //check for connection
                     <img width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php echo createurl(); ?>" />
                     <br />
                     <small>
-                        <a href="<?php $row['mapurl']; ?>" style="color:#0000FF;text-align:left">View Larger Map</a>
+                        <a href="" style="color:#0000FF;text-align:left">View Larger Map</a>
                     </small>
                     
                 </div>
