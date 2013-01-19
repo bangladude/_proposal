@@ -29,7 +29,7 @@ $params = array(
 $result1 = $facebook->api($params);
 
 
-$query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
+$query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= 527355783)";
 $params['query']=$query2;
 $result2 = $facebook->api($params);
 $max = -1;
