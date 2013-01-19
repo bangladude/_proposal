@@ -118,7 +118,9 @@ function storeDB() {
         
         $sql = "SELECT id FROM webpages WHERE (my_name,o_name) VALUES ('$fullname','$p_name') ORDER BY id DESC";
         
+        echo $sql.'<br>';
         $result = mysql_query($sql, $con);
+        
         $row = mysql_fetch_array($result);
         
         echo '<br><a href=./generated/generated.php?id='.$row['id'].'>Generated Page</a><br>';
