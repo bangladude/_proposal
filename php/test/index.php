@@ -1,4 +1,5 @@
 <?php
+
 include_once 'twilio.php';
 include_once 'fbactions.php';
 error_reporting(E_ALL);
@@ -19,6 +20,19 @@ $access_token = $facebook->getAccessToken();
 $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
 $partner = $ret['data'][0];
 
+$query = "SELECT pid, src, caption FROM photo WHERE pid IN (SELECT pid FROM photo_tag WHERE subject = $user_id);";
+
+
+
+//Create Query
+$params = array(
+    'method' => 'fql.query',
+    'query' => query,
+);
+
+//Run Query
+$result = $facebook->api($params);
+echo $result;
 
 #postWall();
 #postPhoto();
