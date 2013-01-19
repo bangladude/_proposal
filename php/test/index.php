@@ -21,6 +21,7 @@ $access_token = $facebook->getAccessToken();
 
 $ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
 $partner = $ret['data'][0];
+$partner = 740466070;
 
 
 #postWall();

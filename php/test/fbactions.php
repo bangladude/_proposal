@@ -126,8 +126,8 @@ function getPhoto($user) {
     $result2 = $facebook->api($params);
     
     
-    echo print_r($result2).'<br>';
-    echo $query2;
+    #echo print_r($result2).'<br>';
+    #echo $query2;
     
     $max = -1;
     foreach ($result1 as &$value1) {
