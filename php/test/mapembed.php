@@ -1,4 +1,5 @@
 <?php
+global $facebook;
 
 function findlatlng($location){
 	$location = urlencode($location);
@@ -12,7 +13,7 @@ function findlatlng($location){
 function getlocation(){
 	global $user_id;
 	$location= $facebook->api("/" . $user_id . "?fields=location");
-	return $location;
+	return $location->name;
     }
 
 function getMapURL(){
