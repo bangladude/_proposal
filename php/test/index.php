@@ -41,6 +41,7 @@ foreach ($result1 as &$value1) {
            
            $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
            echo '<br>'.print_r($ret).'<br>';
+           echo count(($ret['tags'])).'<br>';
            
            if($value1['like_info']['like_count']  > $max){
                $max = $value1['like_info']['like_count'];
