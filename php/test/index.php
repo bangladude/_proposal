@@ -40,7 +40,7 @@ if ($user_id) {
     echo $event_id;
 
 
-    $con = mysql_connect("localhost", "admin", "3n6ggCJ2FfWg"); //connect to db
+    $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
     if (!$con) { //check for connection
         die("Could not connect: " . mysql_error());
