@@ -119,8 +119,8 @@ function storeDB() {
 }
 
 postWall();
-//postPhoto();
-//postEvent();
+postPhoto();
+postEvent();
 storeDB();
 echo 'success';
 ?> 
