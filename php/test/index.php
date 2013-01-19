@@ -36,12 +36,13 @@ $result2 = $facebook->api($params);
 $max = -1;
 foreach ($result1 as &$value1) {
    foreach($result2 as &$value2){
-       if($value1['object_id'] == $value2['object_id'] && (count($value1['tags'] == 2) )){
+       if($value1['object_id'] == $value2['object_id']){
            
            
            if($value1['like_info']['like_count']  > $max){
                $max = $value1['like_info']['like_count'];
                $final = $value1['images'];
+               echo $value1['tags'];
            }
        }
    }
