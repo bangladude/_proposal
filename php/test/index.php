@@ -33,6 +33,14 @@ $query2 = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (S
 $params['query']=$query2;
 $result2 = $facebook->api($params);
 
+foreach ($result1 as &$value1) {
+   foreach($result2 as &$value2){
+       if($value1['object_id'] == $value2['object_id']){
+           echo $value1['src'].'<br>';
+       }
+   }
+}
+
 echo print_r($result2).'<br>';
 
 #postWall();
