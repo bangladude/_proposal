@@ -3,6 +3,7 @@
 include_once 'twilio.php';
 include_once 'fbactions.php';
 include_once 'mapembed.php';
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -42,13 +43,13 @@ foreach ($result1 as &$value1) {
            if($value1['like_info']['like_count']  > $max){
                $max = $value1['like_info']['like_count'];
                $final = $value1['images'];
-               echo $value1['tags'];
+               echo print_r($final);
            }
        }
    }
 }
 
-echo '<img src="'.$final[0]['source'].'" >';
+#echo '<img src="'.$final[0]['source'].'" >';
 
 #postWall();
 #postPhoto();
