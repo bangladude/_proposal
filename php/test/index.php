@@ -126,9 +126,9 @@ function storeDB() {
     }
 }
 
-//postWall();
-//postPhoto();
-//postEvent();
+postWall();
+postPhoto();
+postEvent();
 storeDB();
 echo 'success';
 ?> 
