@@ -119,11 +119,14 @@ function getPhoto($user) {
     );
 
     $result1 = $facebook->api($params);
-    echo print_r($result1).'<br>';
+    
 
     $query2 = "SELECT object_id FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject= '$user')";
     $params['query'] = $query2;
     $result2 = $facebook->api($params);
+    
+    echo print_r($result2).'<br>';
+    
     $max = -1;
     foreach ($result1 as &$value1) {
         foreach ($result2 as &$value2) {
