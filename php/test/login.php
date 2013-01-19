@@ -74,7 +74,7 @@ echo "hello"
                 }(document));
             </script>
         </div>
-        <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event">Login with Facebook</div>
+        <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me">Login with Facebook</div>
 
 
         <a href="#" onclick="FB.logout();">Logout of Facebook</a>
