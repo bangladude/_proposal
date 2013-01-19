@@ -78,7 +78,7 @@ echo $user_id;
                 }(document));
             </script>
         </div>
-        <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me">Login with Facebook</div>
+        <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos">Login with Facebook</div>
 
 
         <a href="#" onclick="FB.logout();">Logout of Facebook</a>
