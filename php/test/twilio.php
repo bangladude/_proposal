@@ -1,6 +1,6 @@
 <?php
 
-function callExcited($pname) {
+function callExcited($pname,$phone) {
 
     #write the call file
     
@@ -25,7 +25,7 @@ function callExcited($pname) {
     $token = 'a09a0f48423b02f3b878c24b8f85682c';
 
 // A phone number you have previously validated with Twilio
-    $phonenumber = '2679334460';
+    $phonenumber = $phone;
 
 // Instantiate a new Twilio Rest Client
     $client = new Services_Twilio($sid, $token, $version);
