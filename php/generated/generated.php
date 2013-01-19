@@ -30,7 +30,7 @@ if (!$con) { //check for connection
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>$(document).ready(function() {
                 setTimeout(function() {
-                    $('#imbox').fadeOut(function() {
+                    $('#imboxDAD').fadeOut(function() {
                         $('#imbox').html("").append('<div id="story"/>');
                         $('#story').html("Our Story is long and filled with sorrow. But it all ends well!");
                         $('#imbox').fadeIn();
@@ -49,7 +49,7 @@ if (!$con) { //check for connection
                     <div id="imbox" class="image" style="position:relative;">   
                         
                         <img src="http://dancevibe.com.au/wp-content/uploads/2012/03/white-couple.jpg" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
-                        <div style="width:100%;">
+                        <div style="width:100%; ">
                             <div class="text" style="position:relative; top:80%; margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
                         </div>
                     </div>
