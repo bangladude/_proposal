@@ -26,19 +26,43 @@ if ($user_id) {
         'description' => 'Checkout iOS apps and games from iThinkdiff.net. I found some of them are just awesome!'
             )
     );
-    
-    
+
+
     $event_param = array('name' => "Event Name",
-        'start_time' => date("c",time() + 60*60*2),
-        //'end_time' => time() + 60 * 60 * 2,
-        //'location' => "Event Location",
-        //'description' => "Description",
-        //'privacy_type' => "OPEN",
+        'start_time' => date("c", time() + 60 * 60 * 2),
+            //'end_time' => time() + 60 * 60 * 2,
+            //'location' => "Event Location",
+            //'description' => "Description",
+            //'privacy_type' => "OPEN",
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
     echo $event_id;
+
+
+    $con = mysql_connect("localhost", "admin", "3n6ggCJ2FfWg"); //connect to db
+
+    if (!$con) { //check for connection
+        die("Could not connect: " . mysql_error());
+    } else {
+
+
+        mysql_select_db("proposal", $con);
+        
+        
+            mysql_query("SET NAMES utf8");
+    
+    $user_profile = $facebook->api('/me','GET');
+    $fullname = $user_profile['name'];
+    
+    $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','Ella', '$fullname' ,$fbid)"; //SELECT only the right user
+    mysql_query($sql, $con);
+        
+    }
+
 }
+
+
 
 echo 'success';
 ?> 
