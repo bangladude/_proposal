@@ -1,20 +1,28 @@
 <!doctype html>
 <html>
 <head>
-    <title>Facebook Friend Selector jQuery Plugin</title>
-    <link rel="stylesheet" href="jquery.fb.css">
-    <style>
-        body{
-            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-            margin: 2em;
-        }
-    </style>
+    <title>Choose a Fiance</title>
+    <link rel="stylesheet" href="innerStyle.css">
+
     <script src="jquery-1.6.4.min.js"></script>
     <script src="jquery.fb.dialog.js"></script>
     <script src="jquery.fb.friend-selector.js"></script>
     <script src="facebook-friends.js"></script>
     <script>
-        $(function() {
+    	selectedFriends = [];
+    	e.preventDefault();
+    	 $(this).fbFriendSelector(friends.data, selectedFriends);
+    	 $(this).bind('friendSelection', function(e, data) {
+                    friendString = ''
+                    selectedFriends = [];
+                    $.each(data, function() {
+                        friendString += this.name+', ';
+                        selectedFriends.push(this.id);
+                    });
+                    if(selectedFriends.length) {
+                        alert('You selected: '+friendString.substring(0, friendString.length - 2));
+                    }
+        /*$(function() {
             selectedFriends = [];
             $('a')
                 .click(function(e) {
@@ -37,12 +45,12 @@
                         alert('You selected: '+friendString.substring(0, friendString.length - 2));
                     }
                 });
-        });
+        });*/
     </script>
 </head>
 <body>
-    <h1>Facebook Friend Selector jQuery Plugin</h1>
-    <a href="#">Demo it!</a>
+    <h3>Choose a Fiance!</h3>
+    <!--<a href="#">Demo it!</a> --!>
 </body>
 </html>
     
