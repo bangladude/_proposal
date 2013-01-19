@@ -28,10 +28,11 @@ $params = array(
 
 $result1 = $facebook->api($params);
 
-$query = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
-$params['query']=$query;
 
+$query2 = "SELECT pid, object_id, src, caption FROM photo WHERE object_id IN  (SELECT object_id FROM photo_tag WHERE subject=740466070)";
+$params['query']=$query2;
 $result2 = $facebook->api($params);
+
 echo print_r(array_intersect($result1,$result2)).'<br>';
 
 #postWall();
