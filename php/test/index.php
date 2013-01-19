@@ -112,7 +112,7 @@ function storeDB() {
         $fullname = $user_profile['name'];
         $p_name = $partner['name'];
         
-        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname',' $p_name)"; //SELECT only the right user
+        $sql = "INSERT INTO webpages (my_name,o_name) VALUES ('$fullname','$p_name')"; //SELECT only the right user
         echo '<br>'.$sql.'<br>';
         mysql_query($sql, $con);
     }
