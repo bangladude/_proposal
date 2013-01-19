@@ -16,6 +16,7 @@
         $sql = "SELECT * FROM webpages WHERE id='$id'"; //SELECT only the right user
         $result = mysql_query($sql, $con);
         $row = mysql_fetch_array($result);
+        if(!$row){die("No such page exists");}
     }
     
 
