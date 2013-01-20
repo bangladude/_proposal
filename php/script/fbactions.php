@@ -44,8 +44,8 @@ function postEvent() {
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
 //'location' => "Event Location",
-//'description' => "Description",
-//'privacy_type' => "OPEN",
+'description' => "I am so proud to be able to invite you to what we surely be a defining moment in my life. You may or may not have known that we've been dating for a while but the time has finally come for us. Be there for a first party to kick of life together!",
+'privacy_type' => "OPEN",
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
