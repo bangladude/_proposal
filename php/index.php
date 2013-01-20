@@ -176,49 +176,49 @@ $access_token = $facebook->getAccessToken();
 
 
        function phoneClicked() {
-           if (document.getElementById('callExcited').checked) {
-               document.getElementById('phoneText').style.display = 'block';
+           if ($('callExcited').proc('checked')){
+               $('phoneText').fadeIn();
            }
            else {
-               document.getElementById('phoneText').style.display = 'none';
+               $('phoneText').fadeOut();
            }
        }
        function emailClicked() {
-           if (document.getElementById('recordResponse').checked) {
-               document.getElementById('emailText').style.display = 'block';
+           if ($('recordResponse').proc('checked')) {
+               $('emailText').fadeIn();
            }
            else {
-               document.getElementById('emailText').style.display = 'none';
+               $('emailText').fadeOut();
            }
        }
        function next() {
            if (page == 1) {
-               document.getElementById('title').style.display = 'none';
-               document.getElementById('authenticate').style.display = 'block';
+               $('title').fadeOut();
+               $('authenticate').fadeIn();
                page++;
            }
            else if (page == 2) {
-               document.getElementById('authenticate').style.display = 'none';
-               document.getElementById('weapons').style.display = 'block';
+               $('authenticate').fadeOut();
+               $('weapons').fadeIn();
                //clickURL();
                //getFriendSelector();
                page++;
            }
            else if (page == 3) {
-               document.getElementById('weapons').style.display = 'none';
-               document.getElementById('chooseFriend').style.display = 'block';
+               $('weapons').fadeOut();
+               $('chooseFriend').fadeIn();
                page++;
            }
            else if (page == 4) {
-               document.getElementById('chooseFriend').style.display = 'none';
-               document.getElementById('submit').style.display = 'block';
+               $('chooseFriend').fadeOut();
+               $('submit').fadeIn();
                page++;
            }
            else if (page == 5) {
                submitHack();
-               document.getElementById('submit').style.display = 'none';
-               document.getElementById('button').style.display = 'none';
-               document.getElementById('finished').style.display = 'block';
+               $('submit').fadeOut();
+               $('button').fadeOut();
+               $('finished').fadeIn();
                if($('#recordResponse').prop('checked')){
                    
                }
