@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 
-include 'sendgrid-php/SendGrid_loader.php';
+require_once 'sendgrid-php/SendGrid_loader.php';
 
 
 
