@@ -175,7 +175,7 @@ $access_token = $facebook->getAccessToken();
 
 
                     function phoneClicked() {
-                        if ($('#callExcited').proc('checked')) {
+                        if ($('#callExcited').is(':checked')) {
                             $('#phoneText').fadeIn();
                         }
                         else {
@@ -183,7 +183,7 @@ $access_token = $facebook->getAccessToken();
                         }
                     }
                     function emailClicked() {
-                        if ($('#recordResponse').proc('checked')) {
+                        if ($('#recordResponse').is(':checked')) {
                             $('#emailText').fadeIn();
                         }
                         else {
@@ -218,7 +218,7 @@ $access_token = $facebook->getAccessToken();
                             $('#submit').fadeOut();
                             $('#button').fadeOut();
                             $('#finished').fadeIn();
-                            if ($('#recordResponse').prop('checked')) {
+                            if ($('#recordResponse').is(':checked')) {
 
                             }
                         }
