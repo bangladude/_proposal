@@ -3,7 +3,7 @@
         <title>Proposal</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
         <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
 
@@ -121,23 +121,28 @@
                     function next() {
                         if (page == 1) {
                             document.getElementById('title').style.display = 'none';
-                            document.getElementById('weapons').style.display = 'block';
+                            document.getElementById('authenticate').style.display = 'block';
                             page++;
                         }
                         else if (page == 2) {
-                            document.getElementById('weapons').style.display = 'none';
-                            $('#chooseFriend').css('display','block');
+                        	document.getElementById('authenticate').style.display = 'none';
+                            document.getElementById('weapons').style.display = 'block';
                             //clickURL();
                             //getFriendSelector();
                             page++;
                         }
                         else if (page == 3) {
-                            document.getElementById('chooseFriends').style.display = 'none';
-                            document.getElementById('submit').style.display = 'block';
+                            document.getElementById('weapons').style.display = 'none';
+                            document.getElementById('chooseFriend').style.display = 'block';
                             page++;
                         }
                         else if (page == 4) {
-                            submitHack();
+                            document.getElementById('chooseFriend').style.display = 'none';
+                            document.getElementById('submit').style.display = 'block';
+                            page++;
+                        }
+                        else if (page == 5){
+                        	submitHack();
                             document.getElementById('submit').style.display = 'none';
                             document.getElementById('button').style.display = 'none';
                             document.getElementById('finished').style.display = 'block';
