@@ -166,7 +166,8 @@ $access_token = $facebook->getAccessToken();
             </div>
 
             <div id="finished" style="display : none"> 
-                The deed is done.
+                The deed is done.<br>
+                <a href="script/opentok.php"> Enable broadcast!</a>
             </div>
 
 
@@ -218,6 +219,9 @@ $access_token = $facebook->getAccessToken();
                document.getElementById('submit').style.display = 'none';
                document.getElementById('button').style.display = 'none';
                document.getElementById('finished').style.display = 'block';
+               if($('#recordResponse').prop('checked')){
+                   
+               }
            }
        }
 
