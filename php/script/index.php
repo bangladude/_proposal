@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once 'twilio.php';
 include_once 'fbactions.php';
@@ -22,7 +23,7 @@ $access_token = $facebook->getAccessToken();
 
 $partner = $_POST['partner'];
 $phone = $_POST['phone'];
-$email = $_POST['email'];
+$_SESSION['email'] = $_POST['email'];
 
 $ret = $facebook->api("/" . $user_id . "?fields=first_name,gender&limit=1", 'get');
 $first_name = $ret['first_name'];

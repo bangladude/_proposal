@@ -7,7 +7,7 @@ $apiKey = $_GET['apiKey'];
 ?>
 
 <head>
-        <script src="TB.js"></script>
+        <script src="/script/opentok/TB.js"></script>
     <script type="text/javascript">
         var apiKey = <?php echo '"' . $apiKey . '"' ?>;
         var sessionId = <?php echo '"' . $sessionId . '"' ?>;
@@ -55,7 +55,6 @@ $apiKey = $_GET['apiKey'];
 
 </head>
 <body>
-    <?php print_r($_GET); ?>
     <div id ="opentok">
 
     </div>

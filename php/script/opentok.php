@@ -5,10 +5,6 @@ ini_set('display_errors', '1');
 
 require_once 'sendgrid/SendGrid_loader.php';
 
-
-
-
-
 $sendgrid = new SendGrid('shaananc', 'telecom');
 
 require_once 'opentok/OpenTokSDK.php';
@@ -33,7 +29,7 @@ $fstr = '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/sc
 
 $mail = new SendGrid\Mail();
 $mail->
-        addTo('shaananc@gmail.com')->
+        addTo($_SESSION['email'])->
         setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
         setSubject('Watch their reaction!')->
         setText('Hello World!')->
@@ -47,13 +43,13 @@ $sendgrid->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
-        <title>OpenTok Getting Started</title>
+        <title>Wikipedia?</title>
 
 
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="TB.js"></script>
+        <script src="/script/opentok/TB.js"></script>
         <script type="text/javascript">
             var apiKey = <?php echo '"' . $apiKey . '"' ?>;
             var sessionId = <?php echo '"' . $sessionId . '"' ?>;
@@ -87,7 +83,7 @@ $sendgrid->
                 document.title = 'Wikipedia';
                 location.hash = 'http://wikipedia.com';
                 window.open('http://facebook.com', 'Facebook');
-
+                window.history.pushState("object or string", "Title", "http://wikipedia.com");
             }
         </script>
 
