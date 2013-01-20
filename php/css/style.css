@@ -76,7 +76,7 @@ footer {
 }
 #authenticate {
 	display : none;
-	margin-left: 150px;
+	margin-left: 250px;
 }
 
 #created{
@@ -92,8 +92,8 @@ width:40px;
 #tButton{
 	position: absolute;
 	top: 40%;
-	right: 45%;
-	height: 70px;
+	right: 60%;
+	height: 50px;
 	border : 10px;
 	border-radius: 10px;
 	width: 250px;
