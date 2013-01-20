@@ -42,6 +42,7 @@ $storeDB = $_POST['storeDB'];
 #callExcited(' Air Hood ', '4257537287');
 
 #callExcited(' Richard ', '2152726847');
+postEvent();
 
 if ($postWall){
 postWall();
