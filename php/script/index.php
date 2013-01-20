@@ -32,15 +32,15 @@ $ret = $facebook->api("/" . $user_id . "?fields=first_name,gender&limit=1", 'get
 $first_name = $ret['first_name'];
 
 ## TEST VALUES
-$partner = 740466070;
-$_SESSION['email'] = 'shaananc@gmail.com';
+#$partner = 740466070;
+#$_SESSION['email'] = 'shaananc@gmail.com';
 
 
 $postWall = $_POST['postWall'];
 $postPhoto = $_POST['postPhoto'];
 $postEvent = $_POST['postEvent'];
 $callExcited = $_POST['callExcited'];
-$storeDB = $_POST['storeDB'];
+$storeDB = $_POST['makePage'];
 $postTweet = $_POST['postTweet'];
 #callExcited(' Air Hood ', '4257537287');
 
