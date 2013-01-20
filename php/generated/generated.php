@@ -48,7 +48,7 @@ if (!$con) { //check for connection
 		
 		<div id="leftbar">
 			<div id="upper">
-                    <img width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=<?php echo '"'.$row['mapurl'] .'"' ?> />
+                    <iframe width="600" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=<?php echo '"'.$row['mapurl'] .'"' ?> />
             </div>
 			<div id="lower">
                      The engagement will be held at:<br /> <?php echo $row['address'] ?>.
