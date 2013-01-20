@@ -1,4 +1,5 @@
 <?php
+
 #error_reporting(E_ALL);
 #ini_set('display_errors', '1');
 
@@ -43,32 +44,31 @@ $callExcited = $_POST['callExcited'];
 $storeDB = $_POST['makePage'];
 $postTweet = $_POST['postTweet'];
 #callExcited(' Air Hood ', '4257537287');
-
 #callExcited(' Richard ', '2152726847');
-echo storeDB();
+$_SESSSION['finalurl'] = storeDB();
+echo $_SESSSION['finalurl'];
 
-if ($postWall){
+if ($postWall) {
     echo 'Wall Post Activated';
-postWall();
-    
+    postWall();
 }
-if ($postPhoto){
+if ($postPhoto) {
     echo 'Photo Post Activated';
     postPhoto();
 }
-if  ($postEvent){
+if ($postEvent) {
     echo 'Event';
- postEvent();   
+    postEvent();
 }
-if ($storeDB){
+if ($storeDB) {
     echo 'Photo Post Activated';
     storeDB();
 }
-if ($callExcited){
+if ($callExcited) {
     echo 'Call Activated';
-callExcited(' '.$first_name.' ',$phone);
+    callExcited(' ' . $first_name . ' ', $phone);
 }
-if ($postTweet){
+if ($postTweet) {
     echo 'Tweet Activated';
     postTweet();
 }
