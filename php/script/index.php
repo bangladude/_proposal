@@ -19,15 +19,38 @@ $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
 
-$ret = $facebook->api("/" . $user_id . "/friends?fields=name,gender&limit=1", 'get');
-$partner = $ret['data'][0];
+
+$partner = $_POST['partner'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+
+$ret = $facebook->api("/" . $user_id . "?fields=first_name,gender&limit=1", 'get');
+$first_name = $ret['first_name'];
+
+
 $partner = 740466070;
 
+$postWall = $_POST['postWall'];
+$postPhoto = $_POST['postPhoto'];
+$postEvent = $_POST['postEvent'];
+$callExcited = $_POST['callExcited'];
+$storeDB = $_POST['storeDB'];
 
-#postWall();
-#postPhoto();
-#postEvent();
+if ($postWall){
+postWall();
+    
+}
+if ($postPhoto){
+    postPhoto();
+}
+if  ($postEvent){
+ postEvent();   
+}
+if ($storeDB){
 storeDB();
-#callExcited(' Nikki ','9736414198');
+}
+if ($callExcited){
+callExcited(' '.$first_name.' ',$phone);
+}
 echo 'success';
 ?> 
