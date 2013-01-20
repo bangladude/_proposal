@@ -9,7 +9,7 @@ function callExcited($pname,$rphone) {
     $stringData = '<?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <Say voice="woman" language="en">You have a prerecorded message from'. $pname .'.</Say>
-    <Play>https://proposal-pennapps.rhcloud.com/test/gratz.mp3</Play>
+    <Play>https://proposal-pennapps.rhcloud.com/script/gratz.mp3</Play>
     <Say voice="woman" language="en">End of recorded message.</Say>
 </Response>';
     fwrite($fh, $stringData);
