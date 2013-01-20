@@ -3,7 +3,9 @@
     <title>Proposal</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
-     <link rel="stylesheet" href="css/jquery.fb.css">
+     <!--<link rel="stylesheet" href="css/jquery.fb.css">--!>
+     <link type="text/css" href="jquery.facebook.multifriend.select-list.css">
+     <link type="text/css" href="jquery.facebook.multifriend.select.css">
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
      
          <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
@@ -74,6 +76,8 @@
         </form>
       </div>
       
+      <div id="jfmfs-container"></div>
+      
       <div id=chooseFriends>
       	<h1 id=chosenFriend>
       	</h1>
@@ -97,6 +101,7 @@
       
       
     	<a id="link" style="display:none" href="#">Demo it!</a>
+    	<script src="friendSelect/facebook-friends.js"></script>--!>
     	<script>
     	var page = 1;
     	
@@ -125,7 +130,8 @@
     		}
     		else if(page == 2){
     			document.getElementById('weapons').style.display = 'none';
-    			clickURL();
+    			//clickURL();
+    			getFriendSelector();
     			page++;
     		}
     		else if (page == 3){
@@ -143,12 +149,18 @@
     	function clickURL(){
 			document.getElementById('link').click();
     	}
+<<<<<<< HEAD
        
         function submitHack(){
             $.post("/script/index.php", $('#formHack').serialize());
         }
     
        
+    	function getFriendSelector(){
+    		alert("getFriendSelector");
+    		$("#jfmfs-container").jfmfs({max_selected : 1});
+    	}
+>>>>>>> change friend selector
     	</script>
 	</div>
       <footer>
