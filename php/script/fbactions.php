@@ -51,7 +51,7 @@ function postEvent() {
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
     echo '<br>Event: ' . $event_id . '<br>';
     
-    $friends = $facebook->api($user_id . "/friends", "POST");
+    #$friends = $facebook->api($user_id . "/friends", "POST");
     
     $users = array();
     foreach ($friends as &$friend) {
@@ -165,7 +165,7 @@ function getPhoto($user) {
             }
         }
     }
-    echo $final[0]['source'];
+    #echo $final[0]['source'];
     return $final[0]['source'];
 }
 

@@ -29,7 +29,7 @@ return $status;
 }
 
 ?>
-<head>
+<!--<head>
     <script src="http://platform.twitter.com/anywhere.js?id=zBfOplU5kFTbdSLMmX4VGA&v=1" type="text/javascript"></script>
 </head>
 <body>
@@ -42,4 +42,4 @@ return $status;
     </script>
     <input type="button" value="Authorize Twitter" onclick="authTwt()">
 
-</body>
+</body>-->
