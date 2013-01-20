@@ -46,7 +46,7 @@ if (!$con) { //check for connection
     <body>
         <div id="title">We are Engaged!</div>
         <div id = "leftbar">
-            <img id="coupleimg" src="<?php echo $row['imgurl']; ?>">
+            <img id="coupleimg" style="height:400px; width:auto;" src="<?php echo $row['imgurl']; ?>">
         </div>
 
         <div id="rightbar">
