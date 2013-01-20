@@ -14,6 +14,22 @@ if (isset($_REQUEST['sessionId']) && $_REQUEST['sessionId']) {
 
 $token1 = $apiObj->generate_token($sessionId);
 $token2 = $apiObj->generate_token($sessionId);
+
+include 'sendgrid/SendGrid_loader.php';
+
+
+$mail = new SendGrid\Mail();
+$mail->
+  addTo('shaananc@gmail.com')->
+  setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
+  setSubject('Watch their reaction!')->
+  setText('Hello World!')->
+  setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction?session_id='."'".$sessionId."'".'&token='."'".$token2."'"."&apikey="."'".$apiKey."'".'>Click here to view the stream</a></strong>');
+
+$sendgrid->
+smtp->
+  send($mail);
+
 ?>
 
 
