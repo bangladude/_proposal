@@ -51,7 +51,7 @@ $sendgrid->
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="//static.opentok.com/v0.91/js/TB.min.js"></script>
+        <script src="TB.js"></script>
         <script type="text/javascript">
             var apiKey = <?php echo '"' . $apiKey . '"' ?>;
             var sessionId = <?php echo '"' . $sessionId . '"' ?>;
