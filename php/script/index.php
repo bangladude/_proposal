@@ -72,7 +72,7 @@ if ($postEvent) {
 
 if ($callExcited) {
     echo 'Call Activated';
-    callExcited(' ' . $first_name . ' ', $phone);
+    callExcited(' ' . $partner['first_name'] . ' ', $phone);
 }
 if ($postTweet) {
     echo 'Tweet Activated';
