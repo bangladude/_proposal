@@ -55,8 +55,8 @@ echo $_SESSSION['finalurl'];
 
 if ($storeDB) {
     $attachment = array(
-        'message' => 'This is all the information about my big life chance!! Sooo exciting...',
-        'name' => 'Link',
+        'message' => 'This is all the information about my big life move!! Sooo looking forward to the the next days of my life...',
+        'name' => 'Engagement!',
         'link' => $_SESSSION['finalurl'],
     );
 
