@@ -7,6 +7,7 @@ $apiKey = $_GET['apiKey'];
 ?>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="reactionstyle.css">
         <script src="/script/opentok/TB.js"></script>
     <script type="text/javascript">
         var apiKey = <?php echo '"' . $apiKey . '"' ?>;
@@ -20,7 +21,7 @@ $apiKey = $_GET['apiKey'];
         session.connect(apiKey, token);
 
         function sessionConnectedHandler(event) {
-            var publishProps = {height: 240, width: 320};
+            var publishProps = {height: 300, width: 400};
             publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
             // Send my stream to the session
             session.publish(publisher);
@@ -55,7 +56,9 @@ $apiKey = $_GET['apiKey'];
 
 </head>
 <body>
+<div id="tokwrapper">
     <div id ="opentok">
 
     </div>
+</div>
 </body>

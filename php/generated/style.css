@@ -26,10 +26,15 @@ h3 {
   color:#38B2CE;
 }
 
+#leftbar{
+ margin-top:30px; 
+ margin-left: 225px;
+  display: inline;
+
+}
 
 #coupleimg {
- margin-top:30px; 
- margin-left: 70px;
+
  display: inline;
  height:75%; 
  width:30%;
@@ -47,16 +52,18 @@ h3 {
 }
 
 #lower{
+ font-family: 'Poiret One';
+ font-size: 16;
  display: block;
  margin-left:10px; 
  background-color: #abc; 
- border-radius:10px;
+ border-radius:5px;
 }
 
-#leftbar{
+#rightbar{
  margin-top:50px; 
- float:right;
- margin-right:170px;
+ float: right;
+ margin-right:225px;
  }
 div div {
   margin: auto;
