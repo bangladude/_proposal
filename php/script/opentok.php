@@ -1,4 +1,5 @@
 <?php
+include 'sendgrid-php/SendGrid_loader.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
