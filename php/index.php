@@ -126,7 +126,7 @@ $access_token = $facebook->getAccessToken();
                             Send a congratulatory phone call
                         </label>
                         <label id="phoneText" for="phone">
-                            Phone Number: 
+                            Victim Phone Number: 
                             <input class="textField" id="phone" name="phone" type="text"/>
 
                         </label>
@@ -138,7 +138,7 @@ $access_token = $facebook->getAccessToken();
                             Record your friend's reaction</label>
 
                         <label id="emailText" for="email">
-                            Email: <input class="textField" id="email" name="email" type="text"/>
+                            Email for Broadcast Link: <input class="textField" id="email" name="email" type="text"/>
                         </label>
                     </div>
 
