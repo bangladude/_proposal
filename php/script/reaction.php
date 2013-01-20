@@ -2,7 +2,7 @@
 
 $token = $_GET['token'];
 $sessionId = $_GET['session_id'];
-$apiKey = $_GET['apikey'];
+$apiKey = $_GET['apiKey'];
 
 ?>
 
@@ -11,7 +11,7 @@ $apiKey = $_GET['apikey'];
     <script type="text/javascript">
         var apiKey = <?php echo '"' . $apiKey . '"' ?>;
         var sessionId = <?php echo '"' . $sessionId . '"' ?>;
-        var token = <?php echo '"' . $token1 . '"' ?>;
+        var token = <?php echo '"' . $token . '"' ?>;
 
         TB.setLogLevel(TB.DEBUG); // Set this for helpful debugging messages in console
 
