@@ -46,17 +46,23 @@ label {
   margin: auto; 
 }
 
-#phone{
+#phoneText{
 	display: none;
 	margin-left: 50px;
 	font-size: 20px;
 }
-#email{
+#emailText{
 	display: none;
 	margin-left: 50px;
 	font-size: 20px;
 }
-
+.textField{
+	border = 1px;
+	width = 200px;
+	height = 100px;
+	font-size = 24px;
+	margin-bottom = 10px;
+}
 #weapons{
 	height: 400px;
 }
