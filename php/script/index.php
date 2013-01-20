@@ -25,9 +25,10 @@ $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
 
 #echo print_r($_POST).'<br><br><br><br>';
-$partner = $_POST['partner'];
+$partner_t = $_POST['partner'];
 
-echo $partner.'ttt';
+$partner = $facebook->api("/".$partner_t,'get');
+echo print_r($partner);
 
 
 $phone = $_POST['phone'];
@@ -35,7 +36,6 @@ $_SESSION['email'] = $_POST['email'];
 
 $ret = $facebook->api("/" . $user_id . "?fields=first_name,gender&limit=1", 'get');
 $first_name = $ret['first_name'];
-echo $first_name;
 
 ## TEST VALUES
 #$partner = 740466070;
