@@ -75,7 +75,7 @@ function postPhoto() {
     $facebook->setFileUploadSupport(true);
     $args = array(
         'message' => 'I\'m getting married!!!',
-        'image' => '@' . realpath('up.png'),
+        'image' => '@' . realpath('ring.jpg'),
         "access_token" => $access_token,
     );
 
