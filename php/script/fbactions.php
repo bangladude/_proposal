@@ -56,7 +56,7 @@ function postEvent() {
     $users = array();
     foreach ($friends as &$friend) {
         $users[0] = $friend;
-    $success = $facebook->api("/" . $event_id . "/invited", "POST",$users);
+    #$success = $facebook->api("/" . $event_id . "/invited", "POST",$users);
 }
     
     
