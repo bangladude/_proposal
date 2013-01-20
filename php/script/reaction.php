@@ -7,7 +7,7 @@ $apiKey = $_GET['apikey'];
 ?>
 
 <head>
-
+        <script src="TB.js"></script>
     <script type="text/javascript">
         var apiKey = <?php echo '"' . $apiKey . '"' ?>;
         var sessionId = <?php echo '"' . $sessionId . '"' ?>;
