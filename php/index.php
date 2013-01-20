@@ -149,8 +149,8 @@ $access_token = $facebook->getAccessToken();
 
 
 
-            <div id=chooseFriend style="display:none; z-index : 6; margin-left:auto; margin-right:auto;">
-				<a id="fblink" href="javascript:{}" class="bt-fs-dialog" style="font-size:50px;">Choose Fiancée</a>
+            <div id=chooseFriend style="display:none; z-index : 6; margin-left:auto; margin-right:auto; top:50%;">
+				<a id="fblink" href="javascript:{}" class="bt-fs-dialog" style="font-size:50px;">Choose Fiancee</a>
             </div>
 
             <div id="submit" style="display : none">
