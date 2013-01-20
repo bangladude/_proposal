@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -39,8 +39,7 @@ $sendgrid->
         smtp->
         send($mail);
 ?>
-
-
+-->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
@@ -48,7 +47,7 @@ $sendgrid->
 
 
 
-
+		<link type="text/css" rel="opentokstyle">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/script/opentok/TB.js"></script>
         <script type="text/javascript">
