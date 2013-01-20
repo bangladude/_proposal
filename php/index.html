@@ -68,7 +68,7 @@
       <div id=chooseFriends>
       	<h1 id=chosenFriend>
       	</h1>
-      	<button id="chooseOther" onClick="clickURL()">Choose different fiance</button>
+      	<button id="chooseOther" onClick="reOpenChooser()">Choose different fiance</button>
       </div>
       
       <div id="submit" style="display : none">
@@ -94,6 +94,11 @@
     	<script src="friendSelect/facebook-friends.js"></script>
     	<script>
     	var page = 1;
+    	
+    	function reOpenChooser(){
+    		document.getElementById('chooseFriends').style.display = 'none';
+    		clickURL();
+    	}
     	function phoneClicked(){
 			if(document.getElementById('checkbox6').checked){
 				document.getElementById('phonenumber').style.display = 'block';
@@ -126,7 +131,7 @@
     			document.getElementById('submit').style.display = 'block';
     			page++;
     		}
-    		else if (page ==4){
+    		else if (page == 4){
     			document.getElementById('submit').style.display = 'none';
     			document.getElementById('button').style.display = 'none';
     			document.getElementById('finished').style.display = 'block';
