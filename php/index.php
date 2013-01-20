@@ -250,6 +250,9 @@ $access_token = $facebook->getAccessToken();
             //Facebook Selector Script
             jQuery(document).ready(function($) {
                 $(".bt-fs-dialog").fSelector({
+                	max : 1,
+                	closeOnSubmit : true,
+                	enableEscapeButton: true,
                     onSubmit: function(response) {
                         // example response usage
                         var selected_friends = [];
