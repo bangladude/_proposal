@@ -22,7 +22,7 @@ $apiKey = $_GET['apiKey'];
 
         function sessionConnectedHandler(event) {
             var publishProps = {height: 300, width: 400};
-            publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
+            publisher = TB.initPublisher(apiKey, 'tokwrapper', publishProps);
             // Send my stream to the session
             //session.publish(publisher);
 
