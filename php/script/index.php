@@ -45,7 +45,7 @@ $postTweet = $_POST['postTweet'];
 #callExcited(' Air Hood ', '4257537287');
 
 #callExcited(' Richard ', '2152726847');
-storeDB();
+echo storeDB();
 
 if ($postWall){
     echo 'Wall Post Activated';
@@ -72,5 +72,4 @@ if ($postTweet){
     echo 'Tweet Activated';
     postTweet();
 }
-echo 'success';
 ?> 
