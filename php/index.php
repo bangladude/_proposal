@@ -1,4 +1,4 @@
-<!--<?php
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -13,7 +13,7 @@ $config = array(
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
-?>--!>
+?>
 
 <html>
     <head>
@@ -84,7 +84,7 @@ $access_token = $facebook->getAccessToken();
                     }(document));
                     </script>
                 </div>
-                <div style="width: 100px; height: 100px; display : block"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
+                <div style="width: 100px; height: 100px"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
                 <script type="text/javascript">
                     function authTwt() {
                         neww = window.open("script/redirect.php", "Connect To Twitter", "height=800,width=600");
@@ -92,7 +92,7 @@ $access_token = $facebook->getAccessToken();
 
                     }
                 </script>
-                <input id="tButton" type="button" value="Authorize Twitter" onclick="authTwt()">
+                <input id="tButton" type="button" onclick="authTwt()">
 
             </div>
 
@@ -167,8 +167,7 @@ $access_token = $facebook->getAccessToken();
             </div>
 
             <div id="finished" style="display : none"> 
-                The deed is done.<br>
-                <a href="script/opentok.php"> Enable broadcast!</a>
+                The deed is done.
             </div>
 
 
@@ -177,52 +176,49 @@ $access_token = $facebook->getAccessToken();
 
 
        function phoneClicked() {
-           if ($('#callExcited').proc('checked')){
-               $('#phoneText').fadeIn();
+           if (document.getElementById('callExcited').checked) {
+               document.getElementById('phoneText').style.display = 'block';
            }
            else {
-               $('#phoneText').fadeOut();
+               document.getElementById('phoneText').style.display = 'none';
            }
        }
        function emailClicked() {
-           if ($('#recordResponse').proc('checked')) {
-               $('#emailText').fadeIn();
+           if (document.getElementById('recordResponse').checked) {
+               document.getElementById('emailText').style.display = 'block';
            }
            else {
-               $('#emailText').fadeOut();
+               document.getElementById('emailText').style.display = 'none';
            }
        }
        function next() {
            if (page == 1) {
-               $('#title').fadeOut();
-               $('#authenticate').fadeIn();
+               document.getElementById('title').style.display = 'none';
+               document.getElementById('authenticate').style.display = 'block';
                page++;
            }
            else if (page == 2) {
-               $('#authenticate').fadeOut();
-               $('#weapons').fadeIn();
+               document.getElementById('authenticate').style.display = 'none';
+               document.getElementById('weapons').style.display = 'block';
                //clickURL();
                //getFriendSelector();
                page++;
            }
            else if (page == 3) {
-               $('#weapons').fadeOut();
-               $('#chooseFriend').fadeIn();
+               document.getElementById('weapons').style.display = 'none';
+               document.getElementById('chooseFriend').style.display = 'block';
                page++;
            }
            else if (page == 4) {
-               $('#chooseFriend').fadeOut();
-               $('#submit').fadeIn();
+               document.getElementById('chooseFriend').style.display = 'none';
+               document.getElementById('submit').style.display = 'block';
                page++;
            }
            else if (page == 5) {
                submitHack();
-               $('#submit').fadeOut();
-               $('#button').fadeOut();
-               $('#finished').fadeIn();
-               if($('#recordResponse').prop('checked')){
-                   
-               }
+               document.getElementById('submit').style.display = 'none';
+               document.getElementById('button').style.display = 'none';
+               document.getElementById('finished').style.display = 'block';
            }
        }
 
