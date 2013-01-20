@@ -2,7 +2,7 @@
 
 function getAddress($url){
 try{	
-    $xml = simplexml_load_file();
+        $xml = simplexml_load_file($url);
 	$addarr = $xml ->result->children();
 	$add = $addarr[2];
 	return $add;

@@ -110,7 +110,7 @@ function storeDB() {
         $p_name = $partner['name'];
         $imgurl = getPhoto($partner);
         $mapurl = getMapURL();
-        #
+        
         
 
         $sql = "INSERT INTO webpages (my_name,o_name,imgurl,mapurl) VALUES ('$fullname','$p_name','$imgurl','$mapurl')"; //SELECT only the right user
