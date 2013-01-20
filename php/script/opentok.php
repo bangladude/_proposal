@@ -1,4 +1,4 @@
-<!--<?php
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -39,7 +39,7 @@ $sendgrid->
         smtp->
         send($mail);
 ?>
--->
+
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
@@ -47,7 +47,7 @@ $sendgrid->
 
 
 
-		<link type="text/css" rel="opentokstyle">
+		<link rel="stylesheet" type="text/css" href="opentokstyle.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/script/opentok/TB.js"></script>
         <script type="text/javascript">
@@ -62,7 +62,7 @@ $sendgrid->
             session.connect(apiKey, token);
 
             function sessionConnectedHandler(event) {
-                var publishProps = {height: 240, width: 320};
+                var publishProps = {height: 320, width: 400};
                 publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
                 // Send my stream to the session
                 session.publish(publisher);
@@ -93,8 +93,8 @@ $sendgrid->
 
         <div id="tokwrapper">
             <div id="opentok">
-            </div>
-            <input type="button" value="Mission Complete" onclick="hideTok();">
+            </div><br />
+            <input id="button" type="button" value="Mission Complete" onclick="hideTok();">
         </div>
         <div id="divframe" style="visibility:hidden;" frameborder="0" >
             <iframe src="http://wikipedia.com" seamless scrolling="no">

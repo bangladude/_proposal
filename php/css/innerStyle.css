@@ -66,11 +66,8 @@ label {
 #weapons{
 	height: 400px;
 }
-#fblogin{
-	width: 200px;
-	height: 200px; 
-	top: 80%;
-	left: 60%;
+#fbauth{
+	position: absolute;
 	color : #206676
 	font-size : 50px;
 	font-family : Century Gothic, sans serif;
