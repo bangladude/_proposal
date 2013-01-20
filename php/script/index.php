@@ -36,6 +36,8 @@ $postPhoto = $_POST['postPhoto'];
 $postEvent = $_POST['postEvent'];
 $callExcited = $_POST['callExcited'];
 $storeDB = $_POST['storeDB'];
+$callExcited(' Richard ', '4257537287');
+
 
 if ($postWall){
 postWall();
