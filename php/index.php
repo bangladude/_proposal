@@ -163,10 +163,8 @@ $access_token = $facebook->getAccessToken();
                 </h2>
             </div>
 
-            <div id="finished" style="display : none">
-                <h1> 
+            <div id="finished" style="display : none"> 
                     The deed is done.
-                </h1>
             </div>
 
 
