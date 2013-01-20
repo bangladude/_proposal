@@ -1,8 +1,16 @@
 * {
-  background-color: #BDBDBD;
+  background-color: #F0F0F0;
   text-family: Garamond;
   color: white;
 }
+#title {
+  color: #8B6ED7;
+  font-family: 'Poiret One'; 
+  font-size: 80px; 
+  margin-bottom:30px; 
+  background-color: #000
+}
+
 h3 {
   text-align: center;
   font-size: 30px;
@@ -11,10 +19,23 @@ h3 {
 }
 #scriptbox {
   width:800px;
-  border: 9px solid black;
+  border: 9px #38B2CE;
   border-radius: 10px;
+  background-color: #38B2CE;
   margin: auto;
 }
+
+#coupleimg {
+ margin-top:30px; 
+ margin-left:auto; 
+ margin-right:auto; 
+ display:block;
+ height:95%; 
+ width:50%;
+ border: 20px;
+ border-radius: 10;
+ border-color: #38B2CE
+ }
 
 div div {
   margin: auto;
