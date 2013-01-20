@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -13,7 +13,7 @@ $config = array(
 $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
-?>
+?>--!>
 
 <html>
     <head>
@@ -152,6 +152,7 @@ $access_token = $facebook->getAccessToken();
             <div id=chooseFriend style="display:none; margin-right: auto;
                  top: -150px;
                  width: 90%;
+                 text-decoration:underline
                  position: relative;">
                 <a id="fblink" href="javascript:{}" class="bt-fs-dialog" style="font-size:50px;">Choose Fiancee</a>
             </div>

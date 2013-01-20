@@ -66,11 +66,4 @@ label {
 #weapons{
 	height: 400px;
 }
-#fbauth{
-	position: absolute;
-	color : #206676
-	font-size : 50px;
-	font-family : Century Gothic, sans serif;
-	top: 150px;
-	margin-left: 250px;
-}
+

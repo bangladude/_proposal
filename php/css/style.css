@@ -27,7 +27,9 @@
 	color : white
 }
 
-
+#chooseFriend :hover{
+	font-weight: bolder;
+}
 #placeholder {
 	color: #F0F0F0 ;
 }
@@ -88,10 +90,11 @@ width:40px;
 
 #tButton{
 	position: absolute;
-	top: 50%;
-	right: 50%;
-	display: block;
-	height: 50px;
-	width: 50px;
-	background-image: url('img/Twitter-Logo.gif');
+	top: 40%;
+	right: 45%;
+	height: 52px;
+	border : 10px;
+	border-radius: 10px;
+	width: 200px;
+	background-image: url('img/twitter-logo_name.jpg');
 }
