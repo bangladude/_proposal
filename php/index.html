@@ -4,6 +4,8 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
+    <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
     
   </head>
   
@@ -71,8 +73,7 @@
       <div id="jfmfs-container"></div>
       
       <div id=chooseFriends>
-      	<h1 id=chosenFriend>
-      	</h1>
+          <a href="javascript:{}" class="bt-fs-dialog">Click here</a>
       	<button id="chooseOther" onClick="reOpenChooser()">Choose different fiance</button>
       </div>
       
@@ -155,5 +156,23 @@
       Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
       Rigel Swavely
     </footer>
+    
+    
+    <script type="text/javascript">
+        //Facebook Selector Script
+      jQuery(document).ready(function($) {
+        $(".bt-fs-dialog").fSelector({
+          onSubmit: function(response){
+            // example response usage
+            var selected_friends = [];
+            $.each(response, function(k, v){
+              selected_friends[k] = v;
+            });
+            alert(selected_friends);
+          }
+        });
+      });
+    </script>
+    
   </body>
 </html>
