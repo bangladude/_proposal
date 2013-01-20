@@ -85,14 +85,14 @@ $access_token = $facebook->getAccessToken();
                     </script>
                 </div>
                 <div style="width: 100px; height: 100px; display : block"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
-   <script type="text/javascript">
-        function authTwt() {
-            neww = window.open("script/redirect.php", "Connect To Twitter", "height=800,width=600");
-            neww.focus();
+                <script type="text/javascript">
+                    function authTwt() {
+                        neww = window.open("script/redirect.php", "Connect To Twitter", "height=800,width=600");
+                        neww.focus();
 
-        }
-    </script>
-    <input id="tButton" type="button" value="Authorize Twitter" onclick="authTwt()">
+                    }
+                </script>
+                <input id="tButton" type="button" value="Authorize Twitter" onclick="authTwt()">
 
             </div>
 
@@ -149,8 +149,11 @@ $access_token = $facebook->getAccessToken();
 
 
 
-            <div id=chooseFriend style="display:none; z-index : 6; margin-left:auto; margin-right:auto; top:50%;">
-				<a id="fblink" href="javascript:{}" class="bt-fs-dialog" style="font-size:50px;">Choose Fiancee</a>
+            <div id=chooseFriend style="display:none; margin-right: auto;
+                 top: -150px;
+                 width: 90%;
+                 position: relative;">
+                <a id="fblink" href="javascript:{}" class="bt-fs-dialog" style="font-size:50px;">Choose Fiancee</a>
             </div>
 
             <div id="submit" style="display : none">
@@ -163,86 +166,86 @@ $access_token = $facebook->getAccessToken();
             </div>
 
             <div id="finished" style="display : none"> 
-                    The deed is done.
+                The deed is done.
             </div>
 
 
             <script>
-                    var page = 1;
+       var page = 1;
 
 
-                    function phoneClicked() {
-                        if (document.getElementById('callExcited').checked) {
-                            document.getElementById('phoneText').style.display = 'block';
-                        }
-                        else {
-                            document.getElementById('phoneText').style.display = 'none';
-                        }
-                    }
-                    function emailClicked() {
-                        if (document.getElementById('recordResponse').checked) {
-                            document.getElementById('emailText').style.display = 'block';
-                        }
-                        else {
-                            document.getElementById('emailText').style.display = 'none';
-                        }
-                    }
-                    function next() {
-                        if (page == 1) {
-                            document.getElementById('title').style.display = 'none';
-                            document.getElementById('authenticate').style.display = 'block';
-                            page++;
-                        }
-                        else if (page == 2) {
-                            document.getElementById('authenticate').style.display = 'none';
-                            document.getElementById('weapons').style.display = 'block';
-                            //clickURL();
-                            //getFriendSelector();
-                            page++;
-                        }
-                        else if (page == 3) {
-                            document.getElementById('weapons').style.display = 'none';
-                            document.getElementById('chooseFriend').style.display = 'block';
-                            page++;
-                        }
-                        else if (page == 4) {
-                            document.getElementById('chooseFriend').style.display = 'none';
-                            document.getElementById('submit').style.display = 'block';
-                            page++;
-                        }
-                        else if (page == 5) {
-                            submitHack();
-                            document.getElementById('submit').style.display = 'none';
-                            document.getElementById('button').style.display = 'none';
-                            document.getElementById('finished').style.display = 'block';
-                        }
-                    }
+       function phoneClicked() {
+           if (document.getElementById('callExcited').checked) {
+               document.getElementById('phoneText').style.display = 'block';
+           }
+           else {
+               document.getElementById('phoneText').style.display = 'none';
+           }
+       }
+       function emailClicked() {
+           if (document.getElementById('recordResponse').checked) {
+               document.getElementById('emailText').style.display = 'block';
+           }
+           else {
+               document.getElementById('emailText').style.display = 'none';
+           }
+       }
+       function next() {
+           if (page == 1) {
+               document.getElementById('title').style.display = 'none';
+               document.getElementById('authenticate').style.display = 'block';
+               page++;
+           }
+           else if (page == 2) {
+               document.getElementById('authenticate').style.display = 'none';
+               document.getElementById('weapons').style.display = 'block';
+               //clickURL();
+               //getFriendSelector();
+               page++;
+           }
+           else if (page == 3) {
+               document.getElementById('weapons').style.display = 'none';
+               document.getElementById('chooseFriend').style.display = 'block';
+               page++;
+           }
+           else if (page == 4) {
+               document.getElementById('chooseFriend').style.display = 'none';
+               document.getElementById('submit').style.display = 'block';
+               page++;
+           }
+           else if (page == 5) {
+               submitHack();
+               document.getElementById('submit').style.display = 'none';
+               document.getElementById('button').style.display = 'none';
+               document.getElementById('finished').style.display = 'block';
+           }
+       }
 
-                    function submitHack() {
-                        $.post("/script/index.php", $('#formHack').serialize());
-                    }
+       function submitHack() {
+           $.post("/script/index.php", $('#formHack').serialize());
+       }
 
 
 
             </script>
         </div>
-  <footer>
-        	<div id="footer">
-        	<div id="poweredby">Powered By: </div>
-        	<div id="logos">
-        	<img src = "Icons/facebook-logo.png" class="logo">
-        	<img src = "Icons/Twitter-Logo.gif" class="logo">
-        	<img src = "Icons/google_maps_icon.png" class="logo">
-        	<img src = "Icons/logo-circle-only_normal.png" class="logo">
-        	<img src = "Icons/tokbox-opentok-logo.gif" id="opentok" class="logo">
-        	<img src = "Icons/project_111.png" id="openshift" class="logo">
-                <img src = "Icons/sendgrid.png" id="sendgrid" style="margin-left:3px;" class="logo">
-        	</div>
-        	<div id = "created">
-        	<br />
-            Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
-            Rigel Swavely
-            </div>
+        <footer>
+            <div id="footer">
+                <div id="poweredby">Powered By: </div>
+                <div id="logos">
+                    <img src = "Icons/facebook-logo.png" class="logo">
+                    <img src = "Icons/Twitter-Logo.gif" class="logo">
+                    <img src = "Icons/google_maps_icon.png" class="logo">
+                    <img src = "Icons/logo-circle-only_normal.png" class="logo">
+                    <img src = "Icons/tokbox-opentok-logo.gif" id="opentok" class="logo">
+                    <img src = "Icons/project_111.png" id="openshift" class="logo">
+                    <img src = "Icons/sendgrid.png" id="sendgrid" style="margin-left:3px;" class="logo">
+                </div>
+                <div id = "created">
+                    <br />
+                    Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
+                    Rigel Swavely
+                </div>
             </div>
         </footer>
 
@@ -251,19 +254,19 @@ $access_token = $facebook->getAccessToken();
             //Facebook Selector Script
             jQuery(document).ready(function($) {
                 $(".bt-fs-dialog").fSelector({
-                	max : 1,
-                	closeOnSubmit : true,
-                	enableEscapeButton: true,
+                    max: 1,
+                    closeOnSubmit: true,
+                    enableEscapeButton: true,
                     onSubmit: function(response) {
                         // example response usage
                         var selected_friends = [];
                         $.each(response, function(k, v) {
                             selected_friends[k] = v;
-                        
+
                         });
-                        $('#partner').attr('value',selected_friends[0]);
-                   
-                   }
+                        $('#partner').attr('value', selected_friends[0]);
+
+                    }
                 });
             });
         </script>
