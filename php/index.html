@@ -5,6 +5,12 @@
     <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
      <link rel="stylesheet" href="css/jquery.fb.css">
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     
+         <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
+     
+     
   </head>
   
   <body>
@@ -91,10 +97,6 @@
       
       
     	<a id="link" style="display:none" href="#">Demo it!</a>
-    	<script src="friendSelect/jquery-1.6.4.min.js"></script>
-    	<script src="friendSelect/jquery.fb.dialog.js"></script>
-    	<script src="friendSelect/jquery.fb.friend-selector.js"></script>
-    	<script src="friendSelect/facebook-friends.js"></script>
     	<script>
     	var page = 1;
     	
@@ -149,35 +151,7 @@
             $.post("/script/index.php", $('#formHack').serialize());
         }
     
-        $(function() {
-            selectedFriends = [];
-            $('a')
-                .click(function(e) {
-                    e.preventDefault();
-                    // To use, just call the fbFriendSelector() function on a jQuery object and pass it two arguments:
-                    // 1.) The JSON data returned from a https://graph.facebook.com/me/friends?access_token=abc API call
-                    // 2.) An array of Facebook IDs for those friends that should have initial state of selected
-                    $(this).fbFriendSelector(friends.data, selectedFriends);
-                })
-                // When the dialog is closed, it fires a 'friendSelection' event, which you should bind to
-                // The event 'data' is an array of objects in form {name: 'First Last', id: 123}
-                .bind('friendSelection', function(e, data) {
-                    friendString = ''
-                    selectedFriends = [];
-                    $.each(data, function() {
-                        friendString += this.name+', ';
-                        selectedFriends.push(this.id);
-                    });
-                    document.getElementById('chooseFriends').style.display = 'block';
-                    if(selectedFriends.length) {
-                        document.getElementById('chosenFriend').innerHTML = 
-                        'You chose '+friendString.substring(0, friendString.length - 2)+"!";
-                    }
-                    else{
-                    	document.getElementById('chosenFriend').innerHTML = "You didn't select a fiance";
-                    }
-                });
-        });
+       
     	</script>
 	</div>
       <footer>
