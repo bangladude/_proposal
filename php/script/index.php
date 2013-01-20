@@ -54,8 +54,7 @@ $_SESSSION['finalurl'] = storeDB();
 echo $_SESSSION['finalurl'];
 
 if ($storeDB) {
-    echo 'Photo Post Activated';
-    storeDB();
+    
 }
 if ($postWall) {
     echo 'Wall Post Activated';
