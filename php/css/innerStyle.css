@@ -66,7 +66,9 @@ label {
 #weapons{
 	height: 400px;
 }
-#chooseFriend{
+#fblogin{
+	width: 200px;
+	height: 200px; 
 	color : #206676
 	font-size : 50px;
 	font-family : Century Gothic, sans serif;
