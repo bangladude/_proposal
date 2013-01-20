@@ -46,12 +46,12 @@ if (!$con) { //check for connection
     <body>
         <div id="title">We are Engaged!</div>
         <div id = "leftbar">
-            <img id="coupleimg" style="height:4500px; width:auto;" src="<?php echo $row['imgurl']; ?>">
+            <img id="coupleimg" style="height:500px; width:auto;" src="<?php echo $row['imgurl']; ?>">
         </div>
 
         <div id="rightbar">
             <div id="upper">
-                <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>"></iframe>
+                <iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>"></iframe>
             </div>
 
             <div id="lower">
