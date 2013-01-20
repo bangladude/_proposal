@@ -46,12 +46,12 @@ if (!$con) { //check for connection
     <body>
         <div id="title">We are Engaged!</div>
         <div id = "leftbar">
-            <img id="coupleimg" style="height:400px; width:auto;" src="<?php echo $row['imgurl']; ?>">
+            <img id="coupleimg" style="height:4500px; width:auto;" src="<?php echo $row['imgurl']; ?>">
         </div>
 
         <div id="rightbar">
             <div id="upper">
-                <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>"></iframe>
+                <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>"></iframe>
             </div>
 
             <div id="lower">
@@ -60,7 +60,7 @@ if (!$con) { //check for connection
 
         </div>
 
-        <div id="heading" style="font-size:22px">
+        <div id="heading" style="font-size:18px">
             <?php echo $row['my_name'] . ' and ' . $row['o_name'] ?>
             wish to share their engagement with you.<br>
             Our story is one of true love. Though many of you did not even hear that we were dating, this is something we have been considering long and hard.
