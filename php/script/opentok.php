@@ -20,8 +20,6 @@ if (isset($_REQUEST['sessionId']) && $_REQUEST['sessionId']) {
 $token1 = $apiObj->generate_token($sessionId);
 $token2 = $apiObj->generate_token($sessionId);
 
-include 'sendgrid/SendGrid_loader.php';
-
 
 $mail = new SendGrid\Mail();
 $mail->
