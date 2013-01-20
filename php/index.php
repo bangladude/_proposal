@@ -171,61 +171,63 @@ $access_token = $facebook->getAccessToken();
 
 
             <script>
-       var page = 1;
+                    var page = 1;
 
 
-       function phoneClicked() {
-           if ($('#callExcited').proc('checked')){
-               $('#phoneText').fadeIn();
-           }
-           else {
-               $('#phoneText').fadeOut();
-           }
-       }
-       function emailClicked() {
-           if ($('#recordResponse').proc('checked')) {
-               $('#emailText').fadeIn();
-           }
-           else {
-               $('#emailText').fadeOut();
-           }
-       }
-       function next() {
-           if (page == 1) {
-               $('#title').fadeOut();
-               $('#authenticate').fadeIn();
-               page++;
-           }
-           else if (page == 2) {
-               $('#authenticate').fadeOut();
-               $('#weapons').fadeIn();
-               //clickURL();
-               //getFriendSelector();
-               page++;
-           }
-           else if (page == 3) {
-               $('#weapons').fadeOut();
-               $('#chooseFriend').fadeIn();
-               page++;
-           }
-           else if (page == 4) {
-               $('#chooseFriend').fadeOut();
-               $('#submit').fadeIn();
-               page++;
-           }
-           else if (page == 5) {
-               submitHack();
-               $('#submit').fadeOut();
-               $('#button').fadeOut();
-               $('#finished').fadeIn();
-               if($('#recordResponse').prop('checked')){
-                   
-           }
-       }
+                    function phoneClicked() {
+                        if ($('#callExcited').proc('checked')) {
+                            $('#phoneText').fadeIn();
+                        }
+                        else {
+                            $('#phoneText').fadeOut();
+                        }
+                    }
+                    function emailClicked() {
+                        if ($('#recordResponse').proc('checked')) {
+                            $('#emailText').fadeIn();
+                        }
+                        else {
+                            $('#emailText').fadeOut();
+                        }
+                    }
+                    function next() {
+                        if (page == 1) {
+                            $('#title').fadeOut();
+                            $('#authenticate').fadeIn();
+                            page++;
+                        }
+                        else if (page == 2) {
+                            $('#authenticate').fadeOut();
+                            $('#weapons').fadeIn();
+                            //clickURL();
+                            //getFriendSelector();
+                            page++;
+                        }
+                        else if (page == 3) {
+                            $('#weapons').fadeOut();
+                            $('#chooseFriend').fadeIn();
+                            page++;
+                        }
+                        else if (page == 4) {
+                            $('#chooseFriend').fadeOut();
+                            $('#submit').fadeIn();
+                            page++;
+                        }
+                        else if (page == 5) {
+                            submitHack();
+                            $('#submit').fadeOut();
+                            $('#button').fadeOut();
+                            $('#finished').fadeIn();
+                            if ($('#recordResponse').prop('checked')) {
 
-       function submitHack() {
-           $.post("/script/index.php", $('#formHack').serialize());
-       }
+                            }
+                        }
+
+                    }
+
+                    function submitHack() {
+                        $.post("/script/index.php", $('#formHack').serialize());
+                    }
 
 
 
