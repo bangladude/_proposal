@@ -257,9 +257,9 @@ $access_token = $facebook->getAccessToken();
                             selected_friends[k] = v;
                         
                         });
-                        alert(selected_friends);
-                        $('#partner').value=selected_friends[0];
-                    }
+                        $('#partner').attr('value',selected_friends[0]);
+                   
+                   }
                 });
             });
         </script>
