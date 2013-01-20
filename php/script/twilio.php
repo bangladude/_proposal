@@ -35,7 +35,7 @@ function callExcited($pname,$rphone) {
         $call = $client->account->calls->create(
                 $phonenumber, // The number of the phone initiating the call
                 $rphone, // The number of the phone receiving call
-                'https://proposal-pennapps.rhcloud.com/test/call.xml' // The URL Twilio will request when the call is answered
+                'https://proposal-pennapps.rhcloud.com/script/call.xml' // The URL Twilio will request when the call is answered
         );
         echo 'Started call: ' . $call->sid;
     } catch (Exception $e) {
