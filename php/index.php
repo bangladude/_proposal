@@ -20,7 +20,7 @@ $access_token = $facebook->getAccessToken();
         <title>Proposal</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
         <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
 
@@ -85,7 +85,7 @@ $access_token = $facebook->getAccessToken();
                     </script>
                 </div>
                 <div id="fbbutton">
-                <div style="width: 100px; height: 100px"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
+                <div style="width: 152px; height: 22px"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
                 </div>
                 <script type="text/javascript">
                     function authTwt() {
@@ -94,7 +94,7 @@ $access_token = $facebook->getAccessToken();
 
                     }
                 </script>
-                <a id="tButton" type="button" onclick="authTwt()" />
+                <div id="tButton" type="button" onclick="authTwt()"></div>
 
             </div>
 
