@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('twitteroauth/twitteroauth.php');
+require_once('twitter/twitteroauth.php');
 require_once('config.php');
 
 function sendTweet(){
