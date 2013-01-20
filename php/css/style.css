@@ -92,9 +92,9 @@ width:40px;
 	position: absolute;
 	top: 40%;
 	right: 45%;
-	height: 52px;
+	height: 100px;
 	border : 10px;
 	border-radius: 10px;
-	width: 200px;
+	width: 250px;
 	background-image: url('img/twitter.png');
 }

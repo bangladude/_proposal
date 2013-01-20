@@ -45,7 +45,12 @@ label {
   display: block;
   margin: auto; 
 }
-
+#fbbutton{
+	height: 100px;
+	width: 250px;
+	top: 50%;
+	right: 50%;
+}
 #phoneText{
 	display: none;
 	margin-left: 50px;
