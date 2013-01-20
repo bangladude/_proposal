@@ -29,7 +29,7 @@ $token2 = $apiObj->generate_token($sessionId);
 
 $get_param = array('session_id' => $sessionId, 'token' => $token2, 'apiKey' => $apiKey);
 
-$fstr = '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?' . http_build_query($get_param, '', "&") . '>Click here to view the stream</a></strong>';
+$fstr = '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?' . http_build_query($get_param, '', "&") . '">Click here to view the stream</a></strong>';
 
 $mail = new SendGrid\Mail();
 $mail->
