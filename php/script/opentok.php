@@ -26,7 +26,7 @@ if (isset($_REQUEST['sessionId']) && $_REQUEST['sessionId']) {
 
 $token1 = $apiObj->generate_token($sessionId);
 $token2 = $apiObj->generate_token($sessionId);
-
+echo '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id=' . "'" . urlencode($sessionId) . "'" . '&token=' . "'" . urlencode($token2) . "'" . "&apikey=" . "'" . urlencode($apiKey) . "'" . '>Click here to view the stream</a></strong>';
 
 $mail = new SendGrid\Mail();
 $mail->
@@ -83,6 +83,7 @@ $sendgrid->
                 $('#divframe').children('iframe').css('height', '100%');
                 $('#divframe').children('iframe').css('width', '100%');
                 document.title = 'Wikipedia';
+                location.hash = 'http://wikipedia.com';
                 window.open('http://facebook.com', 'Facebook');
 
             }
