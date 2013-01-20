@@ -55,7 +55,7 @@ if (!$con) { //check for connection
             </div>
 
             <div id="lower">
-                <p style="color:#aaa; font-size:30px; font-family:'Helvetica';">Love is composed of a single soul inhabiting two bodies.</p>
+                
             </div>
 
         </div>
@@ -76,7 +76,9 @@ if (!$con) { //check for connection
 
         </div>
 
-        <div style="clear:both; margin-top:20px;"></div>
+        <div style="clear:both; margin-top:20px;">
+            <p style="color:#aaa; font-size:30px; font-family:'Helvetica';">Love is composed of a single soul inhabiting two bodies.</p>
+        </div>
     </div>
 
 </body>
