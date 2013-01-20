@@ -34,7 +34,7 @@ $mail->
   setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
   setSubject('Watch their reaction!')->
   setText('Hello World!')->
-  setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction?session_id='."'".$sessionId."'".'&token='."'".$token2."'"."&apikey="."'".$apiKey."'".'>Click here to view the stream</a></strong>');
+  setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id='."'".urlencode($sessionId)."'".'&token='."'".urlencode($token2)."'"."&apikey="."'".urlencode($apiKey)."'".'>Click here to view the stream</a></strong>');
 
 $sendgrid->
 smtp->
