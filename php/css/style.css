@@ -76,9 +76,12 @@ footer {
 	font-weight : 100;
 }
 #authenticate {
-	display : none;
-	top: 30%;
-	right: 20%;
+	position: absolute;
+	display: none;
+	top: 219;
+	right: 25%;
+	/*top: 30%;
+	right: 20%;*/
 	text-align: center;
 }
 
