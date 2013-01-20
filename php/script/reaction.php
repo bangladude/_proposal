@@ -49,6 +49,7 @@ $apiKey = $_GET['apikey'];
 
 </head>
 <body>
+    <?php print_r($_GET); ?>
     <div id ="opentok">
 
     </div>
