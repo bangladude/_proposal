@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+#error_reporting(E_ALL);
+#ini_set('display_errors', '1');
 
 session_start();
 
@@ -23,7 +23,7 @@ $facebook = new Facebook($config);
 $user_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
 
-echo print_r($_POST).'<br><br><br><br>';
+#echo print_r($_POST).'<br><br><br><br>';
 $partner = $_POST['partner'];
 $phone = $_POST['phone'];
 $_SESSION['email'] = $_POST['email'];
