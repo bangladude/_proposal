@@ -39,7 +39,7 @@ $mail->addTo('shaananc@gmail.com')->
         setHtml($fstr);
 
 $ret = $sendgrid->smtp->send($mail);
-echo print_r($ret);
+#echo print_r($ret);
 ?>
 
 
