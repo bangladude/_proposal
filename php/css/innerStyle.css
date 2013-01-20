@@ -32,7 +32,7 @@ h3 {
 #video:hover{
 	font-weight: bolder;
 }
-#formdiv {
+#formHack {
   float:left;
   top: -100px;
   padding-left: 160px;
@@ -41,7 +41,7 @@ h3 {
   width: 520px;
   height: 200px;
 }
-#phoneNumber {
+#phone {
   display:none;
 }
 
@@ -50,12 +50,12 @@ label {
   margin: auto; 
 }
 
-#phonenumber{
+#phone{
 	display: none;
 	margin-left: 50px;
 	font-size: 20px;
 }
-#emailaddr{
+#email{
 	display: none;
 	margin-left: 50px;
 	font-size: 20px;
