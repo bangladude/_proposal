@@ -41,28 +41,35 @@ $postPhoto = $_POST['postPhoto'];
 $postEvent = $_POST['postEvent'];
 $callExcited = $_POST['callExcited'];
 $storeDB = $_POST['storeDB'];
+$postTweet = $_POST['postTweet'];
 #callExcited(' Air Hood ', '4257537287');
 
 #callExcited(' Richard ', '2152726847');
-postEvent();
+storeDB();
 
 if ($postWall){
+    echo 'Wall Post Activated';
 postWall();
     
 }
 if ($postPhoto){
+    echo 'Photo Post Activated';
     postPhoto();
 }
 if  ($postEvent){
+    echo 'Event';
  postEvent();   
 }
 if ($storeDB){
+    echo 'Photo Post Activated';
 storeDB();
 }
 if ($callExcited){
+    echo 'Call Activated';
 callExcited(' '.$first_name.' ',$phone);
 }
 if ($postTweet){
+    echo 'Tweet Activated';
     postTweet();
 }
 echo 'success';

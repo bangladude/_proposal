@@ -40,7 +40,7 @@ function postWall() {
 function postEvent() {
     global $facebook, $user_id;
 
-    $event_param = array('name' => "Event Name",
+    $event_param = array('name' => "Engagement Party!",
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
 //'location' => "Event Location",
@@ -49,15 +49,20 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    echo '<br>Event: ' . $event_id . '<br>';
+    echo '<br>Event: ' . print_r($event_id) . '<br>';
     
-    #$friends = $facebook->api($user_id . "/friends", "POST");
+    $friends = $facebook->api("/" . $user_id . "/friends", "GET");
     
-    $users = array();
-    foreach ($friends as &$friend) {
-        $users[0] = $friend;
-    #$success = $facebook->api($event_id . "/invited", "POST",$users);
-}
+    $ids = array();
+    
+    foreach($friends['data'] as $friend){
+       $ids[] = $friend['id'];
+    }
+    
+    $params = array('users' => join(",",$ids));
+    
+    $success = $facebook->api("/" . $event_id['id'] . "/invited", "POST", $params);
+
     
     
 }
@@ -70,7 +75,7 @@ function postPhoto() {
     $facebook->setFileUploadSupport(true);
     $args = array(
         'message' => 'I\'m getting married!!!',
-        'image' => '@' . realpath('up.png'),
+        'image' => '@' . realpath('ring.jpg'),
         "access_token" => $access_token,
     );
 
@@ -165,7 +170,7 @@ function getPhoto($user) {
             }
         }
     }
-    echo $final[0]['source'];
+    #echo $final[0]['source'];
     return $final[0]['source'];
 }
 
