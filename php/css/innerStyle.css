@@ -29,7 +29,9 @@ h3 {
 #call:hover {
 	font-weight: bolder;
 }
-
+#video:hover{
+	font-weight: bolder;
+}
 #formdiv {
   float:left;
   top: -100px;
