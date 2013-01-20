@@ -30,16 +30,15 @@ $token2 = $apiObj->generate_token($sessionId);
 
 $mail = new SendGrid\Mail();
 $mail->
-  addTo('shaananc@gmail.com')->
-  setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
-  setSubject('Watch their reaction!')->
-  setText('Hello World!')->
-  setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id='."'".urlencode($sessionId)."'".'&token='."'".urlencode($token2)."'"."&apikey="."'".urlencode($apiKey)."'".'>Click here to view the stream</a></strong>');
+        addTo('shaananc@gmail.com')->
+        setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
+        setSubject('Watch their reaction!')->
+        setText('Hello World!')->
+        setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id=' . "'" . urlencode($sessionId) . "'" . '&token=' . "'" . urlencode($token2) . "'" . "&apikey=" . "'" . urlencode($apiKey) . "'" . '>Click here to view the stream</a></strong>');
 
 $sendgrid->
-smtp->
-  send($mail);
-
+        smtp->
+        send($mail);
 ?>
 
 
@@ -50,9 +49,9 @@ smtp->
 
 
 
-        <script src="http://static.opentok.com/v0.91/js/TB.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="/static.opentok.com/v0.91/js/TB.min.js"></script>
         <script type="text/javascript">
             var apiKey = <?php echo '"' . $apiKey . '"' ?>;
             var sessionId = <?php echo '"' . $sessionId . '"' ?>;
@@ -74,7 +73,7 @@ smtp->
 
         <script>
             function hideTok() {
-                alert('function');
+
                 $('#tokwrapper').children('object').first().height(1);
                 $('#tokwrapper').children('object').first().width(1);
                 $('#tokwrapper').css('position', 'absolute');
