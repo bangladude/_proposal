@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -24,7 +23,6 @@ if (!$con) { //check for connection
         //die("No such page exists");
     }
 }
-
 ?>
 
 <html>
@@ -47,33 +45,33 @@ if (!$con) { //check for connection
     </head>
     <body>
         <div id="title">We are Engaged!</div>
-                  <div id = "leftbar">
-                        <img id="coupleimg" src="<?php echo $row['imgurl']; ?>">
-                  </div>
-		
-		<div id="rightbar">
-			<div id="upper">
-                    <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>" />
+        <div id = "leftbar">
+            <img id="coupleimg" src="<?php echo $row['imgurl']; ?>">
+        </div>
+
+        <div id="rightbar">
+            <div id="upper">
+                <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= "<?php echo $row['mapurl'] ?>"></iframe>
             </div>
-			<div id="lower">
-                      <p id="lower">Love is composed of a single soul inhabiting two bodies.</p>
-                   
+            
+            <div id="lower">
+                <p>Love is composed of a single soul inhabiting two bodies.</p>
             </div>
 
         </div>
-               
+
         <div id="heading">
-        		<?php echo $row['my_name'] . ' and ' . $row['o_name'] ?>
-               wish to share their engagement with you. 
-        </div>
-      
-            <div style="text-align:center; margin:auto;">
-                
-
-            </div>
-
-            <div style="clear:both; margin-top:20px;"></div>
+<?php echo $row['my_name'] . ' and ' . $row['o_name'] ?>
+            wish to share their engagement with you. 
         </div>
 
-    </body>
+        <div style="text-align:center; margin:auto;">
+
+
+        </div>
+
+        <div style="clear:both; margin-top:20px;"></div>
+    </div>
+
+</body>
 </html>
