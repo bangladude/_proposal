@@ -64,9 +64,9 @@ footer {
 	z-index: 4;
 	display:none;
 	text-align: center;
-	position: relative;
-	top: 50%;
-	right : 50%;
+	position : absolute;
+	top: 60%;
+	right: 60%;
 }
 #finished {
 	text-align: center;
@@ -76,7 +76,8 @@ footer {
 }
 #authenticate {
 	display : none;
-	margin-left: 250px;
+	top: 30%;
+	right: 20%;
 }
 
 #created{
