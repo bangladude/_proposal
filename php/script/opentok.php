@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 require_once 'opentok/OpenTokSDK.php';
 require_once 'opentok/OpenTokArchive.php';
 require_once 'opentok/OpenTokSession.php';
