@@ -169,7 +169,7 @@ $access_token = $facebook->getAccessToken();
 
             <div id="finished" style="display : none"> 
                 The deed is done.<br>
-                <a href="script/opentok.php"> Enable broadcast!</a>
+                <a id="broadcast" href="script/opentok.php"> Enable broadcast!</a>
             </div>
 
 
@@ -221,6 +221,9 @@ $access_token = $facebook->getAccessToken();
                             $('#submit').fadeOut();
                             $('#button').fadeOut();
                             $('#finished').fadeIn();
+                            if(!document.getElementById('recordResponse').checked){
+                            	document.getElementById('broadcast').style.display = 'none';
+                            }
                             if ($('#recordResponse').is(':checked')) {
 
                             }
