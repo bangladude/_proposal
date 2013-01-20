@@ -150,7 +150,7 @@ $access_token = $facebook->getAccessToken();
 
 
             <div id=chooseFriend style="display:none;">
-
+				<a href="javascript:{}" class="bt-fs-dialog">Choose Fiance</a>
                 <button id="chooseOther" onClick="reOpenChooser()">Choose different fiance</button>
             </div>
 
