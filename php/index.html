@@ -1,7 +1,9 @@
 <html>
   <head>
     <title>Proposal</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
+     <link rel="stylesheet" href="css/jquery.fb.css">
   </head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <body>
@@ -10,13 +12,84 @@
     <p id=placeHolder>placeholder</p>
     <div id="scriptbox">
     	<h2>
-    		<img src='title2.png'>
+    		<img id="title" style="z-index : 1; position : absolute" src='css/img/title2.png'>
     		<button id="button" onClick="next()">></button>
     	</h2>
-    	<script language="javascript">
-    		function next(){
-    			$('#scriptbox').load('weapons.html');
+    		
+    <div id="weapons" style = "z-index : 2; display:none; top : 100px; position : absolute">
+    	<h3>Choose your weapons</h3>
+      <form id="formdiv">
+        <div id="fbstatus">
+          <label for="checkbox1"><input id="checkbox1"  type="checkbox" value="fbstatus"/>
+          Update Facebook status</label>
+        </div>  
+        <div id="tweet"> 
+          <label for="checkbox2"><input  id="checkbox2"  type="checkbox" value="tweet"/>
+          Tweet the good news</label>
+        </div>
+        <div id="fbevent">
+          <label for="checkbox3"><input  id="checkbox3" type="checkbox" value="fbevent"/>
+          Invite friends to engagement event</label>
+        </div>
+        <div id="ring">
+          <label for="checkbox4"> <input  id="checkbox4" type="checkbox" value="ringpic"/>
+          Add picture of ring on Facebook</label>
+        </div>
+        <div id="webpage">
+          <label for="checkbox5"><input  id="checkbox5" type="checkbox" value="webpage"/>
+          Create announcement webpage</label>
+        </div>
+        <div id="call">
+          <label for="checkbox6"><input  id="checkbox6" type="checkbox" value="phonecall"/> 
+          Send a congratulatory phone call</label>
+        </div>
+      </form>
+      </div>
+      
+      
+    	<a id="link" style="display:none" href="#">Demo it!</a>
+    	<script src="friendSelect/jquery-1.6.4.min.js"></script>
+    	<script src="friendSelect/jquery.fb.dialog.js"></script>
+    	<script src="friendSelect/jquery.fb.friend-selector.js"></script>
+    	<script src="friendSelect/facebook-friends.js"></script>
+    	<script>
+    	function next(){
+    		if(document.getElementById('weapons').style.display == 'block'){
+    			document.getElementById('weapons').style.display = 'none';
+    			clickURL();
     		}
+    		else{
+    			document.getElementById('title').style.display = 'none';
+ 				document.getElementById('weapons').style.display = 'block';
+ 			}
+    	}
+    	function clickURL(){
+			document.getElementById('link').click();
+    	}
+        $(function() {
+            selectedFriends = [];
+            $('a')
+                .click(function(e) {
+                    e.preventDefault();
+                    // To use, just call the fbFriendSelector() function on a jQuery object and pass it two arguments:
+                    // 1.) The JSON data returned from a https://graph.facebook.com/me/friends?access_token=abc API call
+                    // 2.) An array of Facebook IDs for those friends that should have initial state of selected
+                    $(this).fbFriendSelector(friends.data, selectedFriends);
+                })
+                // When the dialog is closed, it fires a 'friendSelection' event, which you should bind to
+                // The event 'data' is an array of objects in form {name: 'First Last', id: 123}
+                .bind('friendSelection', function(e, data) {
+                    friendString = ''
+                    selectedFriends = [];
+                    $.each(data, function() {
+                        friendString += this.name+', ';
+                        selectedFriends.push(this.id);
+                    });
+                    if(selectedFriends.length) {
+                        alert('You selected: '+friendString.substring(0, friendString.length - 2));
+                    }
+                });
+        });
     	</script>
     </div>
 

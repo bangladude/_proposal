@@ -4,7 +4,7 @@
   background: 	#F0F0F0  ;
 }
 
-#button {
+/*#button {
 	position:relative;
 	margin-top: 72;
 	left: 102px;
@@ -15,9 +15,10 @@
 	font-size: 28px;
 	font-weight: thicker;
 	color: white;
-}
+}*/
 h3 {
   color: #206676;
+  font-family: monospace;
   font-weight: 200;
   font-size: 40px;
   margin-left: 150px;
@@ -43,8 +44,9 @@ h3 {
 
 #formdiv {
   float:left;
-  padding-left: 150px;
+  padding-left: 160px;
   font-size: 28px;
+  font-weight: 100;
   width: 520px;
   height: 200px;
 }
