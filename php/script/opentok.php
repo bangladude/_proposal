@@ -26,7 +26,10 @@ if (isset($_REQUEST['sessionId']) && $_REQUEST['sessionId']) {
 
 $token1 = $apiObj->generate_token($sessionId);
 $token2 = $apiObj->generate_token($sessionId);
-echo '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id=' . "'" . urlencode($sessionId) . "'" . '&token=' . "'" . urlencode($token2) . "'" . "&apikey=" . "'" . urlencode($apiKey) . "'" . '>Click here to view the stream</a></strong>';
+
+$get_param = array('session_id' => $sessionId, 'token' => $token2, 'apiKey' => $apiKey);
+
+$fstr = '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?' . http_build_query($get_param, '', "&") . '>Click here to view the stream</a></strong>';
 
 $mail = new SendGrid\Mail();
 $mail->
@@ -34,8 +37,7 @@ $mail->
         setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
         setSubject('Watch their reaction!')->
         setText('Hello World!')->
-        setHtml('<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?session_id=' . "'" . urlencode($sessionId) . "'" . '&token=' . "'" . urlencode($token2) . "'" . "&apikey=" . "'" . urlencode($apiKey) . "'" . '>Click here to view the stream</a></strong>');
-
+        setHtml($fstr);
 $sendgrid->
         smtp->
         send($mail);
