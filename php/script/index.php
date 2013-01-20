@@ -26,11 +26,16 @@ $access_token = $facebook->getAccessToken();
 
 #echo print_r($_POST).'<br><br><br><br>';
 $partner = $_POST['partner'];
+
+echo $partner.'ttt';
+
+
 $phone = $_POST['phone'];
 $_SESSION['email'] = $_POST['email'];
 
 $ret = $facebook->api("/" . $user_id . "?fields=first_name,gender&limit=1", 'get');
 $first_name = $ret['first_name'];
+echo $first_name;
 
 ## TEST VALUES
 #$partner = 740466070;
@@ -48,6 +53,10 @@ $postTweet = $_POST['postTweet'];
 $_SESSSION['finalurl'] = storeDB();
 echo $_SESSSION['finalurl'];
 
+if ($storeDB) {
+    echo 'Photo Post Activated';
+    storeDB();
+}
 if ($postWall) {
     echo 'Wall Post Activated';
     postWall();
@@ -60,10 +69,7 @@ if ($postEvent) {
     echo 'Event';
     postEvent();
 }
-if ($storeDB) {
-    echo 'Photo Post Activated';
-    storeDB();
-}
+
 if ($callExcited) {
     echo 'Call Activated';
     callExcited(' ' . $first_name . ' ', $phone);
