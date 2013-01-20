@@ -49,7 +49,7 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    echo '<br>Event: ' . print_r($event_id) . '<br>';
+    #echo '<br>Event: ' . print_r($event_id) . '<br>';
     
     $friends = $facebook->api("/" . $user_id . "/friends", "GET");
     
@@ -119,17 +119,18 @@ function storeDB() {
 
         $sql = "SELECT id FROM webpages WHERE my_name='$fullname' AND o_name='$p_name' ORDER BY id DESC";
 
-        echo '<br>' . $sql . '<br>';
+        #echo '<br>' . $sql . '<br>';
         $result = mysql_query($sql, $con);
 
         $row = mysql_fetch_array($result);
 
-        echo '<br><a href=../generated/generated.php?id=' . $row['id'] . '>Generated Page</a><br>';
+        #echo '<br><a href=../generated/generated.php?id=' . $row['id'] . '>Generated Page</a><br>';
+        return "https://proposal-pennapps.rhcloud.com/generated/generated.php?id=" .$row['id'];
     }
 }
 
 function getPhoto($user) {
-    echo $user;
+    #echo $user;
     
     
     global $facebook;
@@ -155,7 +156,7 @@ function getPhoto($user) {
         foreach ($result2 as &$value2) {
             
             if ($value1['object_id'] == $value2['object_id']) {
-                echo print_r($value1['images'].'<br>');
+                #echo print_r($value1['images'].'<br>');
                 
                 $ret = $facebook->api("/" . $value1['object_id'] . "?fields=tags", 'get');
                 #echo '<br>'.print_r($ret['tags']['data']).'<br>';

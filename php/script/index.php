@@ -62,7 +62,7 @@ if  ($postEvent){
 }
 if ($storeDB){
     echo 'Photo Post Activated';
-storeDB();
+    storeDB();
 }
 if ($callExcited){
     echo 'Call Activated';
