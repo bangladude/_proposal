@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 
 include_once 'twilio.php';
@@ -6,8 +9,7 @@ include_once 'fbactions.php';
 include_once 'twitter.php';
 
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+
 
 require_once('fb/facebook.php');
 
