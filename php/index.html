@@ -12,7 +12,7 @@
     </a>
     <p id=placeHolder>placeholder</p>
     <div id="scriptbox">
-    	<h2>
+    	<h2 id="titleDiv">
     		<img id="title" style="z-index : 1; position : absolute" src='css/img/title2.png'>
     		<button id="button" onClick="next()">></button>
     	</h2>
@@ -71,6 +71,21 @@
       	<button id="chooseOther" onClick="clickURL()">Choose different fiance</button>
       </div>
       
+      <div id="submit" style="display : none">
+      	<h1 style="font-weight: 100; font-color: FFB300; font-size: 28px">
+      		Almost there...
+      	</h1>
+      	<h2 style="font-weight: 175; font-color: #06799F; font-size: 36">
+      		Click the button to sumbit!
+      	</h2>
+      </div>
+      
+      <div id="finished" style="display : none">
+      	<h1> 
+      		The deed is done.
+      	</h1>
+      </div>
+      
       
     	<a id="link" style="display:none" href="#">Demo it!</a>
     	<script src="friendSelect/jquery-1.6.4.min.js"></script>
@@ -108,7 +123,13 @@
     		}
     		else if (page == 3){
     			document.getElementById('chooseFriends').style.display = 'none';
+    			document.getElementById('submit').style.display = 'block';
     			page++;
+    		}
+    		else if (page ==4){
+    			document.getElementById('submit').style.display = 'none';
+    			document.getElementById('button').style.display = 'none';
+    			document.getElementById('finished').style.display = 'block';
     		}
     	}
     	function clickURL(){
