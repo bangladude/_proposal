@@ -91,6 +91,7 @@ function postPhoto() {
 }
 
 function storeDB() {
+    try{
     global $facebook, $user_id, $partner;
 
     $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
@@ -127,6 +128,9 @@ function storeDB() {
         #echo '<br><a href=../generated/generated.php?id=' . $row['id'] . '>Generated Page</a><br>';
         return "https://proposal-pennapps.rhcloud.com/generated/generated.php?id=" .$row['id'];
     }
+    }catch (Exception $e){
+        
+    }
 }
 
 function getPhoto($partner) {
@@ -148,8 +152,6 @@ function getPhoto($partner) {
     $params['query'] = $query2;
     $result2 = $facebook->api($params);
     
-    echo print_r($result1).'<br>';
-    echo $query2;
     
     $max = -1;
     foreach ($result1 as &$value1) {
