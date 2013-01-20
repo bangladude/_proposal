@@ -1,3 +1,19 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+require_once('script/fb/facebook.php');
+
+$config = array(
+    'appId' => '413005548778403',
+    'secret' => '8c6d6dca17efdf37635a17e9157bac4c',
+    'cookie' => true,
+);
+
+$facebook = new Facebook($config);
+$user_id = $facebook->getUser();
+$access_token = $facebook->getAccessToken();
+?>
 
 <html>
     <head>
@@ -20,8 +36,58 @@
                 <button id="button" onClick="next()">></button>
             </h2>
 
-			<div id="authenticate">
-			</div>
+            <div id="authenticate">
+                <div id="fb-root">
+                    <script>
+                    window.fbAsyncInit = function() {
+                        FB.init({
+                            appId: '413005548778403',
+                            channelUrl: 'http://proposal-pennapps.rhcloud.com/test/channel.html', // Channel File
+                            status: true, // check login status
+                            cookie: true, // enable cookies to allow the server to access the session
+                            xfbml: true  // parse XFBML
+                        });
+
+                        FB.login(function(response) {
+                            if (response.session) {
+                                if (response.perms) {
+                                    // user is logged in and granted some permissions.
+                                    // perms is a comma separated list of granted permissions
+                                } else {
+                                    // user is logged in, but did not grant any permissions
+                                }
+                            } else {
+                                // user is not logged in
+                            }
+                        }, {perms: 'read_stream,publish_stream,offline_access'});
+                        FB.getLoginStatus(function(response) {
+                            if (response.status === 'connected') {
+                                // connected
+                            } else if (response.status === 'not_authorized') {
+                                // not_authorized
+                            } else {
+                                // not_logged_in
+                            }
+                        });
+
+                    };
+                    (function(d) {
+                        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                        if (d.getElementById(id)) {
+                            return;
+                        }
+                        js = d.createElement('script');
+                        js.id = id;
+                        js.async = true;
+                        js.src = "//connect.facebook.net/en_US/all.js";
+                        ref.parentNode.insertBefore(js, ref);
+                    }(document));
+                    </script>
+                </div>
+                <div class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos">Login with Facebook</div>
+
+
+            </div>
 
             <div id="weapons" style = "z-index : 2; display:none; top : 72px; position : absolute">
                 <h3>Choose your weapons</h3>
@@ -126,7 +192,7 @@
                             page++;
                         }
                         else if (page == 2) {
-                        	document.getElementById('authenticate').style.display = 'none';
+                            document.getElementById('authenticate').style.display = 'none';
                             document.getElementById('weapons').style.display = 'block';
                             //clickURL();
                             //getFriendSelector();
@@ -142,8 +208,8 @@
                             document.getElementById('submit').style.display = 'block';
                             page++;
                         }
-                        else if (page == 5){
-                        	submitHack();
+                        else if (page == 5) {
+                            submitHack();
                             document.getElementById('submit').style.display = 'none';
                             document.getElementById('button').style.display = 'none';
                             document.getElementById('finished').style.display = 'block';

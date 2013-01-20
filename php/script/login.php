@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-require_once('fb/facebook.php');
+require_once('/script/fb/facebook.php');
 
 $config = array(
     'appId' => '413005548778403',
