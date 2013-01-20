@@ -19,49 +19,52 @@
     		
     <div id="weapons" style = "z-index : 2; display:none; top : 100px; position : absolute">
       <h3>Choose your weapons</h3>
-      <form id="formdiv">
+      <form id="formHack">
         <div id="fbstatus">
-          <label for="checkbox1"><input id="checkbox1"  type="checkbox" value="fbstatus"/>
+          <label for="postWall"><input id="postWall"  type="checkbox" value="fbstatus"/>
           Update Facebook status</label>
         </div>  
         <div id="tweet"> 
-          <label for="checkbox2"><input  id="checkbox2"  type="checkbox" value="tweet"/>
+          <label for="postTweet"><input  id="postTweet"  type="checkbox" value="tweet"/>
           Tweet the good news</label>
         </div>
         <div id="fbevent">
-          <label for="checkbox3"><input  id="checkbox3" type="checkbox" value="fbevent"/>
+          <label for="postEvent"><input  id="postEvent" type="checkbox" value="fbevent"/>
           Invite friends to engagement event</label>
         </div>
         <div id="ring">
-          <label for="checkbox4"> <input  id="checkbox4" type="checkbox" value="ringpic"/>
+          <label for="postPhoto"> <input  id="postPhoto" type="checkbox" value="ringpic"/>
           Add picture of ring on Facebook</label>
         </div>
         <div id="webpage">
-          <label for="checkbox5"><input  id="checkbox5" type="checkbox" value="webpage"/>
+          <label for="makePage"><input  id="makePage" type="checkbox" value="webpage"/>
           Create announcement webpage</label>
         </div>
         
         <div id="call">
-	        <label for="checkbox6">
-	        	<input  id="checkbox6" type="checkbox" value="phonecall" onClick="phoneClicked()"/>
+	        <label for="callExcited">
+	        	<input  id="callExcited" type="checkbox" value="phonecall" onClick="phoneClicked()"/>
 	        		Send a congratulatory phone call
 	        </label>
           	<label id="phonenumber">
           	  Phone Number: 
-          		<input id="phoneTextBox" type="text"/>
+          		<input id="phone" type="text"/>
 
           	</label>
 
         </div><!-- call -->
         
         <div id="video">
-          <label for="checkbox7"><input id="checkbox7" type="checkbox" value="video" onClick="emailClicked()"/>
+          <label for="recordResponse"><input id="recordResponse" type="checkbox" value="video" onClick="emailClicked()"/>
         	Record your friend's reaction</label>
         	
-          <label id="emailaddr">
+          <label id="email">
         	Email: <input id="emailTextBox" type="text"/>
           </label>
         </div>
+        
+        <input id="partner" type="hidden"/>
+        
         </form>
       </div>
       
@@ -100,7 +103,7 @@
     		clickURL();
     	}
     	function phoneClicked(){
-			if(document.getElementById('checkbox6').checked){
+			if(document.getElementById('callExcited').checked){
 				document.getElementById('phonenumber').style.display = 'block';
 			}
 			else{
@@ -108,11 +111,11 @@
 			}
 		}
 		function emailClicked(){
-			if(document.getElementById('checkbox7').checked){
-				document.getElementById('emailaddr').style.display = 'block';
+			if(document.getElementById('recordResponse').checked){
+				document.getElementById('email').style.display = 'block';
 			}
 			else{
-				document.getElementById('emailaddr').style.display = 'none';
+				document.getElementById('email').style.display = 'none';
 			}
 		}
     	function next(){
@@ -132,6 +135,7 @@
     			page++;
     		}
     		else if (page == 4){
+                        submitHack();
     			document.getElementById('submit').style.display = 'none';
     			document.getElementById('button').style.display = 'none';
     			document.getElementById('finished').style.display = 'block';
@@ -140,6 +144,11 @@
     	function clickURL(){
 			document.getElementById('link').click();
     	}
+       
+        function submitHack(){
+            $.post("/script/index.php", $('#formHack').serialize());
+        }
+    
         $(function() {
             selectedFriends = [];
             $('a')
