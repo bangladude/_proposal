@@ -54,8 +54,14 @@
     	<script src="friendSelect/facebook-friends.js"></script>
     	<script>
     	function next(){
-    		document.getElementById('title').style.display = 'none';
- 			document.getElementById('weapons').style.display = 'block';
+    		if(document.getElementById('weapons').style.display == 'block'){
+    			document.getElementById('weapons').style.display = 'none';
+    			clickURL();
+    		}
+    		else{
+    			document.getElementById('title').style.display = 'none';
+ 				document.getElementById('weapons').style.display = 'block';
+ 			}
     	}
     	function clickURL(){
 			document.getElementById('link').click();
@@ -64,7 +70,6 @@
             selectedFriends = [];
             $('a')
                 .click(function(e) {
-                	alert("clicked!");
                     e.preventDefault();
                     // To use, just call the fbFriendSelector() function on a jQuery object and pass it two arguments:
                     // 1.) The JSON data returned from a https://graph.facebook.com/me/friends?access_token=abc API call
