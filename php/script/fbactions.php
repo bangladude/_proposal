@@ -134,7 +134,7 @@ function storeDB() {
 }
 
 function getPhoto($partner) {
-    echo $user.'ttt';
+    #echo $user.'ttt';
     $user = $partner['id'];
     
     global $facebook;
