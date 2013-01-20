@@ -255,8 +255,10 @@ $access_token = $facebook->getAccessToken();
                         var selected_friends = [];
                         $.each(response, function(k, v) {
                             selected_friends[k] = v;
+                        
                         });
                         alert(selected_friends);
+                        $('#partner').value=selected_friends[0];
                     }
                 });
             });
