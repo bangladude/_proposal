@@ -57,6 +57,7 @@ $apiKey = $_GET['apiKey'];
 </head>
 <body>
 <div id="tokwrapper">
+    You can see them... but they can't see you!
     <div id ="opentok">
 
     </div>
