@@ -1,11 +1,10 @@
-<?php
-?>
+
 <html>
     <head>
         <title>Proposal</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
         <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
 
@@ -40,11 +39,11 @@
                             Invite friends to engagement event</label>
                     </div>
                     <div id="ring">
-                        <label for="postPhoto"> <input  id="postPhoto" name="postEvent" type="checkbox" value="ringpic"/>
+                        <label for="postPhoto"> <input  id="postPhoto" name="postPhoto" type="checkbox" value="ringpic"/>
                             Add picture of ring on Facebook</label>
                     </div>
                     <div id="webpage">
-                        <label for="makePage"><input  id="makePage" type="checkbox" name="postEvent" value="webpage"/>
+                        <label for="makePage"><input  id="makePage" type="checkbox" name="makePage" value="webpage"/>
                             Create announcement webpage</label>
                     </div>
 
@@ -53,9 +52,9 @@
                             <input  id="callExcited" name="callExcited" type="checkbox" value="phonecall" onClick="phoneClicked()"/>
                             Send a congratulatory phone call
                         </label>
-                        <label for="phone">
+                        <label id="phoneText" for="phone">
                             Phone Number: 
-                            <input id="phone" name="phone" type="text"/>
+                            <input class="textField" id="phone" name="phone" type="text"/>
 
                         </label>
 
@@ -65,8 +64,8 @@
                         <label for="recordResponse"><input id="recordResponse" name="recordResponse" type="checkbox" value="video" onClick="emailClicked()"/>
                             Record your friend's reaction</label>
 
-                        <label for="email">
-                            Email: <input id="email" name="email" type="text"/>
+                        <label id="emailText" for="email">
+                            Email: <input class="textField" id="email" name="email" type="text"/>
                         </label>
                     </div>
 
@@ -106,18 +105,18 @@
 
                     function phoneClicked() {
                         if (document.getElementById('callExcited').checked) {
-                            document.getElementById('phone').style.display = 'block';
+                            document.getElementById('phoneText').style.display = 'block';
                         }
                         else {
-                            document.getElementById('phone').style.display = 'none';
+                            document.getElementById('phoneText').style.display = 'none';
                         }
                     }
                     function emailClicked() {
                         if (document.getElementById('recordResponse').checked) {
-                            document.getElementById('email').style.display = 'block';
+                            document.getElementById('emailText').style.display = 'block';
                         }
                         else {
-                            document.getElementById('email').style.display = 'none';
+                            document.getElementById('emailText').style.display = 'none';
                         }
                     }
                     function next() {
