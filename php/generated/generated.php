@@ -56,8 +56,9 @@ if (!$con) { //check for connection
             </div>
 
         </div>
-               <?php echo $row['my_name'] . ' and ' . $row['o_name'] ?>
+               
         <div id="heading">
+        		<?php echo $row['my_name'] . ' and ' . $row['o_name'] ?>
                wish to share their engagement with you. 
         </div>
       
