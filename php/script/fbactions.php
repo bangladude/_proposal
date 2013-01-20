@@ -40,7 +40,7 @@ function postWall() {
 function postEvent() {
     global $facebook, $user_id;
 
-    $event_param = array('name' => "Event Name",
+    $event_param = array('name' => "Engagement Party!",
         'start_time' => date("c", time() + 60 * 60 * 2),
             //'end_time' => time() + 60 * 60 * 2,
 //'location' => "Event Location",
@@ -49,14 +49,14 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    echo '<br>Event: ' . print_r($event_id) . '<br>';
+    #echo '<br>Event: ' . print_r($event_id) . '<br>';
     
-    #$friends = $facebook->api($user_id . "/friends", "POST");
+    $friends = $facebook->api($user_id . "/friends", "POST");
     
     $users = array();
     foreach ($friends as &$friend) {
         $users[0] = $friend;
-    #$success = $facebook->api($event_id . "/invited", "POST",$users);
+    $success = $facebook->api($event_id . "/invited", "POST",$users);
 }
     
     
