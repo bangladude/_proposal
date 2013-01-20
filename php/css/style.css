@@ -76,6 +76,7 @@ footer {
 }
 #authenticate {
 	display : none;
+	margin-left: 150px;
 }
 
 #created{
@@ -92,7 +93,7 @@ width:40px;
 	position: absolute;
 	top: 40%;
 	right: 45%;
-	height: 100px;
+	height: 70px;
 	border : 10px;
 	border-radius: 10px;
 	width: 250px;
