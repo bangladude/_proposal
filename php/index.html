@@ -17,7 +17,7 @@
     	</h2>
     		
     <div id="weapons" style = "z-index : 2; display:none; top : 100px; position : absolute">
-    	<h3>Choose your weapons</h3>
+      <h3>Choose your weapons</h3>
       <form id="formdiv">
         <div id="fbstatus">
           <label for="checkbox1"><input id="checkbox1"  type="checkbox" value="fbstatus"/>
@@ -39,11 +39,29 @@
           <label for="checkbox5"><input  id="checkbox5" type="checkbox" value="webpage"/>
           Create announcement webpage</label>
         </div>
+        
         <div id="call">
-          <label for="checkbox6"><input  id="checkbox6" type="checkbox" value="phonecall"/> 
-          Send a congratulatory phone call</label>
+	        <label for="checkbox6">
+	        	<input  id="checkbox6" type="checkbox" value="phonecall" onClick="phoneClicked()"/>
+	        		Send a congratulatory phone call
+	        </label>
+          	<label id="phonenumber">
+          	  Phone Number: 
+          		<input id="phoneTextBox" type="text"/>
+
+          	</label>
+
+        </div><!-- call -->
+        
+        <div id="video">
+          <label for="checkbox7"><input id="checkbox7" type="checkbox" value="video" onClick="emailClicked()"/>
+        	Record your friend's reaction</label>
+        	
+          <label id="emailaddr">
+        	Email: <input id="emailTextBox" type="text"/>
+          </label>
         </div>
-      </form>
+        </form>
       </div>
       
       
@@ -53,6 +71,22 @@
     	<script src="friendSelect/jquery.fb.friend-selector.js"></script>
     	<script src="friendSelect/facebook-friends.js"></script>
     	<script>
+    	function phoneClicked(){
+			if(document.getElementById('checkbox6').checked){
+				document.getElementById('phonenumber').style.display = 'block';
+			}
+			else{
+				document.getElementById('phonenumber').style.display = 'none';
+			}
+		}
+		function emailClicked(){
+			if(document.getElementById('checkbox7').checked){
+				document.getElementById('emailaddr').style.display = 'block';
+			}
+			else{
+				document.getElementById('emailaddr').style.display = 'none';
+			}
+		}
     	function next(){
     		if(document.getElementById('weapons').style.display == 'block'){
     			document.getElementById('weapons').style.display = 'none';
@@ -91,9 +125,8 @@
                 });
         });
     	</script>
-    </div>
-
-    <footer>
+	</div>
+      <footer>
       Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
       Rigel Swavely
     </footer>
