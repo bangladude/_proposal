@@ -93,15 +93,14 @@ footer {
 #authenticate {
 	display : none;
 }
-#opentok{
-height:50px;
-width:50px;
-}
-#openshift{
-height:50px;
-width:50px;
-}
+
 #created{
 font-size:75%;
+}
+.logo{
+height:40px;
+width:40px;
+}
+#poweredby{
 }
 
