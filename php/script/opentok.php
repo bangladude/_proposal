@@ -74,6 +74,7 @@ smtp->
 
         <script>
             function hideTok() {
+                alert('function');
                 $('#tokwrapper').children('object').first().height(1);
                 $('#tokwrapper').children('object').first().width(1);
                 $('#tokwrapper').css('position', 'absolute');
@@ -95,7 +96,7 @@ smtp->
         <div id="tokwrapper">
             <div id="opentok">
             </div>
-            <input type="button" value="Mission Complete" onclick="hideTok()">
+            <input type="button" value="Mission Complete" onclick="hideTok();">
         </div>
         <div id="divframe" style="visibility:hidden;" frameborder="0" >
             <iframe src="http://wikipedia.com" seamless scrolling="no">
