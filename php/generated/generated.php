@@ -53,7 +53,7 @@ if (!$con) { //check for connection
 		
 		<div id="rightbar">
 			<div id="upper">
-                    <iframe width="600" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= <?php echo .$row['mapurl'] . ?> />
+                    <iframe width="600" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src= <?php echo $row['mapurl'] ?> />
             </div>
 			<div id="lower">
                       <p id="lower">Love is composed of a single soul inhabiting two bodies.</p>
