@@ -64,6 +64,12 @@
         </form>
       </div>
       
+      <div id=chooseFriends>
+      	<h1 id=chosenFriend>
+      	</h1>
+      	<button id="chooseOther" onClick="clickURL()">Choose different fiance</button>
+      </div>
+      
       
     	<a id="link" style="display:none" href="#">Demo it!</a>
     	<script src="friendSelect/jquery-1.6.4.min.js"></script>
@@ -71,6 +77,7 @@
     	<script src="friendSelect/jquery.fb.friend-selector.js"></script>
     	<script src="friendSelect/facebook-friends.js"></script>
     	<script>
+    	var page = 1;
     	function phoneClicked(){
 			if(document.getElementById('checkbox6').checked){
 				document.getElementById('phonenumber').style.display = 'block';
@@ -88,14 +95,20 @@
 			}
 		}
     	function next(){
-    		if(document.getElementById('weapons').style.display == 'block'){
-    			document.getElementById('weapons').style.display = 'none';
-    			clickURL();
-    		}
-    		else{
+    		if(page == 1){
     			document.getElementById('title').style.display = 'none';
  				document.getElementById('weapons').style.display = 'block';
- 			}
+ 				page++;
+    		}
+    		else if(page == 2){
+    			document.getElementById('weapons').style.display = 'none';
+    			clickURL();
+    			page++;
+    		}
+    		else if (page == 3){
+    			document.getElementById('chooseFriends').style.display = 'none';
+    			page++;
+    		}
     	}
     	function clickURL(){
 			document.getElementById('link').click();
@@ -119,8 +132,13 @@
                         friendString += this.name+', ';
                         selectedFriends.push(this.id);
                     });
+                    document.getElementById('chooseFriends').style.display = 'block';
                     if(selectedFriends.length) {
-                        alert('You selected: '+friendString.substring(0, friendString.length - 2));
+                        document.getElementById('chosenFriend').innerHTML = 
+                        'You chose '+friendString.substring(0, friendString.length - 2)+"!";
+                    }
+                    else{
+                    	document.getElementById('chosenFriend').innerHTML = "You didn't select a fiance";
                     }
                 });
         });
