@@ -46,7 +46,7 @@ date_default_timezone_set('GMT');
 
 #$parameters = array('status' => date(DATE_RFC822));
 $parameters = array('status' => 'I\'m engaged!!!!!!');
-$status = $connection->post('statuses/update', $parameters);
+#$status = $connection->post('statuses/update', $parameters);
 
 ##CLOSE WINDOW
     echo'<script type="text/javascript">window.close();</script>';
