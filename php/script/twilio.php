@@ -8,6 +8,7 @@ function callExcited($pname,$rphone) {
     $fh = fopen($myFile, 'w') or die("can't open file");
     $stringData = '<?xml version="1.0" encoding="UTF-8"?>
 <Response>
+    <Pause length="1"/>
     <Say voice="woman" language="en">You have a prerecorded message from'. $pname .'.</Say>
     <Play>https://proposal-pennapps.rhcloud.com/script/gratz.mp3</Play>
     <Say voice="woman" language="en">End of recorded message.</Say>
