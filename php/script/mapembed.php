@@ -1,10 +1,16 @@
 <?php
 
 function getAddress($url){
-	$xml = simplexml_load_file();
+try{	
+    $xml = simplexml_load_file();
 	$addarr = $xml ->result->children();
 	$add = $addarr[2];
 	return $add;
+}
+catch(Exception $e){
+    #nothing
+}
+        
 }
 
 
