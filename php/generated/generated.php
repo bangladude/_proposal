@@ -40,19 +40,16 @@ if (!$con) { //check for connection
             });</script>
     </head>
     <body>
-        <div id="title" style="font-family: 'Poiret One'; font-size: 80px; margin-bottom:30px; background-color: #000"><center>We are Engaged!</center></div>
+        <div id="title"><center>We are Engaged!</center></div>
         <div id="scriptbox" style="width:75%; background-color: #000" >
-            <div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
-<?php echo $row['my_name'] . ' and ' . $row['o_name'] ?> wish to share their engagement with you. 
-                <div style="height:60%;">
-                    <div id="imbox" class="image" style="position:relative;">   
-                        
-                        <iframe src="<?php echo $row['imgurl']; ?>" style=" margin-top:30px; margin-left:auto; margin-right:auto; display:block;height:95%; width:50%;">
+                 <div id="imbox" class="image" style="position:relative;">   
+                        <img src="<?php echo $row['imgurl']; ?>" id="coupleimg">
                         <div style="width:100%; position:absolute; top:60%; background-color:rgba(0,0,0,0)">
                             <div class="text" style="position:relative; color:black; background-color:rgba(0,0,0,0); margin-left:auto; margin-right:auto; font-family: 'Helvetica'; font-size:50px;">"So in love are we two..."</div>
                         </div>
                     </div>
-                </div> 
+			<div id="heading" style="font-family: 'Cabin Condensed'; font-size:66px; text-align:center; margin-bottom:25px;">
+                <?php echo $row['my_name'] . ' and ' . $row['o_name'] ?> wish to share their engagement with you. 
             </div>
             <div style="text-align:center; margin:auto;">
                 <div id="leftbar" style="display:inline-block; margin-right:10px; width:45%;">
