@@ -37,6 +37,7 @@ $access_token = $facebook->getAccessToken();
             </h2>
 
             <div id="authenticate">
+            	<h2>Authenticate</h2>
                 <div id="fb-root">
                     <script>
                     window.fbAsyncInit = function() {
