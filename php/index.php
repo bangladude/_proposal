@@ -84,7 +84,7 @@ $access_token = $facebook->getAccessToken();
                     }(document));
                     </script>
                 </div>
-                <div style="width: 100px; height: 100px"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos">Login with Facebook</div>
+                <div style="width: 100px; height: 100px; display : block"class="fb-login-button" onlogin="fblogin();" perms="email,read_stream,publish_stream,offline_access,create_event,friends_about_me,user_photos,friends_photos" id="fblogin">Login with Facebook</div>
    <script type="text/javascript">
         function authTwt() {
             neww = window.open("script/redirect.php", "Connect To Twitter", "height=800,width=600");

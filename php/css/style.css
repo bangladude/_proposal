@@ -86,10 +86,11 @@ width:40px;
 #poweredby{
 }
 #tButton{
+	position: relative;
 	display: block;
-	top: 40%;
+	top: 60%;
 	right: 60%
-	height: 100px;
-	width: 100px;
+	height: 200px;
+	width: 200px;
 	background-image: url('Icons/Twitter-Logo.gif');
 }
