@@ -34,7 +34,6 @@ h3 {
 }
 #formHack {
   float:left;
-  top: -100px;
   padding-left: 160px;
   font-size: 28px;
   font-weight: 100;
@@ -58,3 +57,6 @@ label {
 	font-size: 20px;
 }
 
+#weapons{
+	height: 400px;
+}
