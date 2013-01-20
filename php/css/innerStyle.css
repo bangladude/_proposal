@@ -46,10 +46,9 @@ label {
   margin: auto; 
 }
 #fbbutton{
-	height: 100px;
-	width: 250px;
-	top: 50%;
-	right: 50%;
+	width: 152px;
+	display: inline-block;
+	margin-right: 40px;
 }
 #phoneText{
 	display: none;

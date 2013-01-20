@@ -94,7 +94,7 @@ $access_token = $facebook->getAccessToken();
 
                     }
                 </script>
-                <input id="tButton" type="button" onclick="authTwt()">
+                <a id="tButton" type="button" onclick="authTwt()" />
 
             </div>
 

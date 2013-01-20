@@ -41,6 +41,7 @@
   border: 5px solid #240672;
   border-radius: 10px;
   margin: auto;
+  position: relative;
 }
 
 
@@ -65,8 +66,8 @@ footer {
 	display:none;
 	text-align: center;
 	position : absolute;
-	top: 60%;
-	right: 60%;
+	top: 29%;
+	left: 20%;
 }
 #finished {
 	text-align: center;
@@ -78,6 +79,7 @@ footer {
 	display : none;
 	top: 30%;
 	right: 20%;
+	text-align: center;
 }
 
 #created{
@@ -91,12 +93,8 @@ width:40px;
 }
 
 #tButton{
-	position: absolute;
-	top: 40%;
-	right: 60%;
+	display: inline-block;
 	height: 40px;
-	border : 10px;
-	border-radius: 10px;
 	width: 215px;
 	background-image: url('img/twitter.png');
 }

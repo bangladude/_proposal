@@ -24,7 +24,7 @@ $apiKey = $_GET['apiKey'];
             var publishProps = {height: 300, width: 400};
             publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
             // Send my stream to the session
-            session.publish(publisher);
+            //session.publish(publisher);
 
             // Subscribe to streams that were in the session when we connected
             subscribeToStreams(event.streams);
