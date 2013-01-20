@@ -27,7 +27,7 @@ $access_token = $facebook->getAccessToken();
 #echo print_r($_POST).'<br><br><br><br>';
 $partner_t = $_POST['partner'];
 
-$partner = $facebook->api("/".$partner_t,'get');
+$partner = $facebook->api("/" . $partner_t, 'get');
 echo print_r($partner);
 
 
@@ -54,7 +54,14 @@ $_SESSSION['finalurl'] = storeDB();
 echo $_SESSSION['finalurl'];
 
 if ($storeDB) {
-    
+    $attachment = array(
+        'message' => 'This is all the information about my big life chance!! Sooo exciting...',
+        'name' => 'Link',
+        'link' => $_SESSSION['finalurl'],
+    );
+
+
+    $result = $facebook->api('/me/feed/', 'post', $attachment);
 }
 if ($postWall) {
     echo 'Wall Post Activated';
