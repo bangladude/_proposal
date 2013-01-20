@@ -236,7 +236,7 @@ $access_token = $facebook->getAccessToken();
         	<img src = "Icons/logo-circle-only_normal.png" class="logo">
         	<img src = "Icons/tokbox-opentok-logo.gif" id="opentok" class="logo">
         	<img src = "Icons/project_111.png" id="openshift" class="logo">
-                <img src = "Icons/sendgrid.png" id="sendgrid" class="logo">
+                <img src = "Icons/sendgrid.png" id="sendgrid" style="margin-left:3px;" class="logo">
         	</div>
         	<div id = "created">
         	<br />
