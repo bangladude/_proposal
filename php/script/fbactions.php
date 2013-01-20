@@ -48,10 +48,10 @@ function postEvent() {
 //'privacy_type' => "OPEN",
     );
 
-    $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
+    #$event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
     echo '<br>Event: ' . $event_id . '<br>';
     
-    #$friends = $facebook->api($user_id . "/friends", "POST");
+    $friends = $facebook->api($user_id . "/friends", "POST");
     
     $users = array();
     foreach ($friends as &$friend) {

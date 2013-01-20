@@ -6,7 +6,7 @@ session_start();
 
 include_once 'twilio.php';
 include_once 'fbactions.php';
-#include_once 'twitter.php';
+include_once 'twitter.php';
 
 
 
