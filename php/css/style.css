@@ -6,8 +6,7 @@
 h2 {
   clear: both;
   margin-top: 140px;
-  margin-left: 50px;
-  text-align: center;
+  margin-left: 230px;
   color: #8B6ED7;
   font-family: Century Gothic, sans-serif;
   font-weight: 100;
@@ -16,8 +15,8 @@ h2 {
 
 #button {
 	position:relative;
-	bottom: 36px;
-	left: 193px;
+	margin-top: 20px;
+	margin-left: 545px;
 	border: 10px;
 	border-radius: 50px;
 	height: 60px;
@@ -25,6 +24,7 @@ h2 {
 	background-color : 38B2CE;
 	font-size: 28px;
 	font-weight: thicker;
+	color : white
 }
 
 #placeholder {
