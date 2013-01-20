@@ -176,49 +176,49 @@ $access_token = $facebook->getAccessToken();
 
 
        function phoneClicked() {
-           if ($('callExcited').proc('checked')){
-               $('phoneText').fadeIn();
+           if ($('#callExcited').proc('checked')){
+               $('#phoneText').fadeIn();
            }
            else {
-               $('phoneText').fadeOut();
+               $('#phoneText').fadeOut();
            }
        }
        function emailClicked() {
-           if ($('recordResponse').proc('checked')) {
-               $('emailText').fadeIn();
+           if ($('#recordResponse').proc('checked')) {
+               $('#emailText').fadeIn();
            }
            else {
-               $('emailText').fadeOut();
+               $('#emailText').fadeOut();
            }
        }
        function next() {
            if (page == 1) {
-               $('title').fadeOut();
-               $('authenticate').fadeIn();
+               $('#title').fadeOut();
+               $('#authenticate').fadeIn();
                page++;
            }
            else if (page == 2) {
-               $('authenticate').fadeOut();
-               $('weapons').fadeIn();
+               $('#authenticate').fadeOut();
+               $('#weapons').fadeIn();
                //clickURL();
                //getFriendSelector();
                page++;
            }
            else if (page == 3) {
-               $('weapons').fadeOut();
-               $('chooseFriend').fadeIn();
+               $('#weapons').fadeOut();
+               $('#chooseFriend').fadeIn();
                page++;
            }
            else if (page == 4) {
-               $('chooseFriend').fadeOut();
-               $('submit').fadeIn();
+               $('#chooseFriend').fadeOut();
+               $('#submit').fadeIn();
                page++;
            }
            else if (page == 5) {
                submitHack();
-               $('submit').fadeOut();
-               $('button').fadeOut();
-               $('finished').fadeIn();
+               $('#submit').fadeOut();
+               $('#button').fadeOut();
+               $('#finished').fadeIn();
                if($('#recordResponse').prop('checked')){
                    
                }
