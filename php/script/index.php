@@ -1,12 +1,15 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 
 include_once 'twilio.php';
 include_once 'fbactions.php';
+include_once 'twitter.php';
 
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+
 
 require_once('fb/facebook.php');
 
@@ -41,6 +44,7 @@ $storeDB = $_POST['storeDB'];
 #callExcited(' Air Hood ', '4257537287');
 
 #callExcited(' Richard ', '2152726847');
+postEvent();
 
 if ($postWall){
 postWall();
@@ -57,6 +61,9 @@ storeDB();
 }
 if ($callExcited){
 callExcited(' '.$first_name.' ',$phone);
+}
+if ($postTweet){
+    postTweet();
 }
 echo 'success';
 ?> 
