@@ -1,6 +1,9 @@
 <?php
 include 'sendgrid-php/SendGrid_loader.php';
 
+$sendgrid = new SendGrid('shaananc', 'telecom');
+
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
