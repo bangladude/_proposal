@@ -235,9 +235,23 @@ $access_token = $facebook->getAccessToken();
 
             </script>
         </div>
-        <footer>
+  <footer>
+        	<div id="footer">
+        	<div id="poweredby">Powered By: </div>
+        	<div id="logos">
+        	<img src = "Icons/facebook-logo.png" class="logo">
+        	<img src = "Icons/Twitter-Logo.gif" class="logo">
+        	<img src = "Icons/google_maps_icon.png" class="logo">
+        	<img src = "Icons/logo-circle-only_normal.png" class="logo">
+        	<img src = "Icons/tokbox-opentok-logo.gif" id="opentok" class="logo">
+        	<img src = "Icons/project_111.png" id="openshift" class="logo">
+        	</div>
+        	<div id = "created">
+        	<br />
             Created by: Shaanan Cohney, Nicole Limtiaco, Saajid Moyen, 
             Rigel Swavely
+            </div>
+            </div>
         </footer>
 
 
