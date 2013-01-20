@@ -1,4 +1,9 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
 $con = mysql_connect("127.4.96.129", "proposal", "telecom"); //connect to db
 
 if (!$con) { //check for connection
