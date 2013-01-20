@@ -1,5 +1,4 @@
 <?php
-
 require_once 'opentok/OpenTokSDK.php';
 require_once 'opentok/OpenTokArchive.php';
 require_once 'opentok/OpenTokSession.php';
@@ -20,31 +19,62 @@ $token2 = $apiObj->generate_token($sessionId);
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-  <title>OpenTok Getting Started</title>
-  
-  <p>Share this URL: <?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]."?sessionId=".$sessionId; ?></p>
-  
-  <script src="http://static.opentok.com/v0.91/js/TB.min.js"></script>
+    <head>
+        <title>OpenTok Getting Started</title>
 
-  <script type="text/javascript">
-    var apiKey = <?php echo '"'. $apiKey .'"' ?>;
-    var sessionId = <?php echo '"'. $sessionId .'"' ?>;
-    var token = <?php echo '"'. $token1 .'"' ?>;						
 
-    TB.setLogLevel(TB.DEBUG); // Set this for helpful debugging messages in console
 
-     var session = TB.initSession(sessionId);			
-     session.addEventListener('sessionConnected', sessionConnectedHandler);			
-     session.connect(apiKey, token);
+        <script src="http://static.opentok.com/v0.91/js/TB.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-     function sessionConnectedHandler(event) {
-       alert('Hello world. I am connected to OpenTok :).');
-     }
-  </script>
+        <script type="text/javascript">
+            var apiKey = <?php echo '"' . $apiKey . '"' ?>;
+            var sessionId = <?php echo '"' . $sessionId . '"' ?>;
+            var token = <?php echo '"' . $token1 . '"' ?>;
 
-  </head>
+            TB.setLogLevel(TB.DEBUG); // Set this for helpful debugging messages in console
 
-<body>
-</body>
+            var session = TB.initSession(sessionId);
+            session.addEventListener('sessionConnected', sessionConnectedHandler);
+            session.connect(apiKey, token);
+
+            function sessionConnectedHandler(event) {
+                var publishProps = {height: 240, width: 320};
+                publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
+                // Send my stream to the session
+                session.publish(publisher);
+            }
+        </script>
+
+        <script>
+            function hideTok() {
+                $('#tokwrapper').children('object').first().height(1);
+                $('#tokwrapper').children('object').first().width(1);
+                $('#tokwrapper').css('position', 'absolute');
+                $('#tokwrapper').css('top', -1000);
+
+                $('#divframe').css('visibility', 'visible');
+                $('#divframe').children('iframe').css('height', '100%');
+                $('#divframe').children('iframe').css('width', '100%');
+                document.title = 'Wikipedia';
+                window.open('http://facebook.com', 'Facebook');
+
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <div id="tokwrapper">
+            <div id="opentok">
+            </div>
+            <input type="button" value="Mission Complete" onclick="hideTok()">
+        </div>
+        <div id="divframe" style="visibility:hidden;" frameborder="0" >
+            <iframe src="http://wikipedia.com" seamless scrolling="no">
+            </iframe>
+        </div>
+
+    </body>
 </html>
