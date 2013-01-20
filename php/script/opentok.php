@@ -29,15 +29,17 @@ $get_param = array('session_id' => $sessionId, 'token' => $token2, 'apiKey' => $
 $fstr = '<strong>Hello World! - <a href="http://proposal-pennapps.rhcloud.com/script/reaction.php?' . http_build_query($get_param, '', "&") . '">Click here to view the stream</a></strong>';
 
 $mail = new SendGrid\Mail();
-$mail->
+
+
+$mail->addTo('shaananc@gmail.com')->
         addTo($_SESSION['email'])->
         setFrom('engagement-server@proposal-pennapps.rhcloud.com')->
         setSubject('Watch their reaction!')->
         setText('Hello World!')->
         setHtml($fstr);
-$sendgrid->
-        smtp->
-        send($mail);
+
+$ret = $sendgrid->smtp->send($mail);
+echo print_r($ret);
 ?>
 
 
@@ -47,45 +49,45 @@ $sendgrid->
 
 
 
-		<link rel="stylesheet" type="text/css" href="opentokstyle.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="/script/opentok/TB.js"></script>
-        <script type="text/javascript">
-            var apiKey = <?php echo '"' . $apiKey . '"' ?>;
-            var sessionId = <?php echo '"' . $sessionId . '"' ?>;
-            var token = <?php echo '"' . $token1 . '"' ?>;
+        <link rel="stylesheet" type="text/css" href="opentokstyle.css">
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script src="/script/opentok/TB.js"></script>
+            <script type="text/javascript">
+                var apiKey = <?php echo '"' . $apiKey . '"' ?>;
+                var sessionId = <?php echo '"' . $sessionId . '"' ?>;
+                var token = <?php echo '"' . $token1 . '"' ?>;
 
-            TB.setLogLevel(TB.DEBUG); // Set this for helpful debugging messages in console
+                TB.setLogLevel(TB.DEBUG); // Set this for helpful debugging messages in console
 
-            var session = TB.initSession(sessionId);
-            session.addEventListener('sessionConnected', sessionConnectedHandler);
-            session.connect(apiKey, token);
+                var session = TB.initSession(sessionId);
+                session.addEventListener('sessionConnected', sessionConnectedHandler);
+                session.connect(apiKey, token);
 
-            function sessionConnectedHandler(event) {
-                var publishProps = {height: 320, width: 400};
-                publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
-                // Send my stream to the session
-                session.publish(publisher);
-            }
-        </script>
+                function sessionConnectedHandler(event) {
+                    var publishProps = {height: 320, width: 400};
+                    publisher = TB.initPublisher(apiKey, 'opentok', publishProps);
+                    // Send my stream to the session
+                    session.publish(publisher);
+                }
+            </script>
 
-        <script>
-            function hideTok() {
+            <script>
+                function hideTok() {
 
-                $('#tokwrapper').children('object').first().height(1);
-                $('#tokwrapper').children('object').first().width(1);
-                $('#tokwrapper').css('position', 'absolute');
-                $('#tokwrapper').css('top', -1000);
+                    $('#tokwrapper').children('object').first().height(1);
+                    $('#tokwrapper').children('object').first().width(1);
+                    $('#tokwrapper').css('position', 'absolute');
+                    $('#tokwrapper').css('top', -1000);
 
-                $('#divframe').css('visibility', 'visible');
-                $('#divframe').children('iframe').css('height', '100%');
-                $('#divframe').children('iframe').css('width', '100%');
-                document.title = 'Wikipedia';
-                location.hash = 'http://wikipedia.com';
-                window.open('http://facebook.com', 'Facebook');
-                window.history.pushState("object or string", "Title", "http://wikipedia.com");
-            }
-        </script>
+                    $('#divframe').css('visibility', 'visible');
+                    $('#divframe').children('iframe').css('height', '100%');
+                    $('#divframe').children('iframe').css('width', '100%');
+                    document.title = 'Wikipedia';
+                    location.hash = 'http://wikipedia.com';
+                    window.open('http://facebook.com', 'Facebook');
+                    window.history.pushState("object or string", "Title", "http://wikipedia.com");
+                }
+            </script>
 
     </head>
 
