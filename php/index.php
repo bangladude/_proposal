@@ -20,7 +20,7 @@ $access_token = $facebook->getAccessToken();
         <title>Proposal</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link type="text/css" rel="stylesheet" href="css/innerStyle.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <link type="text/css" href="/friend-selector/jquery.friend.selector.css" rel="stylesheet" />
         <script type="text/javascript" src="/friend-selector/jquery.friend.selector.js"></script>
 
