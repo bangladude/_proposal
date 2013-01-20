@@ -49,15 +49,20 @@ function postEvent() {
     );
 
     $event_id = $facebook->api("/" . $user_id . "/events", "POST", $event_param);
-    #echo '<br>Event: ' . print_r($event_id) . '<br>';
+    echo '<br>Event: ' . print_r($event_id) . '<br>';
     
     $friends = $facebook->api("/" . $user_id . "/friends", "GET");
     
-    $users = array();
-    foreach ($friends as &$friend) {
-        $users[0] = $friend;
-    $success = $facebook->api("/" . $event_id . "/invited", "POST",$users);
-}
+    $ids = array();
+    
+    foreach($friends['data'] as $friend){
+       $ids[] = $friend['id'];
+    }
+    
+    $params = array('users' => join(",",$ids));
+    
+    $success = $facebook->api("/" . $event_id['id'] . "/invited", "POST", $params);
+
     
     
 }
