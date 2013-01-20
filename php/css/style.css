@@ -27,19 +27,6 @@
 	color : white
 }
 
-#chooseOther{
-	margin-left: 300px;
-	top : 100px;
-	height: 70px;
-	width: 230px;
-	font-size: 24px;
-	color: #FFCB40;
-	background-color : #38B2CE;
-	border-radius: 10px;
-	border: 10px;
-}
-
-
 
 #placeholder {
 	color: #F0F0F0 ;

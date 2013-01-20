@@ -149,9 +149,8 @@ $access_token = $facebook->getAccessToken();
 
 
 
-            <div id=chooseFriend style="display:none;">
-				<a href="javascript:{}" class="bt-fs-dialog">Choose Fiance</a>
-                <button id="chooseOther" onClick="reOpenChooser()">Choose different fiance</button>
+            <div id=chooseFriend style="display:none; z-index : 6; position:absolute">
+				<a id="fblink" href="javascript:{}" class="bt-fs-dialog">Choose Fiance</a>
             </div>
 
             <div id="submit" style="display : none">
@@ -167,8 +166,6 @@ $access_token = $facebook->getAccessToken();
                     The deed is done.
             </div>
 
-
-            <a id="link" style="display:none" href="#">Demo it!</a>
 
             <script>
                     var page = 1;
@@ -220,10 +217,6 @@ $access_token = $facebook->getAccessToken();
                             document.getElementById('finished').style.display = 'block';
                         }
                     }
-                    function clickURL() {
-                        document.getElementById('link').click();
-                    }
-
 
                     function submitHack() {
                         $.post("/script/index.php", $('#formHack').serialize());
