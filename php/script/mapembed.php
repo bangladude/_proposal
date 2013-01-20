@@ -10,7 +10,7 @@ function getMapURL(){
 	$latlng = $lat[0].",".$lat[1];
 	$addarr = $xml ->result->children();
 	$add = $addarr[2];
-	$url2 = "https://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&ttype=&q=" . $add . "&center=" .$add. "&markers=color:red|size:small|" . $latlng. "&sll=" .$latlng. "&ie=UTF8&ll=" .$latlng. "&output=embed";
+	$url2 = "https://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&type=&iwloc=A&q=" . $add . "&center=" .$add. "&markers=color:red|size:small|" . $latlng. "&sll=" .$latlng. "&ie=UTF8&ll=" .$latlng. "&output=embed";
 	return $url2;
 }
 
