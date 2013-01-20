@@ -40,7 +40,7 @@ if (!$con) { //check for connection
             });</script>
     </head>
     <body>
-        <div id="title"><center>We are Engaged!</center></div>
+        <div id="title"><center></center></div>
         <div id="scriptbox" style="width:75%; background-color: #000" >
                  <div id="imbox" class="image" style="position:relative;">   
                         <img src="<?php echo $row['imgurl']; ?>" id="coupleimg">
